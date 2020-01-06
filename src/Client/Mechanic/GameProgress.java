@@ -1,25 +1,27 @@
 package Client.Mechanic;
 
-import Client.Objects.Cards.Clothes.CardBeggarPants;
-import Client.Objects.Cards.Clothes.CardBeggarShirt;
-import Client.Objects.Essences.Essence;
-import Client.Objects.GameObjects.GameObject;
+import Client.Objects.Cards.Clothes.CardPovertyPants;
+import Client.Objects.Cards.Clothes.CardPovertyShirt;
 
-import static Client.Mechanic.GameGUI.*;
+import static Client.Mechanic.MainVariables.*;
 
-class GameProgress implements Runnable {
+abstract class GameProgress {
+    GameProgress() {
+        System.out.println("Creating object of class GameProgress...");
+        System.out.println("Finished creating object of class GameProgress.");
+    }
 //        private boolean collision(char l) {
 //        boolean ret = true;
-//        int xPlayer = DrawPanel.xOfPlayer;
-//        int yPlayer = DrawPanel.yOfPlayer;
+//        int xPlayer = xOfPlayerOnFrame;
+//        int yPlayer = yOfPlayerOnFrame;
 //        int xObject;
 //        int yObject;
 //        switch (l) {
 //            case 'w':
 //                for (int n = NearbyGameObjects.size() - 1; n >= 0; n--) {
-//                    if (NearbyGameObjects.get(n).name.equals("Камень")) {
-//                        xObject = NearbyGameObjects.get(n).x;
-//                        yObject = NearbyGameObjects.get(n).y;
+//                    if (NearbyGameObjects.get(n).name.equals("Stone")) {
+//                        xObject = NearbyGameObjects.get(n).xOnFrame;
+//                        yObject = NearbyGameObjects.get(n).yOnFrame;
 //                        for (int x2 = 10; x2 > 0; x2--) {
 //                            for (int x1 = NearbyGameObjects.get(n).height; x1 > 0; x1--) {
 //                                if (xPlayer == xObject) {
@@ -31,22 +33,22 @@ class GameProgress implements Runnable {
 //                                            yObject += 1;
 //                                        }
 //                                        yPlayer += 1;
-//                                        yObject = NearbyGameObjects.get(n).y;
+//                                        yObject = NearbyGameObjects.get(n).yOnFrame;
 //                                    }
 //                                }
 //                                xObject += 1;
 //                            }
 //                            xPlayer += 1;
-//                            xObject = NearbyGameObjects.get(n).x;
+//                            xObject = NearbyGameObjects.get(n).xOnFrame;
 //                        }
 //                    }
 //                }
 //                break;
 //            case 's':
 //                for (int n = NearbyGameObjects.size() - 1; n >= 0; n--) {
-//                    if (NearbyGameObjects.get(n).name.equals("Камень")) {
-//                        xObject = NearbyGameObjects.get(n).x + NearbyGameObjects.get(n).width;
-//                        yObject = NearbyGameObjects.get(n).y + NearbyGameObjects.get(n).height;
+//                    if (NearbyGameObjects.get(n).name.equals("Stone")) {
+//                        xObject = NearbyGameObjects.get(n).xOnFrame + NearbyGameObjects.get(n).width;
+//                        yObject = NearbyGameObjects.get(n).yOnFrame + NearbyGameObjects.get(n).height;
 //                        for (int x2 = 10; x2 > 0; x2--) {
 //                            for (int x1 = NearbyGameObjects.get(n).height; x1 > 0; x1--) {
 //                                if (xPlayer == xObject) {
@@ -58,13 +60,13 @@ class GameProgress implements Runnable {
 //                                            yObject -= 1;
 //                                        }
 //                                        yPlayer += 1;
-//                                        yObject = NearbyGameObjects.get(n).y;
+//                                        yObject = NearbyGameObjects.get(n).yOnFrame;
 //                                    }
 //                                }
 //                                xObject -= 1;
 //                            }
 //                            xPlayer += 1;
-//                            xObject = NearbyGameObjects.get(n).x;
+//                            xObject = NearbyGameObjects.get(n).xOnFrame;
 //                        }
 //                    }
 //                }
@@ -79,198 +81,69 @@ class GameProgress implements Runnable {
 //        return ret;
 //    }
 
-    void searchForNearbyGameObjects() {
-        for (int n = NearbyGameObjects.size() - 1; n >= 0; n--) {
-            NearbyGameObjects.remove(n);
-        }
-        for (GameObject gameObject : listOfObjects) {
-            switch (gameObject.name) {
-                case "Древесина":
-                    gameObject.color = colorWood;
-                    break;
-                case "Камень":
-                    gameObject.color = colorStone;
-                    break;
-                case "Маленький камень":
-                    gameObject.color = colorSmallStone;
-                    break;
-                case "Вода":
-                    gameObject.color = colorWater;
-                    break;
-            }
-        }
-        int x = xOfPlayer - 40;
-        int y = yOfPlayer - 40;
-        for (GameObject gameObject : listOfObjects) {
-            while (x <= xOfPlayer + 50) {
-                if (x == gameObject.x  + (gameObject.height / 2)) {
-                    while (y <= yOfPlayer + 50) {
-                        if (y == gameObject.y + (gameObject.height / 2)) {
-                            NearbyGameObjects.add(gameObject);
-                            switch (gameObject.name) {
-                                case "Древесина":
-                                    gameObject.color = colorWoodNearby;
+    static void searchForNearbyGameObjects() {
+        worldNow.NearbyGameObjects.subList(0, worldNow.NearbyGameObjects.size()).clear();
+        int x = xOfPlayerOnFrame - 40;
+        int y = yOfPlayerOnFrame - 40;
+        int z = 0;
+        while (z < worldNow.listOfObjects.size()) {
+            while (x <= xOfPlayerOnFrame + 50) {
+                if (worldNow.listOfObjects.get(z).name.equals("Water") || worldNow.listOfObjects.get(z).name.equals("Barrier") ? x == worldNow.listOfObjects.get(z).xOnFrame + (worldNow.listOfObjects.get(z).width / 2) : x == worldNow.listOfObjects.get(z).xOnFrame + (worldNow.listOfObjects.get(z).isNearby ? worldNow.listOfObjects.get(z).iconOfNearby.getWidth(null) / 2 : worldNow.listOfObjects.get(z).iconOfNearby.getWidth(null) / 2)) {
+                    while (y <= yOfPlayerOnFrame + 50) {
+                        if (worldNow.listOfObjects.get(z).name.equals("Water") || worldNow.listOfObjects.get(z).name.equals("Barrier") ? y == worldNow.listOfObjects.get(z).yOnFrame + (worldNow.listOfObjects.get(z).height / 2) : y == worldNow.listOfObjects.get(z).yOnFrame + (worldNow.listOfObjects.get(z).isNearby ? worldNow.listOfObjects.get(z).iconOfNearby.getHeight(null) / 2 : worldNow.listOfObjects.get(z).iconOfNearby.getHeight(null) / 2)) {
+                            worldNow.NearbyGameObjects.add(worldNow.listOfObjects.get(z));
+                            switch (worldNow.listOfObjects.get(z).name) {
+                                case "Wood":
+                                case "Stone":
+                                case "Gold":
+                                case "Diamond":
+                                case "SmallStone":
+                                    worldNow.listOfObjects.get(z).isNearby = true;
                                     break;
-                                case "Камень":
-                                    gameObject.color = colorStoneNearby;
-                                    break;
-                                case "Маленький камень":
-                                    gameObject.color = colorSmallStoneNearby;
-                                    break;
-                                case "Золото":
-                                    gameObject.color = colorGoldNearby;
-                                    break;
-                                case "Вода":
-                                    gameObject.color = colorWaterNearby;
+                                case "Water":
+                                    worldNow.listOfObjects.get(z).color = colorWaterNearby;
                                     break;
                             }
                         }
                         y++;
                     }
-                    y = yOfPlayer - 40;
+                    y = yOfPlayerOnFrame - 40;
                 }
                 x++;
             }
-            x = xOfPlayer - 40;
+            x = xOfPlayerOnFrame - 40;
+            z++;
         }
-    }
-
-    //Метод для нажатия кнопки Войти в игру
-    void spawn() {
-        if (slots.isEmpty()) {
-            CardBeggarPants cardBeggarPants = new CardBeggarPants();
-            CardBeggarShirt cardBeggarShirt = new CardBeggarShirt();
-            cardBeggarPants.isWear = true;
-            cardBeggarShirt.isWear = true;
-            slots.add(cardBeggarPants);
-            slots.add(cardBeggarShirt);
-        }
-    }
-
-    @Override
-    public void run() {
-        while (true) {
-            for (int n = listOfEssences.size() - 1; n >= 0; n--) {
-                if (listOfEssences.get(n).name.equals("Волк")) {
-                    boolean isX = false;
-                    boolean isY = false;
-                    if (listOfEssences.get(n).x > xOfPlayer && isStartGame) {
-                        if (listOfEssences.get(n).x - xOfPlayer < 300) {
-                            isX = true;
-                        }
-                    } else if (listOfEssences.get(n).x < xOfPlayer && isStartGame) {
-                        if (xOfPlayer - listOfEssences.get(n).x < 300) {
-                            isX = true;
-                        }
-                    } else if (listOfEssences.get(n).x == xOfPlayer && isStartGame) {
-                        isX = true;
-                    }
-                    if (listOfEssences.get(n).y > yOfPlayer && isStartGame) {
-                        if (listOfEssences.get(n).y - yOfPlayer < 300) {
-                            isY = true;
-                        }
-                    } else if (listOfEssences.get(n).y < yOfPlayer && isStartGame) {
-                        if (yOfPlayer - listOfEssences.get(n).y < 300) {
-                            isY = true;
-                        }
-                    } else if (listOfEssences.get(n).y == yOfPlayer && isStartGame) {
-                        isY = true;
-                    }
-                    if (isX && isY) {
-                        int rand = (int) (Math.random() * 4);
-                        switch (rand) {
-                            case 0:
-                                if (xOfPlayer < listOfEssences.get(n).x) {
-                                    listOfEssences.get(n).x -= 2 * listOfEssences.get(n).essenceSpeed;
-                                } else if (xOfPlayer > listOfEssences.get(n).x) {
-                                    listOfEssences.get(n).x += 2 * listOfEssences.get(n).essenceSpeed;
-                                } else {
-                                    if (yOfPlayer < listOfEssences.get(n).y) {
-                                        listOfEssences.get(n).y -= 2 * listOfEssences.get(n).essenceSpeed;
-                                    } else if (yOfPlayer > listOfEssences.get(n).y) {
-                                        listOfEssences.get(n).y += 2 * listOfEssences.get(n).essenceSpeed;
-                                    }
-                                }
-                                break;
-                            case 1:
-                                if (xOfPlayer > listOfEssences.get(n).x) {
-                                    listOfEssences.get(n).x += 2 * listOfEssences.get(n).essenceSpeed;
-                                } else if (xOfPlayer < listOfEssences.get(n).x) {
-                                    listOfEssences.get(n).x -= 2 * listOfEssences.get(n).essenceSpeed;
-                                } else {
-                                    if (yOfPlayer < listOfEssences.get(n).y) {
-                                        listOfEssences.get(n).y -= 2 * listOfEssences.get(n).essenceSpeed;
-                                    } else if (yOfPlayer > listOfEssences.get(n).y) {
-                                        listOfEssences.get(n).y += 2 * listOfEssences.get(n).essenceSpeed;
-                                    }
-                                }
-                                break;
-                            case 2:
-                                if (yOfPlayer < listOfEssences.get(n).y) {
-                                    listOfEssences.get(n).y -= 2 * listOfEssences.get(n).essenceSpeed;
-                                } else if (yOfPlayer > listOfEssences.get(n).y) {
-                                    listOfEssences.get(n).y += 2 * listOfEssences.get(n).essenceSpeed;
-                                } else {
-                                    if (xOfPlayer < listOfEssences.get(n).x) {
-                                        listOfEssences.get(n).x -= 2 * listOfEssences.get(n).essenceSpeed;
-                                    } else if (xOfPlayer > listOfEssences.get(n).x) {
-                                        listOfEssences.get(n).x += 2 * listOfEssences.get(n).essenceSpeed;
-                                    }
-                                }
-                                break;
-                            case 3:
-                                if (yOfPlayer > listOfEssences.get(n).y) {
-                                    listOfEssences.get(n).y += 2 * listOfEssences.get(n).essenceSpeed;
-                                } else if (yOfPlayer < listOfEssences.get(n).y) {
-                                    listOfEssences.get(n).y -= 2 * listOfEssences.get(n).essenceSpeed;
-                                } else {
-                                    if (xOfPlayer < listOfEssences.get(n).x) {
-                                        listOfEssences.get(n).x -= 2 * listOfEssences.get(n).essenceSpeed;
-                                    } else if (xOfPlayer > listOfEssences.get(n).x) {
-                                        listOfEssences.get(n).x += 2 * listOfEssences.get(n).essenceSpeed;
-                                    }
-                                }
-                                break;
-                        }
-                        if ((yOfPlayer == listOfEssences.get(n).y || yOfPlayer == listOfEssences.get(n).y + 2 || yOfPlayer == listOfEssences.get(n).y + 4 || yOfPlayer == listOfEssences.get(n).y - 2 || yOfPlayer == listOfEssences.get(n).y - 4) && (xOfPlayer == listOfEssences.get(n).x || xOfPlayer == listOfEssences.get(n).x + 2 || xOfPlayer == listOfEssences.get(n).x + 4 || xOfPlayer == listOfEssences.get(n).x - 2 || xOfPlayer == listOfEssences.get(n).x - 4)) {
-                            System.out.println("Game Over!");
-                            System.out.println(slots);
-                            for (int x = slots.size() - 1; x >= 0; x--) {
-                                slots.remove(x);
-                            }
-                            for (Essence essence : listOfEssences) {
-                                essence.x = essence.startX;
-                                essence.y = essence.startY;
-                            }
-                            for (GameObject gameObject : listOfObjects) {
-                                gameObject.x = gameObject.startX;
-                                gameObject.y = gameObject.startY;
-                            }
-                        }
-                    } else {
-                        int rand = (int) (Math.random() * 4);
-                        switch (rand) {
-                            case 0:
-                                listOfEssences.get(n).x -= 2 * listOfEssences.get(n).essenceSpeed;
-                                break;
-                            case 1:
-                                listOfEssences.get(n).x += 2 * listOfEssences.get(n).essenceSpeed;
-                                break;
-                            case 2:
-                                listOfEssences.get(n).y -= 2 * listOfEssences.get(n).essenceSpeed;
-                                break;
-                            case 3:
-                                listOfEssences.get(n).y += 2 * listOfEssences.get(n).essenceSpeed;
-                                break;
-                        }
-                    }
+        int z1 = 0;
+        while (z1 < worldNow.listOfObjects.size()) {
+            if (worldNow.NearbyGameObjects.indexOf(worldNow.listOfObjects.get(z1)) == -1) {
+                switch (worldNow.listOfObjects.get(z1).name) {
+                    case "Wood":
+                    case "Stone":
+                    case "Gold":
+                    case "Diamond":
+                    case "SmallStone":
+                        worldNow.listOfObjects.get(z1).isNearby = false;
+                        break;
+                    case "Water":
+                        worldNow.listOfObjects.get(z1).color = colorWater;
+                        break;
                 }
             }
-            try {
-                Thread.sleep(20);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            z1++;
+        }
+    }
+
+    //Метод
+    static void firstRespawn() {
+        searchForNearbyGameObjects(); //Поиск, выделение и сохранение близких к игроку объектов.
+        if (worldNow.slots.isEmpty()) {
+            CardPovertyPants cardPovertyPants = new CardPovertyPants();
+            CardPovertyShirt cardPovertyShirt = new CardPovertyShirt();
+            cardPovertyPants.isWear = true;
+            cardPovertyShirt.isWear = true;
+            worldNow.slots.add(cardPovertyPants);
+            worldNow.slots.add(cardPovertyShirt);
         }
     }
 }

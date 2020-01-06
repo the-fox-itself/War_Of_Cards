@@ -1,14 +1,15 @@
 package Client.Objects.GameObjects; //Пакет класса.
 
-import static Client.Mechanic.MainVariables.colorStone; //Импорт нужного цвета.
+import static Client.Mechanic.MainVariables.iconOfStone; //Импорт нужного цвета.
+import static Client.Mechanic.MainVariables.iconOfStoneNearby;
 
 public class ObjectStone extends GameObject { //Камень.
-    public ObjectStone() { //Конструктор для установления начальных характеристик..
-        width = (int) (Math.random() * 21) + 20; //Определяется размер.
-        if (width > 25)
-            width -= 10;
-        height = width; //Он квадратный, поэтому его длины должны быть одинаковыми.
-        color = colorStone; //Его цвет.
-        name = "Камень"; //Его название.
+    public ObjectStone() { //Конструктор для установления начальных характеристик.
+        System.out.println("Creating object of class ObjectStone...");
+        iconOfFar = iconOfStone;
+        iconOfNearby = iconOfStoneNearby;
+        name = "Stone"; //Его название.
+        System.out.println("Finished creating object of class ObjectStone.");
+        System.out.println("Created object " + name + ": xOnFrame: " + xOnFrame + ", yOnFrame: " + yOnFrame + ", width: " + width + ", height: " + height + ", iconOfFar: " + iconOfFar + ", iconOfNearby: " + iconOfNearby);
     }
 }

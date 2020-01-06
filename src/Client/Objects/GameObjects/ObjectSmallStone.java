@@ -1,12 +1,14 @@
 package Client.Objects.GameObjects; //Пакет класса.
 
-import static Client.Mechanic.MainVariables.colorSmallStone; //Импорт нужного цвета.
+import static Client.Mechanic.MainVariables.*;
 
 public class ObjectSmallStone extends GameObject { //Маленький камень.
     public ObjectSmallStone() { //Конструктор для установления начальных характеристик.
-        width = (int) (Math.random() * 6) + 10; //Определяется размер.
-        height = width; //Он квадратный, поэтому его длины должны быть одинаковыми.
-        color = colorSmallStone; //Его цвет.
-        name = "Маленький камень"; //Его название.
+        System.out.println("Creating object of class ObjectSmallStone...");
+        iconOfFar = iconOfSmallStone;
+        iconOfNearby = iconOfSmallStoneNearby;
+        name = "SmallStone"; //Его название.
+        System.out.println("Finished creating object of class ObjectSmallStone.");
+        System.out.println("Created object " + name + ": xOnFrame: " + xOnFrame + ", yOnFrame: " + yOnFrame + ", width: " + width + ", height: " + height + ", color: " + color + ", iconOfFar: " + iconOfFar + ", iconOfNearby: " + iconOfNearby);
     }
 }

@@ -3,126 +3,189 @@ package Client.Mechanic;
 import javax.swing.*;
 import java.awt.*;
 
-import static Client.Mechanic.GameGUI.*;
+import static Client.Mechanic.MainVariables.*;
 
 public class DrawPanel extends JPanel {
+    DrawPanel() {
+        System.out.println("Creating object of class DrawPanel...");
+        System.out.println("Finished creating object of class DrawPanel.");
+    }
     protected void paintComponent(Graphics g) {
-        switch (phase) {
-            case 0:
-                super.paintComponent(g);
-                g.setColor(colorStartBackground);
-                g.fillRect(0, 0, 1000, 1000);
-                g.setColor(colorStartPictureBackground);
-                g.fillRect(0, 0, 600, 180);
-                g.setColor(colorStartPictureBlue);
-                g.fillOval(90, 100, 60, 60);
-                g.setColor(colorStartPictureRed);
-                g.fillOval(460, 80, 60, 60);
-                g.fillOval(300, 20, 60, 60);
-                g.setColor(colorStartPartitions);
-                g.fillRect(0, 180, 600, 20);
-                g.fillRect(0, 500, 600, 20);
-                if (!nick.equals("") && age != 0 && !password.equals("")) {
-                    g.setColor(colorStartLabelAccountBackground);
-                    g.fillRect(20, 535, 260, 50);
-                }
-                break;
+        super.paintComponent(g);
+        switch (phaseOfRepaint) {
             case 1:
-                super.paintComponent(g);
-                g.setColor(colorGameBackground);
-                g.fillRect(0, 0, widthOfFrame, heightOfFrame);
-                g.setColor(colorGamePlayerBackground);
-                g.fillOval(xOfPlayer - helpGroundXMinus, yOfPlayer - helpGroundYMinus, 50, 50);
+                paintObject(colorStartBackground, 0, 0, 1000, 1000, "Rect", g);
+                paintObject(colorStartPictureBackground, 0, 0, 600, 180, "Rect", g);
+                paintObject(colorStartPictureBlue, 90, 100, 60, 60, "Oval", g);
+                paintObject(colorStartPictureRed, 460, 80, 60, 60, "Oval", g);
+                paintObject(colorStartPictureRed, 300, 20, 60, 60, "Oval", g);
+                paintObject(colorStartPartitions, 0, 180, 600, 20, "Rect", g);
+                paintObject(colorStartPartitions, 0, 500, 600, 20, "Rect", g);
 
-                int v = listOfObjects.size() - 1;
-                while (v >= 0) {
-                    if (listOfObjects.get(v).name.equals("Золото")) {
-                        g.setColor(listOfObjects.get(v).color);
-                        g.fillOval(listOfObjects.get(v).x, listOfObjects.get(v).y, listOfObjects.get(v).width, listOfObjects.get(v).height);
-                    }
-                    v--;
-                }
-                int w = listOfObjects.size() - 1;
-                while (w >= 0) {
-                    if (listOfObjects.get(w).name.equals("Вода")) {
-                        g.setColor(listOfObjects.get(w).color);
-                        g.fillOval(listOfObjects.get(w).x, listOfObjects.get(w).y, listOfObjects.get(w).width, listOfObjects.get(w).height);
-                    }
-                    w--;
-                }
-
-                g.setColor(colorGamePlayer);
-                g.fillOval(960, 570, 10, 10);
-                Image image = new ImageIcon("/home/creeper/Изображения/Нищий.gif").getImage();
-                g.drawImage(image, 935, 545, this);
-
-                int q = listOfEssences.size() - 1;
-                while (q >= 0) {
-                    if (listOfEssences.get(q).name.equals("Волк")) {
-                        g.setColor(listOfEssences.get(q).color);
-                        g.fillOval(listOfEssences.get(q).x, listOfEssences.get(q).y, listOfEssences.get(q).width, listOfEssences.get(q).height);
-                    }
-                    q--;
-                }
-
-                int y = listOfObjects.size() - 1;
-                while (y >= 0) {
-                    if (listOfObjects.get(y).name.equals("Камень")) {
-                        g.setColor(listOfObjects.get(y).color);
-                        g.fillRect(listOfObjects.get(y).x, listOfObjects.get(y).y, listOfObjects.get(y).width, listOfObjects.get(y).height);
-                    }
-                    y--;
-                }
-                int z = listOfObjects.size() - 1;
-                while (z >= 0) {
-                    if (listOfObjects.get(z).name.equals("Маленький камень")) {
-                        g.setColor(listOfObjects.get(z).color);
-                        g.fillRect(listOfObjects.get(z).x, listOfObjects.get(z).y, listOfObjects.get(z).width, listOfObjects.get(z).height);
-                    }
-                    z--;
-                }
-
-                int x = listOfObjects.size() - 1;
-                while (x >= 0) {
-                    if (listOfObjects.get(x).name.equals("Древесина")) {
-                        g.setColor(listOfObjects.get(x).color);
-                        g.fillOval(listOfObjects.get(x).x, listOfObjects.get(x).y, listOfObjects.get(x).width, listOfObjects.get(x).height);
-                    }
-                    x--;
-                }
-                g.setColor(colorGameHandBackground1);
-                g.fillRect(10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10), widthOfFrame / 10, widthOfFrame / 10 * 15 / 10);
-                g.setColor(colorGameHandBackground2);
-                g.fillRect(20, heightOfFrame - (widthOfFrame / 10 * 15 / 10), widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20);
-
-                g.setColor(colorGameHandBackground1);
-                g.fillRect(widthOfFrame - (widthOfFrame / 10 + 10), heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10), widthOfFrame / 10, widthOfFrame / 10 * 15 / 10);
-                g.setColor(colorGameHandBackground2);
-                g.fillRect(widthOfFrame - (widthOfFrame / 10 + 10) + 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10), widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20);
-
-                for (int u = health; u > 0; u--) {
-                    g.setColor(colorHealth);
-//                    g.fillRect();
-                }
-
-                gameFrame.setLayout(null);
-                labelNick.setText(nick);
-                labelNick.setBounds(xOfPlayer - 30, yOfPlayer - 35, 80, 20);
-                gameFrame.setLayout(new BorderLayout());
+//                if (!textNick.getText().equals("") && !textAge.getText().equals("") && !textPassword.getText().equals(""))
+//                    paintObject(colorStartLabelAccountBackground, 20, 535, 260, 50, "Rect", g);
                 break;
             case 2:
-                super.paintComponent(g);
-                g.setColor(colorGameInventorySlotsBackground);
-                g.fillRect(0, 0, widthOfFrame, heightOfFrame);
-                g.setColor(colorGameHandBackground1);
-                g.fillRect(10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10), widthOfFrame / 10, widthOfFrame / 10 * 15 / 10);
-                g.setColor(colorGameHandBackground2);
-                g.fillRect(20, heightOfFrame - (widthOfFrame / 10 * 15 / 10), widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20);
+                paintObject(colorGameBackground, 0, -5, widthOfFrame, heightOfFrame, "Rect", g);
+                paintObject(colorGamePlayerBackground, xOfPlayerOnFrame - 20, yOfPlayerOnFrame - 20 + 10, 40, 30, "Oval", g);
 
-                g.setColor(colorGameHandBackground1);
-                g.fillRect(widthOfFrame - (widthOfFrame / 10 + 10), heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10), widthOfFrame / 10, widthOfFrame / 10 * 15 / 10);
-                g.setColor(colorGameHandBackground2);
-                g.fillRect(widthOfFrame - (widthOfFrame / 10 + 10) + 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10), widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20);
+                paintImageTypeObjects("Object", "Gold", g);
+                paintImageTypeObjects("Object", "Diamond", g);
+                paintTypeObjects("Object", "Water", "Oval", g);
+                g.drawImage(iconOfPlayer, xOfPlayerOnFrame - iconOfPlayer.getWidth(this)/2, (yOfPlayerOnFrame - iconOfPlayer.getHeight(this)/2) - 15, this);
+                paintImageTypeObjects("Essence", "Wolf", g);
+                paintImageTypeObjects("Object", "Stone", g);
+                paintImageTypeObjects("Object", "SmallStone", g);
+                paintImageTypeObjects("Object", "Wood", g);
+                paintTypeObjects("Object", "Barrier", "Rect", g);
+
+                paintObject(colorGameHandBackground1, 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10) - 30, widthOfFrame / 10, widthOfFrame / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, 20, heightOfFrame - (widthOfFrame / 10 * 15 / 10) - 30, widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, widthOfFrame - (widthOfFrame / 10 + 10) - 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10) - 30, widthOfFrame / 10, widthOfFrame / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, widthOfFrame - (widthOfFrame / 10 + 10), heightOfFrame - (widthOfFrame / 10 * 15 / 10) - 30, widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, widthOfFrame - 250, 20, 220, 220, "Rect", g);
+
+                int y = heightOfFrame - 60;
+                int x = widthOfFrame/3 + 75;
+                for (int h = 0; h < worldNow.maxHealth; h++) {
+                    if (h % 10 == 0) {
+                        y -= 40;
+                        x = widthOfFrame/5;
+                    }
+                    paintObject(colorMaxHealth, x, y, 30, 30, "Rect", g);
+                    x += 40;
+                }
+
+                int y1 = heightOfFrame - 60;
+                int x1 = widthOfFrame/3 + 75;
+                for (int h = 0; h < worldNow.health; h++) {
+                    if (h % 10 == 0) {
+                        y1 -= 40;
+                        x1 = widthOfFrame/5;
+                    }
+                    paintObject(colorHealth, x1, y1, 30, 30, "Rect", g);
+                    x1 += 40;
+                }
+
+                mainFrame.setLayout(null);
+                labelNick.setText(accountNow.nick);
+                labelNick.setBounds(xOfPlayerOnFrame - 30, yOfPlayerOnFrame - 55, 80, 20);
+//                String questText;
+//                for (Quest quest : quests) {
+//
+//                }
+//                textOfQuests.setText(" Квесты:\n " + quests.get(amountOfCompetedQuests).numberOfQuest + ". " + quests.get(amountOfCompetedQuests).getGoal() + "\n Добыто: " + quests.get(amountOfCompetedQuests).getReachNumber() + "/" + quests.get(amountOfCompetedQuests).getGoalNumber() + ".");
+                textOfQuests.setBounds(widthOfFrame - 240, 30, 200, 200);
+                mainFrame.setLayout(new BorderLayout());
+
+                break;
+            case 3:
+                paintObject(colorGameInventorySlotsBackground, 0, 0, widthOfFrame, heightOfFrame, "Rect", g);
+
+                paintObject(colorGameHandBackground1, 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10) - 30, widthOfFrame / 10, widthOfFrame / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, 20, heightOfFrame - (widthOfFrame / 10 * 15 / 10) - 30, widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, widthOfFrame - (widthOfFrame / 10 + 10) - 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10) - 30, widthOfFrame / 10, widthOfFrame / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, widthOfFrame - (widthOfFrame / 10 + 10), heightOfFrame - (widthOfFrame / 10 * 15 / 10) - 30, widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, widthOfFrame - 250, 20, 220, 220, "Rect", g);
+
+                int y3 = heightOfFrame - 60;
+                int x3 = widthOfFrame/3 + 75;
+                for (int h = 0; h < worldNow.maxHealth; h++) {
+                    if (h % 10 == 0) {
+                        y3 -= 40;
+                        x3 = widthOfFrame/5;
+                    }
+                    paintObject(colorMaxHealth, x3, y3, 30, 30, "Rect", g);
+                    x3 += 40;
+                }
+
+                int y2 = heightOfFrame - 60;
+                int x2 = widthOfFrame/3 + 75;
+                for (int h = 0; h < worldNow.health; h++) {
+                    if (h % 10 == 0) {
+                        y2 -= 40;
+                        x2 = widthOfFrame/5;
+                    }
+                    paintObject(colorHealth, x2, y2, 30, 30, "Rect", g);
+                    x2 += 40;
+                }
+                break;
+        }
+    }
+    private void paintTypeObjects(String type, String name, String shape, Graphics g) {
+        int lengthOfList = -1;
+        switch (type) {
+            case "Object":
+                lengthOfList = worldNow.listOfObjects.size() - 1;
+                break;
+            case "Essence":
+                lengthOfList = worldNow.listOfEssences.size() - 1;
+                break;
+        }
+        while (lengthOfList >= 0) {
+            switch (type) {
+                case "Object":
+                    if (worldNow.listOfObjects.get(lengthOfList).name.equals(name)) {
+                        g.setColor(worldNow.listOfObjects.get(lengthOfList).color);
+                        switch (shape) {
+                            case "Rect":
+                                g.fillRect(worldNow.listOfObjects.get(lengthOfList).xOnFrame, worldNow.listOfObjects.get(lengthOfList).yOnFrame, worldNow.listOfObjects.get(lengthOfList).width, worldNow.listOfObjects.get(lengthOfList).height);
+                            case "Oval":
+                                g.fillOval(worldNow.listOfObjects.get(lengthOfList).xOnFrame, worldNow.listOfObjects.get(lengthOfList).yOnFrame, worldNow.listOfObjects.get(lengthOfList).width, worldNow.listOfObjects.get(lengthOfList).height);
+                        }
+                    }
+                    lengthOfList--;
+                    break;
+                case "Essence":
+                    if (worldNow.listOfEssences.get(lengthOfList).name.equals(name)) {
+                        g.setColor(worldNow.listOfEssences.get(lengthOfList).color);
+                        switch (shape) {
+                            case "Rect":
+                                g.fillRect(worldNow.listOfEssences.get(lengthOfList).xOnFrame, worldNow.listOfEssences.get(lengthOfList).yOnFrame, worldNow.listOfEssences.get(lengthOfList).width, worldNow.listOfEssences.get(lengthOfList).height);
+                            case "Oval":
+                                g.fillOval(worldNow.listOfEssences.get(lengthOfList).xOnFrame, worldNow.listOfEssences.get(lengthOfList).yOnFrame, worldNow.listOfEssences.get(lengthOfList).width, worldNow.listOfEssences.get(lengthOfList).height);
+                        }
+                    }
+                    lengthOfList--;
+                    break;
+            }
+        }
+    }
+    private void paintImageTypeObjects(String type, String name, Graphics g) {
+        int lengthOfList = -1;
+        switch (type) {
+            case "Object":
+                lengthOfList = worldNow.listOfObjects.size() - 1;
+                break;
+            case "Essence":
+                lengthOfList = worldNow.listOfEssences.size() - 1;
+                break;
+        }
+        while (lengthOfList >= 0) {
+            switch (type) {
+                case "Object":
+                    if (worldNow.listOfObjects.get(lengthOfList).name.equals(name)) {
+                        g.drawImage(worldNow.listOfObjects.get(lengthOfList).isNearby ? worldNow.listOfObjects.get(lengthOfList).iconOfNearby : worldNow.listOfObjects.get(lengthOfList).iconOfFar, worldNow.listOfObjects.get(lengthOfList).isNearby ? worldNow.listOfObjects.get(lengthOfList).xOnFrame - worldNow.listOfObjects.get(lengthOfList).iconOfNearby.getWidth(null)/2 : worldNow.listOfObjects.get(lengthOfList).xOnFrame - worldNow.listOfObjects.get(lengthOfList).iconOfFar.getWidth(null)/2, worldNow.listOfObjects.get(lengthOfList).isNearby ? worldNow.listOfObjects.get(lengthOfList).yOnFrame - worldNow.listOfObjects.get(lengthOfList).iconOfNearby.getHeight(null)/2 : worldNow.listOfObjects.get(lengthOfList).yOnFrame - worldNow.listOfObjects.get(lengthOfList).iconOfFar.getHeight(null)/2, this);
+                    }
+                    lengthOfList--;
+                    break;
+                case "Essence":
+                    if (worldNow.listOfEssences.get(lengthOfList).name.equals(name)) {
+                        g.drawImage(worldNow.listOfEssences.get(lengthOfList).icon, worldNow.listOfEssences.get(lengthOfList).xOnFrame - worldNow.listOfEssences.get(lengthOfList).icon.getWidth(null)/2, worldNow.listOfEssences.get(lengthOfList).yOnFrame - worldNow.listOfEssences.get(lengthOfList).icon.getHeight(null)/2, this);
+                    }
+                    lengthOfList--;
+                    break;
+            }
+        }
+    }
+    private void paintObject(Color color, int x, int y, int w, int h, String shape, Graphics g) {
+        g.setColor(color);
+        switch (shape) {
+            case "Rect":
+                g.fillRect(x, y, w, h);
+                break;
+            case "Oval":
+                g.fillOval(x, y, w, h);
                 break;
         }
     }
