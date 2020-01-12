@@ -113,7 +113,7 @@ public abstract class MainVariables {
     final static JButton buttonLoadWorld = new JButton("Загрузить мир");
     final static JButton buttonExit = new JButton("Выйти");
     final static JButton buttonSettings = new JButton("Настройки");
-    final static JButton buttonRegisterBack = new JButton("Назад");
+    final static JButton buttonRegistrationBack = new JButton("Назад");
     final static JButton buttonEndRegister = new JButton("Создать");
     final static JButton buttonRight = new JButton(">");
     final static JButton buttonLeft = new JButton("<");
@@ -153,6 +153,25 @@ public abstract class MainVariables {
     final static Font f25 = new Font("", Font.BOLD, 25);
     final static Font f20 = new Font("", Font.BOLD, 20);
     final static Font f15 = new Font("", Font.BOLD, 15);
+
+    static void lNull(JFrame frame) {
+        frame.setLayout(null);
+    }
+    static void lBord(JFrame frame) {
+        frame.setLayout(new BorderLayout());
+    }
+    static void visTrue(Component component) {
+        component.setVisible(true);
+    }
+    static void visFalse(Component component) {
+        component.setVisible(false);
+    }
+    static void setComponentOnFrame(JFrame frame, Component component, Font font, int x, int y, int width, int height) {
+        frame.add(component);
+        component.setBounds(x, y, width, height);
+        component.setFont(font);
+        visFalse(component);
+    }
 
     MainVariables() {
         System.out.println("Creating object of class MainVariables...");

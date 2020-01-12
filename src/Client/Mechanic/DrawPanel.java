@@ -69,7 +69,7 @@ public class DrawPanel extends JPanel {
 
                 mainFrame.setLayout(null);
                 labelNick.setText(accountNow.nick);
-                labelNick.setBounds(xOfPlayerOnFrame - 30, yOfPlayerOnFrame - 55, 80, 20);
+                visTrue(labelNick);
 //                String questText;
 //                for (Quest quest : quests) {
 //
