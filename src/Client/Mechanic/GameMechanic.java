@@ -176,6 +176,10 @@ class GameMechanic { //Этот класс наследует все откры�
 
         visTrue(startFrame);
     }
+    private void gameMenu() {
+        visTrue(labelNick);
+        visTrue(textOfQuests);
+    }
 
     //Метод preparationRunnable(), вызывающийся во время начала игры для подготовки и запуску потоков repaintRunnable и wolfRunnable.
     private void preparationRunnable() {
@@ -434,6 +438,9 @@ class GameMechanic { //Этот класс наследует все откры�
             System.out.println("NEW WORLD HAS CREATED.");
 
             visFalse(startFrame); //То скрываем окно-меню startFrame.
+
+            gameMenu();
+
             visTrue(mainFrame); //И отображаем окно игры mainFrame.
             phaseOfRepaint = 2; //Переключение фазы перерисовки на вторую.
             preparationRunnable(); //Вызов метода preparationRunnable() для создания и запуска нужных для игры потоков.

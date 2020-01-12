@@ -8,11 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b2626c4f-edb6-4e94-ba01-a46c6aef260e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Mechanic/DrawPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/GameMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Mechanic/GameMechanic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/GameProgress.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Mechanic/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/MainVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Mechanic/MainVariables.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/GameMechanic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1970">
-              <caret line="164" column="25" lean-forward="true" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
+            <state relative-caret-position="295">
+              <caret line="179" column="27" selection-start-line="179" selection-start-column="27" selection-end-line="179" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -396,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578296944686</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Была изменена механика всего интерфейса.&#10;Был убран класс GameProgress.">
+      <created>1578834971182</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578834971182</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -410,8 +413,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1719" height="932" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24293445" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24293445" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -492,7 +496,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Работа над версией 0.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Работа над версией 0.2" />
+    <MESSAGE value="Была изменена механика всего интерфейса.&#10;Был убран класс GameProgress." />
+    <option name="LAST_COMMIT_MESSAGE" value="Была изменена механика всего интерфейса.&#10;Был убран класс GameProgress." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/War_Of_Cards_0_2$Main.ic" NAME="Main Coverage Results" MODIFIED="1568455011809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -880,8 +885,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/GameMechanic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1970">
-          <caret line="164" column="25" lean-forward="true" selection-start-line="164" selection-start-column="25" selection-end-line="164" selection-end-column="25" />
+        <state relative-caret-position="295">
+          <caret line="179" column="27" selection-start-line="179" selection-start-column="27" selection-end-line="179" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
