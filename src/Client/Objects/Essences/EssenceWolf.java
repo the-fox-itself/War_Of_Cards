@@ -2,7 +2,7 @@ package Client.Objects.Essences; //Пакет класса.
 
 import Client.Mechanic.MainVariables;
 
-import static Client.Mechanic.MainVariables.iconOfWolfRight;
+import static Client.Mechanic.MainVariables.iconWolfRight;
 
 public class EssenceWolf extends Essence { //Волк.
     public EssenceWolf() { //Конструктор для установления начальных характеристик.
@@ -12,7 +12,7 @@ public class EssenceWolf extends Essence { //Волк.
             xOnFrame = (int) (Math.random() * 1000) * 10 - 5000 - MainVariables.xOfPlayerOnFrame;
             yOnFrame = (int) (Math.random() * 1000) * 10 - 5000 - MainVariables.yOfPlayerOnFrame;
         } while (!(xOnFrame < 5000 && xOnFrame > -5000 && yOnFrame < 5000 && yOnFrame > -5000));
-        icon = iconOfWolfRight;
+        icon = iconWolfRight;
         width = 15;
         height = 15;
         essenceHealth = 5;

@@ -3,6 +3,7 @@ package Client.Objects;
 import Client.Objects.Cards.Card;
 import Client.Objects.Essences.Essence;
 import Client.Objects.GameObjects.GameObject;
+import Client.Objects.Ground.Ground;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -62,6 +63,7 @@ public class World implements Serializable {
     public int startAmountOfWolfs = 50;
 
     public ArrayList<GameObject> listOfObjects = new ArrayList<>();
+    public ArrayList<Ground> listOfGrounds = new ArrayList<>();
     public ArrayList<Essence> listOfEssences = new ArrayList<>();
     public ArrayList<GameObject> NearbyGameObjects = new ArrayList<>();
 

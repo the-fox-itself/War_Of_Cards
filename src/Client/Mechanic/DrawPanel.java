@@ -1,5 +1,7 @@
 package Client.Mechanic;
 
+import Client.Objects.Ground.Ground;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,54 +16,56 @@ public class DrawPanel extends JPanel {
         super.paintComponent(g);
         switch (phaseOfRepaint) {
             case 1:
-                paintObject(colorStartBackground, 0, 0, 1000, 1000, "Rect", g);
-                paintObject(colorStartPictureBackground, 0, 0, 600, 180, "Rect", g);
-                paintObject(colorStartPictureBlue, 90, 100, 60, 60, "Oval", g);
-                paintObject(colorStartPictureRed, 460, 80, 60, 60, "Oval", g);
-                paintObject(colorStartPictureRed, 300, 20, 60, 60, "Oval", g);
-                paintObject(colorStartPartitions, 0, 180, 600, 20, "Rect", g);
-                paintObject(colorStartPartitions, 0, 500, 600, 20, "Rect", g);
+                paintObject(colorStartBackground, 0, 0, 2000, 1000, "Rect", g);
+                paintObject(colorStartPictureBackground, 0, 0, 2000, 200, "Rect", g);
+                paintObject(colorStartPictureBlue, 590, 100, 60, 60, "Oval", g);
+                paintObject(colorStartPictureRed, 1100, 80, 60, 60, "Oval", g);
+                paintObject(colorStartPictureRed, 900, 20, 60, 60, "Oval", g);
+                paintObject(colorStartPartitions, 0, 200, 2000, 20, "Rect", g);
+                paintObject(colorStartPartitions, 0, 800, 2000, 20, "Rect", g);
 
 //                if (!textNick.getText().equals("") && !textAge.getText().equals("") && !textPassword.getText().equals(""))
 //                    paintObject(colorStartLabelAccountBackground, 20, 535, 260, 50, "Rect", g);
                 break;
             case 2:
-                paintObject(colorGameBackground, 0, -5, widthOfFrame, heightOfFrame, "Rect", g);
+                for (Ground ground : worldNow.listOfGrounds) {
+                    g.drawImage(ground.icon, ground.x, ground.y, null);
+                }
                 paintObject(colorGamePlayerBackground, xOfPlayerOnFrame - 20, yOfPlayerOnFrame - 20 + 10, 40, 30, "Oval", g);
 
                 paintImageTypeObjects("Object", "Gold", g);
                 paintImageTypeObjects("Object", "Diamond", g);
                 paintTypeObjects("Object", "Water", "Oval", g);
-                g.drawImage(iconOfPlayer, xOfPlayerOnFrame - iconOfPlayer.getWidth(this)/2, (yOfPlayerOnFrame - iconOfPlayer.getHeight(this)/2) - 15, this);
+                g.drawImage(iconPlayer, xOfPlayerOnFrame - iconPlayer.getWidth(this)/2, (yOfPlayerOnFrame - iconPlayer.getHeight(this)/2) - 15, this);
                 paintImageTypeObjects("Essence", "Wolf", g);
                 paintImageTypeObjects("Object", "Stone", g);
                 paintImageTypeObjects("Object", "SmallStone", g);
                 paintImageTypeObjects("Object", "Wood", g);
                 paintTypeObjects("Object", "Barrier", "Rect", g);
 
-                paintObject(colorGameHandBackground1, 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10) - 30, widthOfFrame / 10, widthOfFrame / 10 * 15 / 10, "Rect", g);
-                paintObject(colorGameHandBackground2, 20, heightOfFrame - (widthOfFrame / 10 * 15 / 10) - 30, widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20, "Rect", g);
-                paintObject(colorGameHandBackground1, widthOfFrame - (widthOfFrame / 10 + 10) - 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10) - 30, widthOfFrame / 10, widthOfFrame / 10 * 15 / 10, "Rect", g);
-                paintObject(colorGameHandBackground2, widthOfFrame - (widthOfFrame / 10 + 10), heightOfFrame - (widthOfFrame / 10 * 15 / 10) - 30, widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20, "Rect", g);
-                paintObject(colorGameHandBackground1, widthOfFrame - 250, 20, 220, 220, "Rect", g);
+                paintObject(colorGameHandBackground1, 10, heightOfScreen - (widthOfScreen / 10 * 15 / 10 + 10) - 30, widthOfScreen / 10, widthOfScreen / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, 20, heightOfScreen - (widthOfScreen / 10 * 15 / 10) - 30, widthOfScreen / 10 - 20, widthOfScreen / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, widthOfScreen - (widthOfScreen / 10 + 10) - 10, heightOfScreen - (widthOfScreen / 10 * 15 / 10 + 10) - 30, widthOfScreen / 10, widthOfScreen / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, widthOfScreen - (widthOfScreen / 10 + 10), heightOfScreen - (widthOfScreen / 10 * 15 / 10) - 30, widthOfScreen / 10 - 20, widthOfScreen / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, widthOfScreen - 250, 20, 220, 220, "Rect", g);
 
-                int y = heightOfFrame - 60;
-                int x = widthOfFrame/3 + 75;
+                int y = heightOfScreen - 60;
+                int x = widthOfScreen /3 + 75;
                 for (int h = 0; h < worldNow.maxHealth; h++) {
                     if (h % 10 == 0) {
                         y -= 40;
-                        x = widthOfFrame/5;
+                        x = widthOfScreen /5;
                     }
                     paintObject(colorMaxHealth, x, y, 30, 30, "Rect", g);
                     x += 40;
                 }
 
-                int y1 = heightOfFrame - 60;
-                int x1 = widthOfFrame/3 + 75;
+                int y1 = heightOfScreen - 60;
+                int x1 = widthOfScreen /3 + 75;
                 for (int h = 0; h < worldNow.health; h++) {
                     if (h % 10 == 0) {
                         y1 -= 40;
-                        x1 = widthOfFrame/5;
+                        x1 = widthOfScreen /5;
                     }
                     paintObject(colorHealth, x1, y1, 30, 30, "Rect", g);
                     x1 += 40;
@@ -75,36 +79,36 @@ public class DrawPanel extends JPanel {
 //
 //                }
 //                textOfQuests.setText(" Квесты:\n " + quests.get(amountOfCompetedQuests).numberOfQuest + ". " + quests.get(amountOfCompetedQuests).getGoal() + "\n Добыто: " + quests.get(amountOfCompetedQuests).getReachNumber() + "/" + quests.get(amountOfCompetedQuests).getGoalNumber() + ".");
-                textOfQuests.setBounds(widthOfFrame - 240, 30, 200, 200);
+                textOfQuests.setBounds(widthOfScreen - 240, 30, 200, 200);
                 mainFrame.setLayout(new BorderLayout());
 
                 break;
             case 3:
-                paintObject(colorGameInventorySlotsBackground, 0, 0, widthOfFrame, heightOfFrame, "Rect", g);
+                paintObject(colorGameInventorySlotsBackground, 0, 0, widthOfScreen, heightOfScreen, "Rect", g);
 
-                paintObject(colorGameHandBackground1, 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10) - 30, widthOfFrame / 10, widthOfFrame / 10 * 15 / 10, "Rect", g);
-                paintObject(colorGameHandBackground2, 20, heightOfFrame - (widthOfFrame / 10 * 15 / 10) - 30, widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20, "Rect", g);
-                paintObject(colorGameHandBackground1, widthOfFrame - (widthOfFrame / 10 + 10) - 10, heightOfFrame - (widthOfFrame / 10 * 15 / 10 + 10) - 30, widthOfFrame / 10, widthOfFrame / 10 * 15 / 10, "Rect", g);
-                paintObject(colorGameHandBackground2, widthOfFrame - (widthOfFrame / 10 + 10), heightOfFrame - (widthOfFrame / 10 * 15 / 10) - 30, widthOfFrame / 10 - 20, widthOfFrame / 10 * 15 / 10 - 20, "Rect", g);
-                paintObject(colorGameHandBackground1, widthOfFrame - 250, 20, 220, 220, "Rect", g);
+                paintObject(colorGameHandBackground1, 10, heightOfScreen - (widthOfScreen / 10 * 15 / 10 + 10) - 30, widthOfScreen / 10, widthOfScreen / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, 20, heightOfScreen - (widthOfScreen / 10 * 15 / 10) - 30, widthOfScreen / 10 - 20, widthOfScreen / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, widthOfScreen - (widthOfScreen / 10 + 10) - 10, heightOfScreen - (widthOfScreen / 10 * 15 / 10 + 10) - 30, widthOfScreen / 10, widthOfScreen / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, widthOfScreen - (widthOfScreen / 10 + 10), heightOfScreen - (widthOfScreen / 10 * 15 / 10) - 30, widthOfScreen / 10 - 20, widthOfScreen / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, widthOfScreen - 250, 20, 220, 220, "Rect", g);
 
-                int y3 = heightOfFrame - 60;
-                int x3 = widthOfFrame/3 + 75;
+                int y3 = heightOfScreen - 60;
+                int x3 = widthOfScreen /3 + 75;
                 for (int h = 0; h < worldNow.maxHealth; h++) {
                     if (h % 10 == 0) {
                         y3 -= 40;
-                        x3 = widthOfFrame/5;
+                        x3 = widthOfScreen /5;
                     }
                     paintObject(colorMaxHealth, x3, y3, 30, 30, "Rect", g);
                     x3 += 40;
                 }
 
-                int y2 = heightOfFrame - 60;
-                int x2 = widthOfFrame/3 + 75;
+                int y2 = heightOfScreen - 60;
+                int x2 = widthOfScreen /3 + 75;
                 for (int h = 0; h < worldNow.health; h++) {
                     if (h % 10 == 0) {
                         y2 -= 40;
-                        x2 = widthOfFrame/5;
+                        x2 = widthOfScreen /5;
                     }
                     paintObject(colorHealth, x2, y2, 30, 30, "Rect", g);
                     x2 += 40;
