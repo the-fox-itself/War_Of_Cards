@@ -1,6 +1,7 @@
 package Client.Mechanic;
 
 import Client.Objects.Ground.Ground;
+import Client.Objects.Quest;
 
 import javax.swing.*;
 import java.awt.*;
@@ -87,11 +88,24 @@ public class DrawPanel extends JPanel {
                         Thread thread = new Thread(runnable);
                         thread.start();
                     }
-//                    String questText;
-//                    for (Quest quest : quests) {
-//
-//                    }
-//                    textOfQuests.setText(" Квесты:\n " + quests.get(amountOfCompetedQuests).numberOfQuest + ". " + quests.get(amountOfCompetedQuests).getGoal() + "\n Добыто: " + quests.get(amountOfCompetedQuests).getReachNumber() + "/" + quests.get(amountOfCompetedQuests).getGoalNumber() + ".");
+                    if (worldNow.listOfQuests.size() > worldNow.amountOfCompletedQuests) {
+                        if (!worldNow.listOfQuests.get(worldNow.amountOfCompletedQuests).isCompleted()) {
+                            textOfQuests.setText(" Квесты:\n " + worldNow.listOfQuests.get(worldNow.amountOfCompletedQuests).getNumberOfQuest() + ". "
+                                    + worldNow.listOfQuests.get(worldNow.amountOfCompletedQuests).getGoal() + "\n Добыто: "
+                                    + worldNow.listOfQuests.get(worldNow.amountOfCompletedQuests).getReachCards().size() + "/"
+                                    + worldNow.listOfQuests.get(worldNow.amountOfCompletedQuests).getGoalNumber() + ".");
+                            if (!worldNow.listOfQuests.get(worldNow.amountOfCompletedQuests).isNow()) {
+                                worldNow.listOfQuests.get(worldNow.amountOfCompletedQuests).setNow(true);
+                            }
+                        } else {
+                            for (Quest quest : worldNow.listOfQuests) {
+                                quest.setNow(false);
+                            }
+                            worldNow.amountOfCompletedQuests++;
+                        }
+                    } else {
+                        textOfQuests.setText(" Все квесты\n пройдены!\n Поздравляем!");
+                    }
                 }
                 if (timerStatementRepaint == 5) {
                     timerStatementRepaint = 0;

@@ -19,6 +19,7 @@ import static Client.Mechanic.MainVariables.*;
 //Импорт библиотек API.
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 //Это - GameMechanic - класс для отслеживания пользовательских нажатий по мышке, клавиатуре, фрейму и т. д., также в этом классе хранятся потоки, которые используются в игровой механике.
 class GameMechanic { //Этот класс наследует все открытые переменные класса MainVariables, а также всё то, что MainVariables унаследовал от своих классов-родителей.
@@ -106,12 +107,6 @@ class GameMechanic { //Этот класс наследует все откры�
         System.out.println("JFrame mainFrame has done.");
 
         System.out.println("All ActionListeners have added.");
-
-        if (!isQuestsPrepared) {
-            Quest quest1 = new Quest(1, "Собери 10 карт алмазов.", 10, 0, false);
-
-            isQuestsPrepared = true;
-        }
 
         System.out.println("preparationGUIAndWorld() has completed."); //Вывод системного уседомления.
 
@@ -428,6 +423,16 @@ class GameMechanic { //Этот класс наследует все откры�
                 worldNow.listOfGrounds.add(groundWater);
             }
             System.out.println("All GroundWaters have created.");
+            Quest quest1 = new Quest(1, "Собрать 10 карт\n Дерево", 10, "Wood");
+            Quest quest2 = new Quest(2, "Собрать 10 карт\n Камень", 10, "Stone");
+            Quest quest3 = new Quest(2, "Собрать 5 карт\n Мальнький камень", 5, "SmallStone");
+            Quest quest4 = new Quest(2, "Собрать 10 карт\n Золото", 10, "Gold");
+            Quest quest5 = new Quest(2, "Собрать 10 карт\n Алмаз", 10, "Diamond");
+            worldNow.listOfQuests.add(quest1);
+            worldNow.listOfQuests.add(quest2);
+            worldNow.listOfQuests.add(quest3);
+            worldNow.listOfQuests.add(quest4);
+            worldNow.listOfQuests.add(quest5);
             System.out.println("NEW WORLD HAS CREATED.");
 
             menuGameMain();
@@ -880,6 +885,13 @@ class GameMechanic { //Этот класс наследует все откры�
         System.out.println("Уведомление. Ваше количество смертей: " + worldNow.amountOfDeaths);
         worldNow.health = worldNow.maxHealth;
         worldNow.slots.subList(0, worldNow.slots.size()).clear();
+        for (Quest quest : worldNow.listOfQuests) {
+            quest.setCompleted(false);
+            ArrayList<Card> list = new ArrayList<>();
+            quest.setReachCards(list);
+            quest.setNow(false);
+        }
+        worldNow.amountOfCompletedQuests = 0;
         for (Essence essence : worldNow.listOfEssences) {
             essence.xOnFrame -= worldNow.xOfPlayer;
             essence.yOnFrame -= worldNow.yOfPlayer;

@@ -1,49 +1,71 @@
 package Client.Objects;
 
+import Client.Mechanic.MainVariables;
 import Client.Objects.Cards.Card;
+
+import java.util.ArrayList;
 
 public class Quest {
     private int numberOfQuest;
     private String goal;
     private int goalNumber;
-    private int reachNumber;
+    private ArrayList<Card> reachCards = new ArrayList<>();
     private boolean isCompleted;
-    private Card searchCard;
+    private boolean isNow;
+    private String searchCard;
 
-    public Quest(int numberOfQuest, String goal, int goalNumber, int reachNumber, boolean isCompleted) {
+    public Quest(int numberOfQuest, String goal, int goalNumber, String searchCard) {
         System.out.println("Creating object of class Quest...");
         this.numberOfQuest = numberOfQuest;
         this.goal = goal;
         this.goalNumber = goalNumber;
-        this.reachNumber = reachNumber;
-        this.isCompleted = isCompleted;
-        System.out.println("Finished creating object of class Quest.");
-        System.out.println("Created quest:  numberOfQuest: " + numberOfQuest + ", goal: " + goal + ", goalNumber: " + goalNumber + ", reachNumber: " + reachNumber + ", isCompleted: " + isCompleted + ", searchCard: " + null);
-    }
-
-    public Quest(int numberOfQuest, String goal, int goalNumber, int reachNumber, boolean isCompleted, Card searchCard) {
-        System.out.println("Creating object of class Quest...");
-        this.numberOfQuest = numberOfQuest;
-        this.goal = goal;
-        this.goalNumber = goalNumber;
-        this.reachNumber = reachNumber;
-        this.isCompleted = isCompleted;
         this.searchCard = searchCard;
         System.out.println("Finished creating object of class Quest.");
-        System.out.println("Created quest:  numberOfQuest: " + numberOfQuest + ", goal: " + goal + ", goalNumber: " + goalNumber + ", reachNumber: " + reachNumber + ", isCompleted: " + isCompleted + ", searchCard: " + searchCard);
+        System.out.println("Created quest:  numberOfQuest: " + numberOfQuest + ", goal: " + goal + ", goalNumber: " + goalNumber + ", reachCards: " + reachCards + ", isCompleted: " + isCompleted + ", searchCard: " + searchCard);
+
+        Runnable runnable = () -> {
+            while (true) {
+                if (isNow) {
+                    for (Card card : MainVariables.worldNow.slots) {
+                        if (reachCards.size() >= goalNumber) {
+                            isCompleted = true;
+                        } else if (card.name.equals(searchCard) && reachCards.indexOf(card) == -1) {
+                            reachCards.add(card);
+                        }
+                    }
+                    try {
+                        Thread.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    try {
+                        Thread.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
     }
 
-//    Quest(int nOQ, String g, int gN, int rN, boolean iC, ) {
-//        System.out.println("Creating object of class Quest...");
-//        numberOfQuest = nOQ;
-//        goal = g;
-//        goalNumber = gN;
-//        reachNumber = rN;
-//        isCompleted = iC;
-//        searchCards = sC;
-//        System.out.println("Finished creating object of class Quest.");
-//        System.out.println("Created quest:  numberOfQuest: " + numberOfQuest + ", goal: " + goal + ", goalNumber: " + goalNumber + ", reachNumber: " + reachNumber + ", isCompleted: " + isCompleted + ", searchCard: " + searchCard);
-//    }
+    public int getNumberOfQuest() {
+        return numberOfQuest;
+    }
+
+    public void setNumberOfQuest(int numberOfQuest) {
+        this.numberOfQuest = numberOfQuest;
+    }
+
+    public String getSearchCard() {
+        return searchCard;
+    }
+
+    public void setSearchCard(String searchCard) {
+        this.searchCard = searchCard;
+    }
 
     public String getGoal() {
         return goal;
@@ -61,12 +83,12 @@ public class Quest {
         this.goalNumber = goalNumber;
     }
 
-    public int getReachNumber() {
-        return reachNumber;
+    public ArrayList<Card> getReachCards() {
+        return reachCards;
     }
 
-    public void setReachNumber(int reachNumber) {
-        this.reachNumber = reachNumber;
+    public void setReachCards(ArrayList<Card> reachCards) {
+        this.reachCards = reachCards;
     }
 
     public boolean isCompleted() {
@@ -76,4 +98,13 @@ public class Quest {
     public void setCompleted(boolean completed) {
         isCompleted = completed;
     }
+
+    public boolean isNow() {
+        return isNow;
+    }
+
+    public void setNow(boolean now) {
+        isNow = now;
+    }
+
 }
