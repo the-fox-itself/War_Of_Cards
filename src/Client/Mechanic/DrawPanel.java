@@ -71,32 +71,33 @@ public class DrawPanel extends JPanel {
                     x1 += 40;
                 }
 
-                lNull(mainFrame);
-                labelNick.setText(accountNow.nick);
-                visTrue(labelNick);
-                visTrue(labelNotification);
-                if (!labelNotification.getText().equals("")) {
-                    Runnable runnable = () -> {
-                        String s = labelNotification.getText();
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        if (s.equals(labelNotification.getText())) {
-                            labelNotification.setText("");
-                        }
-                    };
-                    Thread thread = new Thread(runnable);
-                    thread.start();
-                }
-//                String questText;
-//                for (Quest quest : quests) {
+                if (timerStatementRepaint == 5) {
+                    if (!labelNotification.getText().equals("")) {
+                        Runnable runnable = () -> {
+                            String s = labelNotification.getText();
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            if (s.equals(labelNotification.getText())) {
+                                labelNotification.setText("");
+                            }
+                        };
+                        Thread thread = new Thread(runnable);
+                        thread.start();
+                    }
+//                    String questText;
+//                    for (Quest quest : quests) {
 //
-//                }
-//                textOfQuests.setText(" Квесты:\n " + quests.get(amountOfCompetedQuests).numberOfQuest + ". " + quests.get(amountOfCompetedQuests).getGoal() + "\n Добыто: " + quests.get(amountOfCompetedQuests).getReachNumber() + "/" + quests.get(amountOfCompetedQuests).getGoalNumber() + ".");
-                textOfQuests.setBounds(widthOfScreen - 240, 30, 200, 200);
-                lBord(mainFrame);
+//                    }
+//                    textOfQuests.setText(" Квесты:\n " + quests.get(amountOfCompetedQuests).numberOfQuest + ". " + quests.get(amountOfCompetedQuests).getGoal() + "\n Добыто: " + quests.get(amountOfCompetedQuests).getReachNumber() + "/" + quests.get(amountOfCompetedQuests).getGoalNumber() + ".");
+                }
+                if (timerStatementRepaint == 5) {
+                    timerStatementRepaint = 0;
+                } else {
+                    timerStatementRepaint++;
+                }
 
                 break;
             case 3:

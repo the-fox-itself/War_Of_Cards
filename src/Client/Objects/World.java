@@ -57,7 +57,7 @@ public class World implements Serializable {
     public int startAmountOfWoods = 3000;
     public int startAmountOfStones = 2000;
     public int startAmountOfSmallStones = 100;
-    public int startAmountOfWaters = 100;
+    public int startAmountOfWaters = 2000;
     public int startAmountOfGolds = 500;
     public int startAmountOfDiamonds = 100;
     public int startAmountOfWolfs = 50;

@@ -58,7 +58,7 @@ public abstract class MainVariables {
     final public static Image iconWolfRight = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\Wolf Right.png").getImage();
     final static Image iconWolfLeft = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\Wolf Left.png").getImage();
     final public static Image iconWood = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\Wood.png").getImage();
-    final public static Image iconWoodNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\WoodNearby.gif").getImage();
+    final public static Image iconWoodNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\WoodNearby.png").getImage();
     final public static Image iconStone = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\Stone.png").getImage();
     final public static Image iconStoneNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\StoneNearby.png").getImage();
     final public static Image iconSmallStone = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\SmallStone.png").getImage();
@@ -66,7 +66,7 @@ public abstract class MainVariables {
     final public static Image iconUndergroundObject = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\UndergroundObject.png").getImage();
     final public static Image iconGoldNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\GoldNearby.png").getImage();
     final public static Image iconDiamondNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\DiamondNearby.png").getImage();
-    final public static Image iconGroundGrass = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\GroundGrass1.png").getImage();
+    final public static Image iconGroundGrass = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\GroundGrass.png").getImage();
     final public static Image iconGroundWater = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\0.0.0.3\\resources\\images\\GroundWater.png").getImage();
 
 
@@ -103,6 +103,7 @@ public abstract class MainVariables {
     static int phaseOfRepaint = 1;
 
     static int timerStatement = 0;
+    static int timerStatementRepaint = 0;
     final static int timeForTakingAHealth = 8;
     static int timeForRunnable = 0;
 

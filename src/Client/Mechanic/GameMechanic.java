@@ -440,6 +440,10 @@ class GameMechanic { //Этот класс наследует все откры�
             gameIsStartedOrNot = true; //Выдача переменной gameIsStartedOrNot значение true.
 
             firstRespawn(); //Вызов метода firstRespawn() для выдачи игроку начальных предметов и первого поиска ближайших к нему объектов. Игра начинается.
+            labelNick.setText(accountNow.nick);
+            visTrue(labelNick);
+            visTrue(labelNotification);
+            visTrue(textOfQuests);
             visFalse(mainFrame);
             visTrue(mainFrame);
         } //Конец переопредлённого метода actionPerformed().
@@ -518,8 +522,6 @@ class GameMechanic { //Этот класс наследует все откры�
                     accountNow.age = Integer.parseInt(textAge.getText());
                     accountNow.password = textPassword.getText(); //Сохранение пароля.
 
-                    lNull(mainFrame);
-
                     menuStartWorld();
                 }
             }
@@ -537,45 +539,41 @@ class GameMechanic { //Этот класс наследует все откры�
     private class InventoryLeft implements ActionListener {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
-            lNull(mainFrame);
             if (buttonRight.isVisible())
                 visFalse(buttonLeft);
             else
                 visTrue(buttonRight);
 
-            lBord(mainFrame);
         } //Конец переопредлённого метода actionPerformed().
     } //Конец внутреннего класса InventoryLeft.
 
     private class InventoryRight implements ActionListener {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
-            lNull(mainFrame);
             if (buttonLeft.isVisible())
                 visFalse(buttonRight);
             else
                 visTrue(buttonLeft);
 
-            lBord(mainFrame);
         } //Конец переопредлённого метода actionPerformed().
     } //Конец внутреннего класса InventoryRight.
 
     private class InventorySlotsPants implements ActionListener {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
-            lBord(mainFrame);
+
         } //Конец переопредлённого метода actionPerformed().
     } //Конец внутреннего класса InventorySlotsPants.
     private class InventorySlotsShirt implements ActionListener {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
-            lBord(mainFrame);
+
         } //Конец переопредлённого метода actionPerformed().
     } //Конец внутреннего класса InventorySlotsShirt.
     private class InventorySlotsHands implements ActionListener {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
-            lBord(mainFrame);
+
         } //Конец переопредлённого метода actionPerformed().
     } //Конец внутреннего класса InventorySlotsHands.
 
@@ -719,7 +717,6 @@ class GameMechanic { //Этот класс наследует все откры�
                                 buttonShirtClothes.setText(card.name);
                             }
                         }
-                        lNull(mainFrame);
 
                         visFalse(labelNick);
 
@@ -732,7 +729,6 @@ class GameMechanic { //Этот класс наследует все откры�
 
                         mainFrame.repaint();
                     } else {
-                        lNull(mainFrame);
 
                         visTrue(labelNick);
 
@@ -743,7 +739,6 @@ class GameMechanic { //Этот класс наследует все откры�
                         visFalse(buttonShirtSlots);
                         visFalse(buttonHandsSlots);
 
-                        lBord(mainFrame);
                         phaseOfRepaint = 2;
                         mainFrame.repaint();
                         System.out.println("Уведомление. Выход из инвенторя.");
