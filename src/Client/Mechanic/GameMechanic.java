@@ -62,7 +62,7 @@ class GameMechanic { //Этот класс наследует все откры�
         setComponentOnFrame(mainFrame, buttonLeft, f50, 10, mainFrame.getHeight() /2 - 40, 90, 80);
 
         setComponentOnFrame(mainFrame, textOfQuests, f20, mainFrame.getWidth() - 240, 30, 200, 200);
-        setComponentOnFrame(mainFrame, labelNotification, f20, mainFrame.getWidth()/5*3-40, mainFrame.getHeight()-100, 500, 50);
+        setComponentOnFrame(mainFrame, labelNotification, f20, mainFrame.getWidth()/5*3-40, mainFrame.getHeight()-100, 600, 50);
 
         setComponentOnFrame(mainFrame, labelWarning, f20, 170, 410, 200, 30);
         setComponentOnFrame(mainFrame, labelRegisterNick, f20, 60, 310, 300, 20);
@@ -425,9 +425,9 @@ class GameMechanic { //Этот класс наследует все откры�
             System.out.println("All GroundWaters have created.");
             Quest quest1 = new Quest(1, "Собрать 10 карт\n Дерево", 10, "Wood");
             Quest quest2 = new Quest(2, "Собрать 10 карт\n Камень", 10, "Stone");
-            Quest quest3 = new Quest(2, "Собрать 5 карт\n Мальнький камень", 5, "SmallStone");
-            Quest quest4 = new Quest(2, "Собрать 10 карт\n Золото", 10, "Gold");
-            Quest quest5 = new Quest(2, "Собрать 10 карт\n Алмаз", 10, "Diamond");
+            Quest quest3 = new Quest(3, "Собрать 5 карт\n Мальнький камень", 5, "SmallStone");
+            Quest quest4 = new Quest(4, "Собрать 10 карт\n Золото", 10, "Gold");
+            Quest quest5 = new Quest(5, "Собрать 10 карт\n Алмаз", 10, "Diamond");
             worldNow.listOfQuests.add(quest1);
             worldNow.listOfQuests.add(quest2);
             worldNow.listOfQuests.add(quest3);
@@ -766,6 +766,10 @@ class GameMechanic { //Этот класс наследует все откры�
                         gameObject.xOnFrame -= x;
                         gameObject.yOnFrame -= y;
                     }
+                    for (Ground ground : worldNow.listOfGrounds) {
+                        ground.x -= x;
+                        ground.y -= y;
+                    }
                     searchForNearbyGameObjects(); //Поиск, выделение и сохранение близких к игроку объектов.
                     break;
                 case 'k': //k
@@ -899,6 +903,10 @@ class GameMechanic { //Этот класс наследует все откры�
         for (GameObject gameObject : worldNow.listOfObjects) {
             gameObject.xOnFrame -= worldNow.xOfPlayer;
             gameObject.yOnFrame -= worldNow.yOfPlayer;
+        }
+        for (Ground ground : worldNow.listOfGrounds) {
+            ground.x -= worldNow.xOfPlayer;
+            ground.y -= worldNow.yOfPlayer;
         }
         worldNow.xOfPlayer = 0;
         worldNow.yOfPlayer = 0;
