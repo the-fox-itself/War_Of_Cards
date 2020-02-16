@@ -46,7 +46,7 @@ class GameMechanic { //Этот класс наследует все откры�
         setComponentOnFrame(mainFrame, buttonSaveAccount, f50, mainFrame.getWidth()/2-560/2, 510, 560, 80);
         setComponentOnFrame(mainFrame, textNameForNewWorld, f50, mainFrame.getWidth()/2-100/2, 235, 400, 70);
 
-        setComponentOnFrame(mainFrame, labelAccount, f32, 30, mainFrame.getHeight()-50, 250, 40);
+        setComponentOnFrame(mainFrame, labelAccount, f32, 30, mainFrame.getHeight()-120, 400, 60);
 
 
         setComponentOnFrame(mainFrame, labelNick, f15, xOfPlayerOnFrame - 30, yOfPlayerOnFrame - 55, 80, 20);
@@ -61,6 +61,7 @@ class GameMechanic { //Этот класс наследует все откры�
         setComponentOnFrame(mainFrame, buttonLeft, f50, 10, mainFrame.getHeight() /2 - 40, 90, 80);
 
         setComponentOnFrame(mainFrame, textOfQuests, f20, mainFrame.getWidth() - 240, 30, 200, 200);
+        setComponentOnFrame(mainFrame, labelNotification, f20, mainFrame.getWidth()/5*3-40, mainFrame.getHeight()-100, 500, 50);
 
         setComponentOnFrame(mainFrame, labelWarning, f20, 170, 410, 200, 30);
         setComponentOnFrame(mainFrame, labelRegisterNick, f20, 60, 310, 300, 20);
@@ -439,6 +440,8 @@ class GameMechanic { //Этот класс наследует все откры�
             gameIsStartedOrNot = true; //Выдача переменной gameIsStartedOrNot значение true.
 
             firstRespawn(); //Вызов метода firstRespawn() для выдачи игроку начальных предметов и первого поиска ближайших к нему объектов. Игра начинается.
+            visFalse(mainFrame);
+            visTrue(mainFrame);
         } //Конец переопредлённого метода actionPerformed().
     } //Конец внутреннего класса NewWorld.
     private class LoadWorld implements ActionListener {
@@ -892,6 +895,7 @@ class GameMechanic { //Этот класс наследует все откры�
         }
         worldNow.xOfPlayer = 0;
         worldNow.yOfPlayer = 0;
+        labelNotification.setText("Вы умерли! Ваше текущее количество смертей: " + worldNow.amountOfDeaths);
         searchForNearbyGameObjects(); //Поиск, выделение и сохранение близких к игроку объектов.
     }
 
@@ -913,40 +917,42 @@ class GameMechanic { //Этот класс наследует все откры�
                     if (worldNow.NearbyGameObjects.get(indexOfNearbyObject).height <= 0 || worldNow.NearbyGameObjects.get(indexOfNearbyObject).width <= 0) {
                         worldNow.listOfObjects.remove(worldNow.NearbyGameObjects.get(indexOfNearbyObject));
                     }
-
-                    int rand = (int) (Math.random() * chanceToGetResource);
                     Card card = null;
-                    if (rand == 0) {
-                        switch (worldNow.NearbyGameObjects.get(indexOfNearbyObject).name){
-                            case "Wood":
-                                card = new CardWood();
-                                worldNow.amountOfAllGettingCardWoods++;
-                                break;
-                            case "Stone":
-                                card = new CardStone();
-                                worldNow.amountOfAllGettingCardStones++;
-                                break;
-                            case "SmallStone":
-                                card = new CardSmallStone();
-                                worldNow.amountOfAllGettingCardSmallStones++;
-                                break;
-                            case "Gold":
-                                card = new CardGold();
-                                worldNow.amountOfAllGettingCardGolds++;
-                                break;
-                            case "Diamond":
-                                card = new CardDiamond();
-                                worldNow.amountOfAllGettingCardDiamonds++;
-                                break;
-                            case "Water":
-                                card = new CardWater();
-                                worldNow.amountOfAllGettingCardWaters++;
-                                break;
-                        }
-                        worldNow.slots.add(card);
-                        worldNow.amountOfAllGettingCards++;
-                        System.out.println("Уведомление. Получен ресурс: " + worldNow.NearbyGameObjects.get(indexOfNearbyObject).name);
+                    switch (worldNow.NearbyGameObjects.get(indexOfNearbyObject).name){
+                        case "Wood":
+                            card = new CardWood();
+                            worldNow.amountOfAllGettingCardWoods++;
+                            labelNotification.setText("Добыт ресурс: Дерево");
+                            break;
+                        case "Stone":
+                            card = new CardStone();
+                            worldNow.amountOfAllGettingCardStones++;
+                            labelNotification.setText("Добыт ресурс: Камень");
+                            break;
+                        case "SmallStone":
+                            card = new CardSmallStone();
+                            worldNow.amountOfAllGettingCardSmallStones++;
+                            labelNotification.setText("Добыт ресурс: Маленький камень");
+                            break;
+                        case "Gold":
+                            card = new CardGold();
+                            worldNow.amountOfAllGettingCardGolds++;
+                            labelNotification.setText("Добыт ресурс: Золото");
+                            break;
+                        case "Diamond":
+                            card = new CardDiamond();
+                            worldNow.amountOfAllGettingCardDiamonds++;
+                            labelNotification.setText("Добыт ресурс: Алмаз");
+                            break;
+                        case "Water":
+                            card = new CardWater();
+                            worldNow.amountOfAllGettingCardWaters++;
+                            labelNotification.setText("Добыт ресурс: Вода");
+                            break;
                     }
+                    worldNow.slots.add(card);
+                    worldNow.amountOfAllGettingCards++;
+                    System.out.println("Уведомление. Получен ресурс: " + worldNow.NearbyGameObjects.get(indexOfNearbyObject).name);
                 }
             }
         }
@@ -1087,6 +1093,7 @@ class GameMechanic { //Этот класс наследует все откры�
             worldNow.slots.add(cardPovertyPants);
             worldNow.slots.add(cardPovertyShirt);
         }
+        labelNotification.setText("Мир успешно создан!");
     }
 
     private void playerMove(char XOnFrameOrYOnFrame, int numOfPixelsToMove) {
