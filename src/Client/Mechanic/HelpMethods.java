@@ -32,10 +32,4 @@ public abstract class HelpMethods extends MainVariables {
         }
         return returnCard;
     }
-
-    static void plusOneToYourHealthButNotOverMaxHealth() {
-        if (worldNow.health < worldNow.maxHealth) {
-            worldNow.health++;
-        }
-    }
 }

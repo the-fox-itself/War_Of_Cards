@@ -3,8 +3,9 @@ package Client.Objects.GameObjects; //Пакет класса.
 import Client.Mechanic.MainVariables;
 
 import java.awt.*; //Импорт пакета с классом Color.
+import java.io.Serializable;
 
-public abstract class GameObject { //Класс-родитель для всех неживых объектов на местности.
+public abstract class GameObject implements Serializable { //Класс-родитель для всех неживых объектов на местности.
     public int xOnFrame; //Первая координата объекта на плоскости.
     public int yOnFrame; //Вторая координата объекта на плоскости.
     public int width; //Длина объекта по оси xOnFrame.
@@ -12,8 +13,8 @@ public abstract class GameObject { //Класс-родитель для всех
     public Color colorOfFar; //Цвет объекта при его дальности от игрока.
     public Color colorOfNearby; //Цвет объекта при его близости к игроку.
     public Color color; //Цвет объекта.
-    public Image iconOfFar; //Иконка объекта при его дальности от игрока.
-    public Image iconOfNearby; //Иконка объекта при его близости к игроку.
+    public transient Image iconOfFar; //Иконка объекта при его дальности от игрока.
+    public transient Image iconOfNearby; //Иконка объекта при его близости к игроку.
     public boolean isNearby = false;
     public String name; //Название объекта.
     private boolean isSingleXY = false; //Переменная, необходимая для выхода из цикла при выбирании возможных (без столкновения с другими) рандомных координат объекта.

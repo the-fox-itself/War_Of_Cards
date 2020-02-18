@@ -44,29 +44,29 @@ public class DrawPanel extends JPanel {
                 paintImageTypeObjects("Object", "Wood", g);
                 paintTypeObjects("Object", "Barrier", "Rect", g);
 
-                paintObject(colorGameHandBackground1, 10, heightOfScreen - (widthOfScreen / 10 * 15 / 10 + 10) - 30, widthOfScreen / 10, widthOfScreen / 10 * 15 / 10, "Rect", g);
-                paintObject(colorGameHandBackground2, 20, heightOfScreen - (widthOfScreen / 10 * 15 / 10) - 30, widthOfScreen / 10 - 20, widthOfScreen / 10 * 15 / 10 - 20, "Rect", g);
-                paintObject(colorGameHandBackground1, widthOfScreen - (widthOfScreen / 10 + 10) - 10, heightOfScreen - (widthOfScreen / 10 * 15 / 10 + 10) - 30, widthOfScreen / 10, widthOfScreen / 10 * 15 / 10, "Rect", g);
-                paintObject(colorGameHandBackground2, widthOfScreen - (widthOfScreen / 10 + 10), heightOfScreen - (widthOfScreen / 10 * 15 / 10) - 30, widthOfScreen / 10 - 20, widthOfScreen / 10 * 15 / 10 - 20, "Rect", g);
-                paintObject(colorGameHandBackground1, widthOfScreen - 250, 20, 220, 220, "Rect", g);
+                paintObject(colorGameHandBackground1, 10, mainFrame.getHeight() - (mainFrame.getWidth() / 10 * 15 / 10 + 10) - 30, mainFrame.getWidth() / 10, mainFrame.getWidth() / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, 20, mainFrame.getHeight() - (mainFrame.getWidth() / 10 * 15 / 10) - 30, mainFrame.getWidth() / 10 - 20, mainFrame.getWidth() / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, mainFrame.getWidth() - (mainFrame.getWidth() / 10 + 10) - 10, mainFrame.getHeight() - (mainFrame.getWidth() / 10 * 15 / 10 + 10) - 30, mainFrame.getWidth() / 10, mainFrame.getWidth() / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, mainFrame.getWidth() - (mainFrame.getWidth() / 10 + 10), mainFrame.getHeight() - (mainFrame.getWidth() / 10 * 15 / 10) - 30, mainFrame.getWidth() / 10 - 20, mainFrame.getWidth() / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, mainFrame.getWidth() - 250, 20, 220, 220, "Rect", g);
 
-                int y = heightOfScreen - 60;
-                int x = widthOfScreen /3 + 75;
+                int y = mainFrame.getHeight() - 60;
+                int x = mainFrame.getWidth() /3 + 75;
                 for (int h = 0; h < worldNow.maxHealth; h++) {
                     if (h % 10 == 0) {
                         y -= 40;
-                        x = widthOfScreen /5;
+                        x = mainFrame.getWidth() /5;
                     }
                     paintObject(colorMaxHealth, x, y, 30, 30, "Rect", g);
                     x += 40;
                 }
 
-                int y1 = heightOfScreen - 60;
-                int x1 = widthOfScreen /3 + 75;
+                int y1 = mainFrame.getHeight() - 60;
+                int x1 = mainFrame.getWidth() /3 + 75;
                 for (int h = 0; h < worldNow.health; h++) {
                     if (h % 10 == 0) {
                         y1 -= 40;
-                        x1 = widthOfScreen /5;
+                        x1 = mainFrame.getWidth() /5;
                     }
                     paintObject(colorHealth, x1, y1, 30, 30, "Rect", g);
                     x1 += 40;
@@ -115,31 +115,31 @@ public class DrawPanel extends JPanel {
 
                 break;
             case 3:
-                paintObject(colorGameInventorySlotsBackground, 0, 0, widthOfScreen, heightOfScreen, "Rect", g);
+                paintObject(colorGameInventorySlotsBackground, 0, 0, mainFrame.getWidth(), mainFrame.getHeight(), "Rect", g);
 
-                paintObject(colorGameHandBackground1, 10, heightOfScreen - (widthOfScreen / 10 * 15 / 10 + 10) - 30, widthOfScreen / 10, widthOfScreen / 10 * 15 / 10, "Rect", g);
-                paintObject(colorGameHandBackground2, 20, heightOfScreen - (widthOfScreen / 10 * 15 / 10) - 30, widthOfScreen / 10 - 20, widthOfScreen / 10 * 15 / 10 - 20, "Rect", g);
-                paintObject(colorGameHandBackground1, widthOfScreen - (widthOfScreen / 10 + 10) - 10, heightOfScreen - (widthOfScreen / 10 * 15 / 10 + 10) - 30, widthOfScreen / 10, widthOfScreen / 10 * 15 / 10, "Rect", g);
-                paintObject(colorGameHandBackground2, widthOfScreen - (widthOfScreen / 10 + 10), heightOfScreen - (widthOfScreen / 10 * 15 / 10) - 30, widthOfScreen / 10 - 20, widthOfScreen / 10 * 15 / 10 - 20, "Rect", g);
-                paintObject(colorGameHandBackground1, widthOfScreen - 250, 20, 220, 220, "Rect", g);
+                paintObject(colorGameHandBackground1, 10, mainFrame.getHeight() - (mainFrame.getWidth() / 10 * 15 / 10 + 10) - 30, mainFrame.getWidth() / 10, mainFrame.getWidth() / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, 20, mainFrame.getHeight() - (mainFrame.getWidth() / 10 * 15 / 10) - 30, mainFrame.getWidth() / 10 - 20, mainFrame.getWidth() / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, mainFrame.getWidth() - (mainFrame.getWidth() / 10 + 10) - 10, mainFrame.getHeight() - (mainFrame.getWidth() / 10 * 15 / 10 + 10) - 30, mainFrame.getWidth() / 10, mainFrame.getWidth() / 10 * 15 / 10, "Rect", g);
+                paintObject(colorGameHandBackground2, mainFrame.getWidth() - (mainFrame.getWidth() / 10 + 10), mainFrame.getHeight() - (mainFrame.getWidth() / 10 * 15 / 10) - 30, mainFrame.getWidth() / 10 - 20, mainFrame.getWidth() / 10 * 15 / 10 - 20, "Rect", g);
+                paintObject(colorGameHandBackground1, mainFrame.getWidth() - 250, 20, 220, 220, "Rect", g);
 
-                int y3 = heightOfScreen - 60;
-                int x3 = widthOfScreen /3 + 75;
+                int y3 = mainFrame.getHeight() - 60;
+                int x3 = mainFrame.getWidth() /3 + 75;
                 for (int h = 0; h < worldNow.maxHealth; h++) {
                     if (h % 10 == 0) {
                         y3 -= 40;
-                        x3 = widthOfScreen /5;
+                        x3 = mainFrame.getWidth() / 5;
                     }
                     paintObject(colorMaxHealth, x3, y3, 30, 30, "Rect", g);
                     x3 += 40;
                 }
 
-                int y2 = heightOfScreen - 60;
-                int x2 = widthOfScreen /3 + 75;
+                int y2 = mainFrame.getHeight() - 60;
+                int x2 = mainFrame.getWidth() /3 + 75;
                 for (int h = 0; h < worldNow.health; h++) {
                     if (h % 10 == 0) {
                         y2 -= 40;
-                        x2 = widthOfScreen /5;
+                        x2 = mainFrame.getWidth() / 5;
                     }
                     paintObject(colorHealth, x2, y2, 30, 30, "Rect", g);
                     x2 += 40;

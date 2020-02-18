@@ -3,9 +3,10 @@ package Client.Objects;
 import Client.Mechanic.MainVariables;
 import Client.Objects.Cards.Card;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Quest {
+public class Quest implements Serializable {
     private int numberOfQuest;
     private String goal;
     private int goalNumber;

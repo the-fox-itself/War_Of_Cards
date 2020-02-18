@@ -19,6 +19,8 @@ import static Client.Mechanic.MainVariables.*;
 //Импорт библиотек API.
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 //Это - GameMechanic - класс для отслеживания пользовательских нажатий по мышке, клавиатуре, фрейму и т. д., также в этом классе хранятся потоки, которые используются в игровой механике.
@@ -46,6 +48,7 @@ class GameMechanic { //Этот класс наследует все откры�
         setComponentOnFrame(mainFrame, buttonLoadWorld, f50, mainFrame.getWidth()/2-570/2, 390, 570, 80);
         setComponentOnFrame(mainFrame, buttonSaveAccount, f50, mainFrame.getWidth()/2-560/2, 510, 560, 80);
         setComponentOnFrame(mainFrame, textNameForNewWorld, f50, mainFrame.getWidth()/2-100/2, 235, 400, 70);
+        setComponentOnFrame(mainFrame, labelSaveAccount, f20, mainFrame.getWidth()/2+360, 510, 800, 70);
 
         setComponentOnFrame(mainFrame, labelAccount, f32, 30, mainFrame.getHeight()-120, 400, 60);
 
@@ -167,7 +170,7 @@ class GameMechanic { //Этот класс наследует все откры�
                 while (true) {
                     if (isRepaint) { //Переменная isRepaint нужна для временной остановки перерисовки экрана, но из-за большой нагрузки на компьютер, я врядли буду её когда-нибудь менять.
                         mainFrame.repaint(); //Выполнение перерисовки окна mainFrame.
-                        buttonNewAccount.setBounds(widthOfScreen/2-480/2, heightOfScreen/3-80/2, 480, 80);
+                        buttonNewAccount.setBounds(mainFrame.getWidth()/2-480/2, mainFrame.getHeight()/3-80/2, 480, 80);
                     }
                     if (gameIsStartedOrNot && timeForRunnable % 3 == 0) {
                         for (Essence essence : worldNow.listOfEssences) { //То, что находится в этом цикле for, произойдёт со всеми объектами из списка listOfEssences.
@@ -199,6 +202,7 @@ class GameMechanic { //Этот класс наследует все откры�
                                             xOfPlayerOnFrame -= 10;
                                             if (timerStatement == 0) { //Если переменная-таймер timerStatement равна 0.
                                                 worldNow.health--; //У игрока отнимается одна жизнь.
+                                                timerStatementHP = 20;
                                                 mainFrame.repaint();
                                             } //Конец if.
                                             if (worldNow.health == 0) { //Если у игрока 0 жизней.
@@ -307,6 +311,38 @@ class GameMechanic { //Этот класс наследует все откры�
             };
             Thread thread = new Thread(runnable);
             thread.start();
+
+            Runnable runnableHP = () -> {
+                while (true) {
+                    if (timerStatementHP > 0) {
+                        if (timerStatementHP == 1 && worldNow.health != worldNow.maxHealth) {
+                            worldNow.health++;
+                            if (worldNow.health != worldNow.maxHealth) {
+                                timerStatementHP = 10;
+                            } else {
+                                timerStatementHP = 0;
+                            }
+                        } else {
+                            timerStatementHP--;
+
+                            try {
+                                Thread.sleep(100);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    } else {
+                        try {
+                            Thread.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            };
+            Thread threadHP = new Thread(runnableHP);
+            threadHP.start();
+
             System.out.println("runnable has started"); //Вывод системного уседомления.
 
             isRunnablePrepared = true; //Изменеие значения переменной isRunnablePrepared на true для запрещения очередного вызова этого метода.
@@ -460,13 +496,28 @@ class GameMechanic { //Этот класс наследует все откры�
                 phaseOfRepaint = 2;
 
                 gameIsStartedOrNot = true;
+
+                menuGameMain();
+                visFalse(mainFrame);
+                visTrue(mainFrame);
             }
         }
     }
     private class SaveAccount implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            try {
+                FileOutputStream fileOutputStream = new FileOutputStream(accountNow.nick + ".ser");
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+                objectOutputStream.writeObject(accountNow);
+                objectOutputStream.close();
+                System.out.println("Аккаунт " + accountNow.nick + " сохранён!");
+                System.out.println(accountNow.toString());
+                labelSaveAccount.setText("Аккаунт " + accountNow.nick + " успешно сохранён!");
+                visTrue(labelSaveAccount);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
 
@@ -679,6 +730,10 @@ class GameMechanic { //Этот класс наследует все откры�
                     gameIsStartedOrNot = false;
 
                     phaseOfRepaint = 1;
+                    menuStartWorld();
+                    mainFrame.repaint();
+                    visFalse(mainFrame);
+                    visTrue(mainFrame);
                     break;
 
                 case 'e': //e

@@ -1,8 +1,9 @@
 package Client.Objects.Ground;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public abstract class Ground {
+public abstract class Ground implements Serializable {
     public Ground(int x, int y) {
         this.x = x;
         this.y = y;
@@ -13,5 +14,5 @@ public abstract class Ground {
     public int x;
     public int y;
 
-    public Image icon;
+    public transient Image icon;
 }
