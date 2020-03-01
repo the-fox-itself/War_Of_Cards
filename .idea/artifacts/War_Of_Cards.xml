@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="War Of Cards">
+    <output-path>$PROJECT_DIR$/out/artifacts/War_Of_Cards</output-path>
+    <root id="root">
+      <element id="archive" name="War Of Cards 0.3.5.jar">
+        <element id="module-output" name="War Of Cards 0.2" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

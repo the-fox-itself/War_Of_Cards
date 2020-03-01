@@ -67,7 +67,7 @@ class GameMechanic { //Этот класс наследует все откры�
         setComponentOnFrame(mainFrame, textOfQuests, f20, mainFrame.getWidth() - 240, 30, 200, 200);
         setComponentOnFrame(mainFrame, labelNotification, f20, mainFrame.getWidth()/5*3-40, mainFrame.getHeight()-100, 600, 50);
 
-        setComponentOnFrame(mainFrame, labelWarning, f20, 170, 410, 200, 30);
+        setComponentOnFrame(mainFrame, labelWarning, f20, 170, 410, 400, 30);
         setComponentOnFrame(mainFrame, labelRegisterNick, f20, 60, 310, 300, 20);
         setComponentOnFrame(mainFrame, textNick, f25, 60, 340, 220, 35);
         setComponentOnFrame(mainFrame, labelRegisterAge, f20, 60, 385, 300, 20);
@@ -665,6 +665,9 @@ class GameMechanic { //Этот класс наследует все откры�
                 case 'ц': //ц
                     if (!iswPressed && !isWPressed) {
                         iswPressed = true;
+                        if (!isaPressed && !isAPressed && !isdPressed && !isDPressed && !issPressed && !isSPressed) {
+                            iconPlayer = iconPlayerBack;
+                        }
                     }
                     break;
 
@@ -672,6 +675,9 @@ class GameMechanic { //Этот класс наследует все откры�
                 case 'Ц': //Ц
                     if (!iswPressed && !isWPressed) {
                         isWPressed = true;
+                        if (!isaPressed && !isAPressed && !isdPressed && !isDPressed && !issPressed && !isSPressed) {
+                            iconPlayer = iconPlayerBack;
+                        }
                     }
                     break;
 
@@ -679,12 +685,18 @@ class GameMechanic { //Этот класс наследует все откры�
                 case 'ф': //ф
                     if (!isaPressed && !isAPressed) {
                         isaPressed = true;
+                        if (!isdPressed && !isDPressed) {
+                            iconPlayer = iconPlayerLeft;
+                        }
                     }
                     break;
                 case 'A': //A
                 case 'Ф': //Ф
                     if (!isaPressed && !isAPressed) {
                         isAPressed = true;
+                        if (!isdPressed && !isDPressed) {
+                            iconPlayer = iconPlayerLeft;
+                        }
                     }
                     break;
 
@@ -692,12 +704,18 @@ class GameMechanic { //Этот класс наследует все откры�
                 case 'ы': //ы
                     if (!issPressed && !isSPressed) {
                         issPressed = true;
+                        if (!isaPressed && !isAPressed && !isdPressed && !isDPressed && !iswPressed && !isWPressed) {
+                            iconPlayer = iconPlayerFront;
+                        }
                     }
                     break;
                 case 'S': //S
                 case 'Ы': //Ы
                     if (!issPressed && !isSPressed) {
                         isSPressed = true;
+                        if (!isaPressed && !isAPressed && !isdPressed && !isDPressed && !iswPressed && !isWPressed) {
+                            iconPlayer = iconPlayerFront;
+                        }
                     }
                     break;
 
@@ -705,12 +723,18 @@ class GameMechanic { //Этот класс наследует все откры�
                 case 'в': //в
                     if (!isdPressed && !isDPressed) {
                         isdPressed = true;
+                        if (!isaPressed && !isAPressed) {
+                            iconPlayer = iconPlayerRight;
+                        }
                     }
                     break;
                 case 'D': //D
                 case 'В': //В
                     if (!isdPressed && !isDPressed) {
                         isDPressed = true;
+                        if (!isaPressed && !isAPressed) {
+                            iconPlayer = iconPlayerRight;
+                        }
                     }
                     break;
 
@@ -840,34 +864,90 @@ class GameMechanic { //Этот класс наследует все откры�
                 case 'w': //w
                 case 'ц': //ц
                     iswPressed = false;
+                    if (issPressed || isSPressed) {
+                        iconPlayer = iconPlayerFront;
+                    } else if (!isaPressed && !isAPressed && !isdPressed && !isDPressed) {
+                        iconPlayer = iconPlayerBackStay;
+                    }
                     break;
                 case 'W': //W
                 case 'Ц': //Ц
                     isWPressed = false;
+                    if (issPressed || isSPressed) {
+                        iconPlayer = iconPlayerFront;
+                    } else if (!isaPressed && !isAPressed && !isdPressed && !isDPressed) {
+                        iconPlayer = iconPlayerBackStay;
+                    }
                     break;
                 case 'a': //a
                 case 'ф': //ф
                     isaPressed = false;
+                    if (issPressed || isSPressed) {
+                        iconPlayer = iconPlayerFront;
+                    } else if (iswPressed || isWPressed) {
+                        iconPlayer = iconPlayerBack;
+                    } else if (isdPressed || isDPressed) {
+                        iconPlayer = iconPlayerRight;
+                    } else {
+                        iconPlayer = iconPlayerLeftStay;
+                    }
                     break;
                 case 'A': //A
                 case 'Ф': //Ф
                     isAPressed = false;
+                    if (issPressed || isSPressed) {
+                        iconPlayer = iconPlayerFront;
+                    } else if (iswPressed || isWPressed) {
+                        iconPlayer = iconPlayerBack;
+                    } else if (isdPressed || isDPressed) {
+                        iconPlayer = iconPlayerRight;
+                    } else {
+                        iconPlayer = iconPlayerLeftStay;
+                    }
                     break;
                 case 's': //s
                 case 'ы': //ы
                     issPressed = false;
+                    if (iswPressed || isWPressed) {
+                        iconPlayer = iconPlayerBack;
+                    } else if (!isaPressed && !isAPressed && !isdPressed && !isDPressed) {
+                        iconPlayer = iconPlayerBackStay;
+                    }
                     break;
                 case 'S': //S
                 case 'Ы': //Ы
                     isSPressed = false;
+                    if (iswPressed || isWPressed) {
+                        iconPlayer = iconPlayerBack;
+                    } else if (!isaPressed && !isAPressed && !isdPressed && !isDPressed) {
+                        iconPlayer = iconPlayerBackStay;
+                    }
                     break;
                 case 'd': //d
                 case 'в': //в
                     isdPressed = false;
+                    if (issPressed || isSPressed) {
+                        iconPlayer = iconPlayerFront;
+                    } else if (iswPressed || isWPressed) {
+                        iconPlayer = iconPlayerBack;
+                    } else if (isaPressed || isAPressed) {
+                        iconPlayer = iconPlayerLeft;
+                    } else {
+                        iconPlayer = iconPlayerRightStay;
+                    }
                     break;
                 case 'D': //D
                 case 'В': //В
                     isDPressed = false;
+                    if (issPressed || isSPressed) {
+                        iconPlayer = iconPlayerFront;
+                    } else if (iswPressed || isWPressed) {
+                        iconPlayer = iconPlayerBack;
+                    } else if (isaPressed || isAPressed) {
+                        iconPlayer = iconPlayerLeft;
+                    } else {
+                        iconPlayer = iconPlayerRightStay;
+                    }
                     break;
                 case 0x31: //1
                     is1Pressed = false;
@@ -966,6 +1046,7 @@ class GameMechanic { //Этот класс наследует все откры�
         worldNow.xOfPlayer = 0;
         worldNow.yOfPlayer = 0;
         labelNotification.setText("Вы умерли! Ваше текущее количество смертей: " + worldNow.amountOfDeaths);
+        iconPlayer = iconPlayerFrontStay;
         searchForNearbyGameObjects(); //Поиск, выделение и сохранение близких к игроку объектов.
     }
 
@@ -1164,6 +1245,7 @@ class GameMechanic { //Этот класс наследует все откры�
             worldNow.slots.add(cardPovertyShirt);
         }
         labelNotification.setText("Мир успешно создан!");
+        iconPlayer = iconPlayerFrontStay;
     }
 
     private void playerMove(char XOnFrameOrYOnFrame, int numOfPixelsToMove) {
