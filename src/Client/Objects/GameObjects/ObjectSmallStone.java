@@ -11,4 +11,10 @@ public class ObjectSmallStone extends GameObject { //Маленький каме
         System.out.println("Finished creating object of class ObjectSmallStone.");
         System.out.println("Created object " + name + ": xOnFrame: " + xOnFrame + ", yOnFrame: " + yOnFrame + ", width: " + width + ", height: " + height + ", color: " + color + ", iconOfFar: " + iconOfFar + ", iconOfNearby: " + iconOfNearby);
     }
+
+    @Override
+    public void recovery() {
+        iconOfFar = iconSmallStone;
+        iconOfNearby = iconSmallStoneNearby;
+    }
 }

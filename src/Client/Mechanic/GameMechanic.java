@@ -19,8 +19,7 @@ import static Client.Mechanic.MainVariables.*;
 //Импорт библиотек API.
 import javax.swing.*;
 import java.awt.event.*;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 
 //Это - GameMechanic - класс для отслеживания пользовательских нажатий по мышке, клавиатуре, фрейму и т. д., также в этом классе хранятся потоки, которые используются в игровой механике.
@@ -37,23 +36,23 @@ class GameMechanic { //Этот класс наследует все откры�
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setResizable(isResizable);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        lNull(mainFrame);
+        mainFrame.setLayout(null);
 
-        setComponentOnFrame(mainFrame, buttonNewAccount, f50, mainFrame.getWidth()/2-480/2, mainFrame.getHeight()/3-80/2+80, 480, 80);
-        setComponentOnFrame(mainFrame, buttonLoadAccount, f50, mainFrame.getWidth()/2-300/2, mainFrame.getHeight()/2-80/2+50, 300, 80);
+        setComponentOnFrame(mainFrame, buttonNewAccount, f50, mainFrame.getWidth()/2-480/2, mainFrame.getHeight()/3-80/2+50, 480, 80);
+        setComponentOnFrame(mainFrame, buttonLoadAccount, f50, mainFrame.getWidth()/2-300/2, mainFrame.getHeight()/2-80/2+40, 300, 80);
         setComponentOnFrame(mainFrame, buttonExit, f50, mainFrame.getWidth()/8*5-300/2, mainFrame.getHeight()/3*2-80/2+40, 300, 80);
         setComponentOnFrame(mainFrame, buttonSettings, f50, mainFrame.getWidth()/8*3-270/2, mainFrame.getHeight()/3*2-80/2+40, 350, 80);
 
-        setComponentOnFrame(mainFrame, buttonNewWorld, f50, mainFrame.getWidth()/2-550/2, 270, 550, 80);
-        setComponentOnFrame(mainFrame, buttonLoadWorld, f50, mainFrame.getWidth()/2-570/2, 390, 570, 80);
-        setComponentOnFrame(mainFrame, buttonSaveAccount, f50, mainFrame.getWidth()/2-560/2, 510, 560, 80);
+        setComponentOnFrame(mainFrame, buttonNewWorld, f50, mainFrame.getWidth()/2-430, 320, 380, 80);
+        setComponentOnFrame(mainFrame, buttonLoadWorld, f50, mainFrame.getWidth()/2+50, 320, 400, 80);
+        setComponentOnFrame(mainFrame, buttonSaveAccount, f50, mainFrame.getWidth()/2-560/2, 480, 560, 80);
         setComponentOnFrame(mainFrame, textNameForNewWorld, f50, mainFrame.getWidth()/2-100/2, 235, 400, 70);
-        setComponentOnFrame(mainFrame, labelSaveAccount, f20, mainFrame.getWidth()/2+360, 510, 800, 70);
+        setComponentOnFrame(mainFrame, labelSaveAccount, f20, mainFrame.getWidth()/2+360, 480, 800, 70);
 
-        setComponentOnFrame(mainFrame, labelAccount, f32, 30, mainFrame.getHeight()-120, 400, 60);
+        setComponentOnFrame(mainFrame, labelAccount, f32, 80, mainFrame.getHeight()-117, 400, 60);
 
 
-        setComponentOnFrame(mainFrame, labelNick, f15, xOfPlayerOnFrame - 30, yOfPlayerOnFrame - 55, 80, 20);
+        setComponentOnFrame(mainFrame, labelNick, f15, xOfPlayerOnFrame - 40, yOfPlayerOnFrame - 60, 1000, 20);
 
         setComponentOnFrame(mainFrame, labelSlots, f50, mainFrame.getWidth() /2 - 200, 50, 400, 50);
 
@@ -67,22 +66,24 @@ class GameMechanic { //Этот класс наследует все откры�
         setComponentOnFrame(mainFrame, textOfQuests, f20, mainFrame.getWidth() - 240, 30, 200, 200);
         setComponentOnFrame(mainFrame, labelNotification, f20, mainFrame.getWidth()/5*3-40, mainFrame.getHeight()-100, 600, 50);
 
-        setComponentOnFrame(mainFrame, labelWarning, f20, 170, 410, 400, 30);
-        setComponentOnFrame(mainFrame, labelRegisterNick, f20, 60, 310, 300, 20);
-        setComponentOnFrame(mainFrame, textNick, f25, 60, 340, 220, 35);
-        setComponentOnFrame(mainFrame, labelRegisterAge, f20, 60, 385, 300, 20);
-        setComponentOnFrame(mainFrame, textAge, f20, 60, 415, 100, 25);
-        setComponentOnFrame(mainFrame, labelRegisterPassword, f20, 60, 450, 200, 20);
-        setComponentOnFrame(mainFrame, textPassword, f20, 60, 480, 250, 20);
-        setComponentOnFrame(mainFrame, buttonEndRegister, f30, 65, 550, 270, 45);
-        setComponentOnFrame(mainFrame, buttonRegistrationBack, f20, 230, 300, 125, 30);
-        setComponentOnFrame(mainFrame, buttonNewAccountFromLoadAccount, f20, 60, 510, 220, 30);
-        setComponentOnFrame(mainFrame, buttonLoadAccountFromNewAccount, f20, 60, 510, 220, 30);
+        setComponentOnFrame(mainFrame, labelWarning, f20, 110, 650, 400, 30);
+        setComponentOnFrame(mainFrame, labelRegisterNick    , f25, 165, 340, 300, 30);
+        setComponentOnFrame(mainFrame, textNick             , f30, 80, 385, 250, 40);
+        setComponentOnFrame(mainFrame, labelRegisterPassword, f25, 155, 440, 200, 30);
+        setComponentOnFrame(mainFrame, textPassword         , f30, 80, 485, 250, 40);
+
+        setComponentOnFrame(mainFrame, buttonEndRegistration, f20, 75, 600, 270, 45);
+
+        setComponentOnFrame(mainFrame, buttonRegistrationBack, f20, 250, 290, 125, 30);
+        setComponentOnFrame(mainFrame, buttonNewAccountFromLoadAccount, f20, 90, 545, 240, 35);
+        setComponentOnFrame(mainFrame, buttonLoadAccountFromNewAccount, f20, 90, 545, 240, 35);
 
         textOfQuests.setEnabled(false);
         textOfQuests.setBackground(colorGameHandBackground2);
-        lBord(mainFrame);
-        mainFrame.getContentPane().add(new DrawPanel());
+
+        DrawPanel drawPanel = new DrawPanel();
+        mainFrame.add(drawPanel);
+        drawPanel.setBounds(0, 0, 2000, 2000);
 
         mainFrame.addKeyListener(new MainFrameKeyListener()); //Обработчик событий, выслеживающий нажатия по клавиатуре при открытии окна mainFrame.
         mainFrame.addMouseListener(new MainFrameMouseListener());
@@ -102,8 +103,8 @@ class GameMechanic { //Этот класс наследует все откры�
         buttonExit.addActionListener(new Exit()); //Обработчик событий, выслеживающий нажатия по кнопке Выйти (в окне startFrame) - buttonExit.
         buttonSettings.addActionListener(new Settings()); //Обработчик событий, выслеживающий нажатия по кнопке Настройки (в окне startFrame) - buttonSettings.
 
-        buttonEndRegister.addActionListener(new EndOfRegistrationAccount()); //Обработчик событий, выслеживающий нажатия по кнопке Регистрация (в окне registrationFrame) - buttonEndRegister.
-        buttonRegistrationBack.addActionListener(new RegisterBack()); //Обработчик событий, выслеживающий нажатия по кнопке Назад (в окне registrationFrame) - buttonEndRegister.
+        buttonEndRegistration.addActionListener(new EndOfRegistrationAccount()); //Обработчик событий, выслеживающий нажатия по кнопке Регистрация (в окне registrationFrame) - buttonEndRegistration.
+        buttonRegistrationBack.addActionListener(new RegisterBack()); //Обработчик событий, выслеживающий нажатия по кнопке Назад (в окне registrationFrame) - buttonEndRegistration.
         buttonNewAccountFromLoadAccount.addActionListener(new NewAccount());
         buttonLoadAccountFromNewAccount.addActionListener(new LoadAccount());
 
@@ -133,11 +134,9 @@ class GameMechanic { //Этот класс наследует все откры�
     private void menuStartAccountRegistrationEntry() {
         visTrue(labelRegisterNick);
         visTrue(textNick);
-        visTrue(labelRegisterAge);
-        visTrue(textAge);
         visTrue(labelRegisterPassword);
         visTrue(textPassword);
-        visTrue(buttonEndRegister);
+        visTrue(buttonEndRegistration);
         visTrue(buttonRegistrationBack);
 
         labelNick.requestFocus();
@@ -159,8 +158,12 @@ class GameMechanic { //Этот класс наследует все откры�
     private void menuGameMain() {
         visFalseAll();
 
+        labelNick.setText(accountNow.nick);
         visTrue(labelNick);
+        visTrue(labelNotification);
         visTrue(textOfQuests);
+        visFalse(mainFrame);
+        visTrue(mainFrame);
     }
 
     //Метод preparationRunnable(), вызывающийся во время начала игры для подготовки и запуску потоков repaintRunnable и wolfRunnable.
@@ -356,7 +359,6 @@ class GameMechanic { //Этот класс наследует все откры�
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
             worldNow = new World();
-            worldNow.name = textNameForNewWorld.getText();
             accountNow.listOfWorlds.add(worldNow);
 
             for (int x = 0; x <= 500; x++) {
@@ -459,11 +461,11 @@ class GameMechanic { //Этот класс наследует все откры�
                 worldNow.listOfGrounds.add(groundWater);
             }
             System.out.println("All GroundWaters have created.");
-            Quest quest1 = new Quest(1, "Собрать 10 карт\n Дерево", 10, "Wood");
-            Quest quest2 = new Quest(2, "Собрать 10 карт\n Камень", 10, "Stone");
-            Quest quest3 = new Quest(3, "Собрать 5 карт\n Мальнький камень", 5, "SmallStone");
-            Quest quest4 = new Quest(4, "Собрать 10 карт\n Золото", 10, "Gold");
-            Quest quest5 = new Quest(5, "Собрать 10 карт\n Алмаз", 10, "Diamond");
+            Quest quest1 = new Quest(1, "Собрать 10 карт:\n Дерево", 10, "Wood");
+            Quest quest2 = new Quest(2, "Собрать 10 карт:\n Камень", 10, "Stone");
+            Quest quest3 = new Quest(3, "Собрать 5 карт:\n Мальнький камень", 5, "SmallStone");
+            Quest quest4 = new Quest(4, "Собрать 10 карт:\n Золото", 10, "Gold");
+            Quest quest5 = new Quest(5, "Собрать 10 карт:\n Алмаз", 10, "Diamond");
             worldNow.listOfQuests.add(quest1);
             worldNow.listOfQuests.add(quest2);
             worldNow.listOfQuests.add(quest3);
@@ -481,12 +483,6 @@ class GameMechanic { //Этот класс наследует все откры�
             gameIsStartedOrNot = true; //Выдача переменной gameIsStartedOrNot значение true.
 
             firstRespawn(); //Вызов метода firstRespawn() для выдачи игроку начальных предметов и первого поиска ближайших к нему объектов. Игра начинается.
-            labelNick.setText(accountNow.nick);
-            visTrue(labelNick);
-            visTrue(labelNotification);
-            visTrue(textOfQuests);
-            visFalse(mainFrame);
-            visTrue(mainFrame);
         } //Конец переопредлённого метода actionPerformed().
     } //Конец внутреннего класса NewWorld.
     private class LoadWorld implements ActionListener {
@@ -498,6 +494,8 @@ class GameMechanic { //Этот класс наследует все откры�
                 gameIsStartedOrNot = true;
 
                 menuGameMain();
+
+                preparationRunnable();
                 visFalse(mainFrame);
                 visTrue(mainFrame);
             }
@@ -507,8 +505,7 @@ class GameMechanic { //Этот класс наследует все откры�
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                FileOutputStream fileOutputStream = new FileOutputStream(accountNow.nick + ".ser");
-                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(accountNow.nick + ".ser"));
                 objectOutputStream.writeObject(accountNow);
                 objectOutputStream.close();
                 System.out.println("Аккаунт " + accountNow.nick + " сохранён!");
@@ -540,8 +537,8 @@ class GameMechanic { //Этот класс наследует все откры�
         public void actionPerformed(ActionEvent actionEvent) {
             visFalse(buttonNewAccountFromLoadAccount);
             visTrue(buttonLoadAccountFromNewAccount);
-            buttonEndRegister.setFont(f20);
-            buttonEndRegister.setText("Зарегестрироваться");
+            buttonEndRegistration.setText("Зарегестрироваться");
+            buttonEndRegistration.setFont(f20);
             isNewAccount = true;
             menuStartAccountRegistrationEntry();
         } //Конец переопредлённого метода actionPerformed().
@@ -552,34 +549,66 @@ class GameMechanic { //Этот класс наследует все откры�
         public void actionPerformed(ActionEvent e) {
             visFalse(buttonLoadAccountFromNewAccount);
             visTrue(buttonNewAccountFromLoadAccount);
-            buttonEndRegister.setFont(f30);
-            buttonEndRegister.setText("Войти");
+            buttonEndRegistration.setText("Войти");
+            buttonEndRegistration.setFont(f30);
             isNewAccount = false;
             menuStartAccountRegistrationEntry();
         }
     }
 
-    private class EndOfRegistrationAccount implements ActionListener { //Обработка нажатия кнопки buttonEndRegister.
+    private class EndOfRegistrationAccount implements ActionListener { //Обработка нажатия кнопки buttonEndRegistration.
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
-            try { //Проверка правильного введения возраста.
-                Integer.parseInt(textAge.getText()); //Если переведение вписанного возраста в числа выдаст ошибку, программа перейдёт в catch.
-                visFalse(labelWarning);
-            } catch (NumberFormatException e) {
-                textAge.setText(""); //Опустошение поля возраст для неудачной работы следующего условия.
-                textAge.requestFocus(); //Наведение курсора на поле Возраст.
-                visTrue(labelWarning);
-            }
-            //Если все поля регистрации чем-то заполнены, а возраст получилось перевести в цифры, то это условие срабатывает.
-            if (!textNick.getText().equals("") && !textPassword.getText().equals("") && !textAge.getText().equals("")) {
+            //Если все поля регистрации чем-то заполнены то это условие срабатывает.
+            if (!textNick.getText().equals("") && !textPassword.getText().equals("")) {
                 if (isNewAccount) {
-                    accountNow = new Account();
-                    accountNow.nick = textNick.getText(); //Сохранение ника.
-                    accountNow.age = Integer.parseInt(textAge.getText());
-                    accountNow.password = textPassword.getText(); //Сохранение пароля.
-
-                    menuStartWorld();
+                    boolean is = false;
+                    try {
+                        ObjectInputStream objectOutputStream = new ObjectInputStream(new FileInputStream(textNick.getText() + ".ser"));
+                        Account account = (Account) objectOutputStream.readObject();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        is = true;
+                    }
+                    if (is) {
+                        accountNow = new Account();
+                        accountNow.nick = textNick.getText(); //Сохранение ника.
+                        accountNow.password = textPassword.getText(); //Сохранение пароля.
+                        menuStartWorld();
+                    } else {
+                        labelWarning.setFont(f17);
+                        labelWarning.setText("Аккаунт с таким логином уже существует!");
+                        visTrue(labelWarning);
+                    }
+                } else {
+                    try {
+                        ObjectInputStream objectOutputStream = new ObjectInputStream(new FileInputStream(textNick.getText() + ".ser"));
+                        Account account = (Account) objectOutputStream.readObject();
+                        if (account.password.equals(textPassword.getText())) {
+                            accountNow = account;
+                            accountNow.recovery();
+                            worldNow = accountNow.listOfWorlds.get(0);
+                            menuStartWorld();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        labelWarning.setFont(f20);
+                        labelWarning.setText("Вход выполнен неудачно!");
+                        visTrue(labelWarning);
+                    }
                 }
+            } else if (textNick.getText().equals("") && textPassword.getText().equals("")) {
+                labelWarning.setFont(f20);
+                labelWarning.setText("Введите логин и пароль!");
+                visTrue(labelWarning);
+            } else if (textNick.getText().equals("")) {
+                labelWarning.setFont(f20);
+                labelWarning.setText("Введите логин!");
+                visTrue(labelWarning);
+            } else if (textPassword.getText().equals("")) {
+                labelWarning.setFont(f20);
+                labelWarning.setText("Введите пароль!");
+                visTrue(labelWarning);
             }
         } //Конец переопредлённого метода actionPerformed().
     } //Конец внутреннего класса EndOfRegistrationAccount.
@@ -911,7 +940,7 @@ class GameMechanic { //Этот класс наследует все откры�
                     if (iswPressed || isWPressed) {
                         iconPlayer = iconPlayerBack;
                     } else if (!isaPressed && !isAPressed && !isdPressed && !isDPressed) {
-                        iconPlayer = iconPlayerBackStay;
+                        iconPlayer = iconPlayerFrontStay;
                     }
                     break;
                 case 'S': //S
@@ -920,7 +949,7 @@ class GameMechanic { //Этот класс наследует все откры�
                     if (iswPressed || isWPressed) {
                         iconPlayer = iconPlayerBack;
                     } else if (!isaPressed && !isAPressed && !isdPressed && !isDPressed) {
-                        iconPlayer = iconPlayerBackStay;
+                        iconPlayer = iconPlayerFrontStay;
                     }
                     break;
                 case 'd': //d
@@ -1051,25 +1080,25 @@ class GameMechanic { //Этот класс наследует все откры�
     }
 
     private void resourceMining(String nameOfSearchObject, int chanceToGetResource) {
-        int indexOfNearbyObject = worldNow.NearbyGameObjects.size() - 1; //В переменную n сохраняется длина массива NearbyGameObjects.
+        int indexOfNearbyObject = worldNow.listOfNearbyGameObjects.size() - 1; //В переменную n сохраняется длина массива listOfNearbyGameObjects.
         if (indexOfNearbyObject != -1) { //Если он не пустой, то это условие срабатывает.
-            while (!worldNow.NearbyGameObjects.get(indexOfNearbyObject).name.equals(nameOfSearchObject)) { //Поиск древесины в массиве NearbyGameObjects.
+            while (!worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).name.equals(nameOfSearchObject)) { //Поиск древесины в массиве listOfNearbyGameObjects.
                 indexOfNearbyObject--;
                 if (indexOfNearbyObject == -1) { //Если поблизости деревья не найдены, то программа выходит из цикла.
                     break;
                 }
             }
             if (indexOfNearbyObject != -1) { //Повторный условный оператор, т.к. после не нахождения деревьев поблизости переменная n могла стать -1.
-                if (worldNow.NearbyGameObjects.get(indexOfNearbyObject).name.equals(nameOfSearchObject)) {
-                    worldNow.NearbyGameObjects.get(indexOfNearbyObject).height -= 2;
-                    worldNow.NearbyGameObjects.get(indexOfNearbyObject).width -= 2;
-                    worldNow.NearbyGameObjects.get(indexOfNearbyObject).xOnFrame += 1;
-                    worldNow.NearbyGameObjects.get(indexOfNearbyObject).yOnFrame += 1;
-                    if (worldNow.NearbyGameObjects.get(indexOfNearbyObject).height <= 0 || worldNow.NearbyGameObjects.get(indexOfNearbyObject).width <= 0) {
-                        worldNow.listOfObjects.remove(worldNow.NearbyGameObjects.get(indexOfNearbyObject));
+                if (worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).name.equals(nameOfSearchObject)) {
+                    worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).height -= 2;
+                    worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).width -= 2;
+                    worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).xOnFrame += 1;
+                    worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).yOnFrame += 1;
+                    if (worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).height <= 0 || worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).width <= 0) {
+                        worldNow.listOfObjects.remove(worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject));
                     }
                     Card card = null;
-                    switch (worldNow.NearbyGameObjects.get(indexOfNearbyObject).name){
+                    switch (worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).name){
                         case "Wood":
                             card = new CardWood();
                             worldNow.amountOfAllGettingCardWoods++;
@@ -1103,7 +1132,7 @@ class GameMechanic { //Этот класс наследует все откры�
                     }
                     worldNow.slots.add(card);
                     worldNow.amountOfAllGettingCards++;
-                    System.out.println("Уведомление. Получен ресурс: " + worldNow.NearbyGameObjects.get(indexOfNearbyObject).name);
+                    System.out.println("Уведомление. Получен ресурс: " + worldNow.listOfNearbyGameObjects.get(indexOfNearbyObject).name);
                 }
             }
         }
@@ -1117,55 +1146,55 @@ class GameMechanic { //Этот класс наследует все откры�
         int yObject;
         switch (l) {
             case 'w':
-                for (int n = worldNow.NearbyGameObjects.size() - 1; n >= 0; n--) {
-                    if (worldNow.NearbyGameObjects.get(n).name.equals("Stone")) {
-                        xObject = worldNow.NearbyGameObjects.get(n).xOnFrame;
-                        yObject = worldNow.NearbyGameObjects.get(n).yOnFrame;
+                for (int n = worldNow.listOfNearbyGameObjects.size() - 1; n >= 0; n--) {
+                    if (worldNow.listOfNearbyGameObjects.get(n).name.equals("Stone")) {
+                        xObject = worldNow.listOfNearbyGameObjects.get(n).xOnFrame;
+                        yObject = worldNow.listOfNearbyGameObjects.get(n).yOnFrame;
                         for (int x2 = 10; x2 > 0; x2--) {
-                            for (int x1 = worldNow.NearbyGameObjects.get(n).height; x1 > 0; x1--) {
+                            for (int x1 = worldNow.listOfNearbyGameObjects.get(n).height; x1 > 0; x1--) {
                                 if (xPlayer == xObject) {
                                     for (int x3 = 10; x3 > 0; x3--) {
-                                        for (int x4 = worldNow.NearbyGameObjects.get(n).height; x4 > 0; x4--) {
+                                        for (int x4 = worldNow.listOfNearbyGameObjects.get(n).height; x4 > 0; x4--) {
                                             if (yPlayer == yObject) {
                                                 ret = false;
                                             }
                                             yObject += 1;
                                         }
                                         yPlayer += 1;
-                                        yObject = worldNow.NearbyGameObjects.get(n).yOnFrame;
+                                        yObject = worldNow.listOfNearbyGameObjects.get(n).yOnFrame;
                                     }
                                 }
                                 xObject += 1;
                             }
                             xPlayer += 1;
-                            xObject = worldNow.NearbyGameObjects.get(n).xOnFrame;
+                            xObject = worldNow.listOfNearbyGameObjects.get(n).xOnFrame;
                         }
                     }
                 }
                 break;
             case 's':
-                for (int n = worldNow.NearbyGameObjects.size() - 1; n >= 0; n--) {
-                    if (worldNow.NearbyGameObjects.get(n).name.equals("Stone")) {
-                        xObject = worldNow.NearbyGameObjects.get(n).xOnFrame + worldNow.NearbyGameObjects.get(n).width;
-                        yObject = worldNow.NearbyGameObjects.get(n).yOnFrame + worldNow.NearbyGameObjects.get(n).height;
+                for (int n = worldNow.listOfNearbyGameObjects.size() - 1; n >= 0; n--) {
+                    if (worldNow.listOfNearbyGameObjects.get(n).name.equals("Stone")) {
+                        xObject = worldNow.listOfNearbyGameObjects.get(n).xOnFrame + worldNow.listOfNearbyGameObjects.get(n).width;
+                        yObject = worldNow.listOfNearbyGameObjects.get(n).yOnFrame + worldNow.listOfNearbyGameObjects.get(n).height;
                         for (int x2 = 10; x2 > 0; x2--) {
-                            for (int x1 = worldNow.NearbyGameObjects.get(n).height; x1 > 0; x1--) {
+                            for (int x1 = worldNow.listOfNearbyGameObjects.get(n).height; x1 > 0; x1--) {
                                 if (xPlayer == xObject) {
                                     for (int x3 = 10; x3 > 0; x3--) {
-                                        for (int x4 = worldNow.NearbyGameObjects.get(n).height; x4 > 0; x4--) {
+                                        for (int x4 = worldNow.listOfNearbyGameObjects.get(n).height; x4 > 0; x4--) {
                                             if (yPlayer == yObject) {
                                                 ret = false;
                                             }
                                             yObject -= 1;
                                         }
                                         yPlayer += 1;
-                                        yObject = worldNow.NearbyGameObjects.get(n).yOnFrame;
+                                        yObject = worldNow.listOfNearbyGameObjects.get(n).yOnFrame;
                                     }
                                 }
                                 xObject -= 1;
                             }
                             xPlayer += 1;
-                            xObject = worldNow.NearbyGameObjects.get(n).xOnFrame;
+                            xObject = worldNow.listOfNearbyGameObjects.get(n).xOnFrame;
                         }
                     }
                 }
@@ -1181,7 +1210,7 @@ class GameMechanic { //Этот класс наследует все откры�
     }
 
     private static void searchForNearbyGameObjects() {
-        worldNow.NearbyGameObjects.subList(0, worldNow.NearbyGameObjects.size()).clear();
+        worldNow.listOfNearbyGameObjects.subList(0, worldNow.listOfNearbyGameObjects.size()).clear();
         int x = xOfPlayerOnFrame - 40;
         int y = yOfPlayerOnFrame - 40;
         int z = 0;
@@ -1190,7 +1219,7 @@ class GameMechanic { //Этот класс наследует все откры�
                 if (worldNow.listOfObjects.get(z).name.equals("Water") || worldNow.listOfObjects.get(z).name.equals("Barrier") ? x == worldNow.listOfObjects.get(z).xOnFrame + (worldNow.listOfObjects.get(z).width / 2) : x == worldNow.listOfObjects.get(z).xOnFrame + (worldNow.listOfObjects.get(z).isNearby ? worldNow.listOfObjects.get(z).iconOfNearby.getWidth(null) / 2 : worldNow.listOfObjects.get(z).iconOfNearby.getWidth(null) / 2)) {
                     while (y <= yOfPlayerOnFrame + 50) {
                         if (worldNow.listOfObjects.get(z).name.equals("Water") || worldNow.listOfObjects.get(z).name.equals("Barrier") ? y == worldNow.listOfObjects.get(z).yOnFrame + (worldNow.listOfObjects.get(z).height / 2) : y == worldNow.listOfObjects.get(z).yOnFrame + (worldNow.listOfObjects.get(z).isNearby ? worldNow.listOfObjects.get(z).iconOfNearby.getHeight(null) / 2 : worldNow.listOfObjects.get(z).iconOfNearby.getHeight(null) / 2)) {
-                            worldNow.NearbyGameObjects.add(worldNow.listOfObjects.get(z));
+                            worldNow.listOfNearbyGameObjects.add(worldNow.listOfObjects.get(z));
                             switch (worldNow.listOfObjects.get(z).name) {
                                 case "Wood":
                                 case "Stone":
@@ -1215,7 +1244,7 @@ class GameMechanic { //Этот класс наследует все откры�
         }
         int z1 = 0;
         while (z1 < worldNow.listOfObjects.size()) {
-            if (worldNow.NearbyGameObjects.indexOf(worldNow.listOfObjects.get(z1)) == -1) {
+            if (worldNow.listOfNearbyGameObjects.indexOf(worldNow.listOfObjects.get(z1)) == -1) {
                 switch (worldNow.listOfObjects.get(z1).name) {
                     case "Wood":
                     case "Stone":
@@ -1304,7 +1333,7 @@ class GameMechanic { //Этот класс наследует все откры�
         visFalse(buttonExit);
         visFalse(buttonSettings);
         visFalse(buttonRegistrationBack);
-        visFalse(buttonEndRegister);
+        visFalse(buttonEndRegistration);
         visFalse(buttonRight);
         visFalse(buttonLeft);
 
@@ -1317,7 +1346,6 @@ class GameMechanic { //Этот класс наследует все откры�
 
         visFalse(labelNewAccount);
         visFalse(labelRegisterNick);
-        visFalse(labelRegisterAge);
         visFalse(labelRegisterPassword);
         visFalse(labelAccount);
         visFalse(labelWarning);
@@ -1325,8 +1353,8 @@ class GameMechanic { //Этот класс наследует все откры�
         visFalse(labelNick);
 
         visFalse(textNick);
-        visFalse(textAge);
         visFalse(textPassword);
+        visFalse(labelNotification);
 
         visFalse(textNameForNewWorld);
 

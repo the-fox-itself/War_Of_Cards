@@ -12,4 +12,10 @@ public class ObjectStone extends GameObject { //Камень.
         System.out.println("Finished creating object of class ObjectStone.");
         System.out.println("Created object " + name + ": xOnFrame: " + xOnFrame + ", yOnFrame: " + yOnFrame + ", width: " + width + ", height: " + height + ", iconOfFar: " + iconOfFar + ", iconOfNearby: " + iconOfNearby);
     }
+
+    @Override
+    public void recovery() {
+        iconOfFar = iconStone;
+        iconOfNearby = iconStoneNearby;
+    }
 }

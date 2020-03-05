@@ -8,6 +8,7 @@ public abstract class Ground implements Serializable {
         this.x = x;
         this.y = y;
     }
+    public abstract void recovery();
 
     public String name;
 

@@ -10,12 +10,16 @@ public abstract class Essence implements Serializable { //Класс-родит�
     public int width; //Ширина существа.
     public int height; //Длина существа.
     public String name; //Название существа.
+
     public transient Image icon; //Спрайт объекта.
+
     int essenceHealth; //Количество жизней существа.
     public double essenceSpeed; //Скорость передвижения существа.
     public int timeOfNextWalk; //Время, спустя которое волк делает следующий шаг, если он не видит игрока.
     public int timePassed = 0; //Вспомогательная переменная для хранения пройденного времени.
+
     Essence() {
         System.out.println("Created class Essence.");
     }
+    public abstract void recovery();
 }

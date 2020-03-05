@@ -13,8 +13,10 @@ public abstract class GameObject implements Serializable { //Класс-роди
     public Color colorOfFar; //Цвет объекта при его дальности от игрока.
     public Color colorOfNearby; //Цвет объекта при его близости к игроку.
     public Color color; //Цвет объекта.
+
     public transient Image iconOfFar; //Иконка объекта при его дальности от игрока.
     public transient Image iconOfNearby; //Иконка объекта при его близости к игроку.
+
     public boolean isNearby = false;
     public String name; //Название объекта.
     private boolean isSingleXY = false; //Переменная, необходимая для выхода из цикла при выбирании возможных (без столкновения с другими) рандомных координат объекта.
@@ -36,4 +38,5 @@ public abstract class GameObject implements Serializable { //Класс-роди
         } //Конец цикла.
         System.out.println("setLocations() has complete for " + object.toString() + " with values:  xOnFrame: " + xOnFrame + ", yOnFrame: " + yOnFrame);
     }
+    public abstract void recovery();
 }

@@ -11,4 +11,10 @@ public class ObjectDiamond extends GameObject { //Алмаз.
         System.out.println("Finished creating object of class ObjectDiamond.");
         System.out.println("Created object " + name + ": xOnFrame: " + xOnFrame + ", yOnFrame: " + yOnFrame + ", width: " + width + ", height: " + height + ", color: " + color + ", iconOfFar: " + iconOfFar + ", iconOfNearby: " + iconOfNearby);
     }
+
+    @Override
+    public void recovery() {
+        iconOfFar = iconUndergroundObject;
+        iconOfNearby = iconDiamondNearby;
+    }
 }

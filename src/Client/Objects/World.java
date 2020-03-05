@@ -65,6 +65,6 @@ public class World implements Serializable {
     public ArrayList<GameObject> listOfObjects = new ArrayList<>();
     public ArrayList<Ground> listOfGrounds = new ArrayList<>();
     public ArrayList<Essence> listOfEssences = new ArrayList<>();
-    public ArrayList<GameObject> NearbyGameObjects = new ArrayList<>();
+    public ArrayList<GameObject> listOfNearbyGameObjects = new ArrayList<>();
     public ArrayList<Quest> listOfQuests = new ArrayList<>();
 }

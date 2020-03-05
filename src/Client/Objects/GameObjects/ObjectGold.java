@@ -12,4 +12,10 @@ public class ObjectGold extends GameObject { //Золото.
         System.out.println("Finished creating object of class ObjectGold.");
         System.out.println("Created object " + name + ": xOnFrame: " + xOnFrame + ", yOnFrame: " + yOnFrame + ", width: " + width + ", height: " + height + ", iconOfFar: " + iconOfFar + ", iconOfNearby: " + iconOfNearby);
     }
+
+    @Override
+    public void recovery() {
+        iconOfFar = iconUndergroundObject;
+        iconOfNearby = iconGoldNearby;
+    }
 }

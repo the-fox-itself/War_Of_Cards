@@ -24,4 +24,9 @@ public class EssenceWolf extends Essence { //Волк.
         System.out.println("Finished creating object of class EssenceWolf.");
         System.out.println("Created essence " + name + ":  x: " + xOnFrame + ", y: " + yOnFrame + ", w: " + width + ", h: " + height + ", health: " + essenceHealth + ", speed: " + essenceSpeed + ", color: " + color + ", icon: " + icon + ", timeToWalk: " + timeOfNextWalk + ", timePassed: " + timePassed);
     }
+
+    @Override
+    public void recovery() {
+        icon = iconWolfRight;
+    }
 }
