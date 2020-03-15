@@ -5,6 +5,7 @@ import Client.Objects.World;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public abstract class MainVariables {
     static Account accountNow;
@@ -37,56 +38,64 @@ public abstract class MainVariables {
     final static Color colorHealth = new Color(0xD80011);
     final static Color colorMaxHealth = new Color(0x6E343634, true);
 
+    final static Color colorBackgroundYellow = new Color(0xF9FF7C);
+    final static Color colorBackgroundGreen = new Color(0xBBFF7F);
 
-//    final static Image iconPlayerFront = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerFront.gif").getImage();
-//    final static Image iconPlayerBack = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerBack.gif").getImage();
-//    final static Image iconPlayerLeft = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerLeft.gif").getImage();
-//    final static Image iconPlayerRight = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerRight.gif").getImage();
-//    final static Image iconPlayerFrontStay = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerFrontStay.png").getImage();
-//    final static Image iconPlayerBackStay = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerBackStay.png").getImage();
-//    final static Image iconPlayerLeftStay = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerLeftStay.png").getImage();
-//    final static Image iconPlayerRightStay = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerRightStay.png").getImage();
-//    static Image iconPlayer = iconPlayerFrontStay;
-//
-//    final public static Image iconWolfRight = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"Wolf Right.png").getImage();
-//    final static Image iconWolfLeft = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"Wolf Left.png").getImage();
-//    final public static Image iconWood = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"Wood.png").getImage();
-//    final public static Image iconWoodNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"WoodNearby.png").getImage();
-//    final public static Image iconStone = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"Stone.png").getImage();
-//    final public static Image iconStoneNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"StoneNearby.png").getImage();
-//    final public static Image iconSmallStone = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"SmallStone.png").getImage();
-//    final public static Image iconSmallStoneNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"SmallStoneNearby.png").getImage();
-//    final public static Image iconUndergroundObject = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"UndergroundObject.png").getImage();
-//    final public static Image iconGoldNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"GoldNearby.png").getImage();
-//    final public static Image iconDiamondNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"DiamondNearby.png").getImage();
-//    final public static Image iconGroundGrass = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"GroundGrass.png").getImage();
-//    final public static Image iconGroundWater = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"GroundWater.png").getImage();
+    final static Color colorForegroundLightBlue = new Color(0xFFBF0F);
 
 
-    final static Image iconPlayerFront = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\PlayerFrontStay.png").getImage();
-    final static Image iconPlayerBack = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\PlayerBackStay.png").getImage();
-    final static Image iconPlayerLeft = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\PlayerLeftStay.png").getImage();
-    final static Image iconPlayerRight = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\PlayerRightStay.png").getImage();
-    final static Image iconPlayerFrontStay = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\PlayerFrontStay.png").getImage();
-    final static Image iconPlayerBackStay = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\PlayerBackStay.png").getImage();
-    final static Image iconPlayerLeftStay = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\PlayerLeftStay.png").getImage();
-    final static Image iconPlayerRightStay = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\PlayerRightStay.png").getImage();
+    final static Image iconPlayerFront = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerFront.gif").getImage();
+    final static Image iconPlayerBack = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerBack.gif").getImage();
+    final static Image iconPlayerLeft = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerLeft.gif").getImage();
+    final static Image iconPlayerRight = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerRight.gif").getImage();
+    final static Image iconPlayerFrontStay = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerFrontStay.png").getImage();
+    final static Image iconPlayerBackStay = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerBackStay.png").getImage();
+    final static Image iconPlayerLeftStay = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerLeftStay.png").getImage();
+    final static Image iconPlayerRightStay = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"PlayerRightStay.png").getImage();
     static Image iconPlayer = iconPlayerFrontStay;
 
-    final public static Image iconWolfRight = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\Wolf Right.png").getImage();
-    final static Image iconWolfLeft = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\Wolf Left.png").getImage();
-    final public static Image iconWood = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\Wood.png").getImage();
-    final public static Image iconWoodNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\WoodNearby.png").getImage();
-    final public static Image iconStone = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\Stone.png").getImage();
-    final public static Image iconStoneNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\StoneNearby.png").getImage();
-    final public static Image iconSmallStone = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\SmallStone.png").getImage();
-    final public static Image iconSmallStoneNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\SmallStoneNearby.png").getImage();
-    final public static Image iconUndergroundObject = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\UndergroundObject.png").getImage();
-    final public static Image iconGoldNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\GoldNearby.png").getImage();
-    final public static Image iconDiamondNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\DiamondNearby.png").getImage();
-    final public static Image iconGroundGrass = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\GroundGrass.png").getImage();
-    final public static Image iconGroundWater = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.5.1\\resources\\images\\GroundWater.png").getImage();
+    final public static Image iconWolfRight = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"Wolf Right.png").getImage();
+    final static Image iconWolfLeft = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"Wolf Left.png").getImage();
+    final public static Image iconWood = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"Wood.png").getImage();
+    final public static Image iconWoodNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"WoodNearby.png").getImage();
+    final public static Image iconStone = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"Stone.png").getImage();
+    final public static Image iconStoneNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"StoneNearby.png").getImage();
+    final public static Image iconSmallStone = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"SmallStone.png").getImage();
+    final public static Image iconSmallStoneNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"SmallStoneNearby.png").getImage();
+    final public static Image iconUndergroundObject = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"UndergroundObject.png").getImage();
+    final public static Image iconGoldNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"GoldNearby.png").getImage();
+    final public static Image iconDiamondNearby = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"DiamondNearby.png").getImage();
+    final public static Image iconGroundGrass = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"GroundGrass.png").getImage();
+    final public static Image iconGroundWater = new ImageIcon("resources"+System.getProperty("file.separator")+"images"+System.getProperty("file.separator")+"GroundWater.png").getImage();
 
+
+//    final static Image iconPlayerFront = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\PlayerFrontStay.png").getImage();
+//    final static Image iconPlayerBack = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\PlayerBackStay.png").getImage();
+//    final static Image iconPlayerLeft = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\PlayerLeftStay.png").getImage();
+//    final static Image iconPlayerRight = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\PlayerRightStay.png").getImage();
+//    final static Image iconPlayerFrontStay = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\PlayerFrontStay.png").getImage();
+//    final static Image iconPlayerBackStay = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\PlayerBackStay.png").getImage();
+//    final static Image iconPlayerLeftStay = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\PlayerLeftStay.png").getImage();
+//    final static Image iconPlayerRightStay = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\PlayerRightStay.png").getImage();
+//    static Image iconPlayer = iconPlayerFrontStay;
+//
+//    final public static Image iconWolfRight = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\Wolf Right.png").getImage();
+//    final static Image iconWolfLeft = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\Wolf Left.png").getImage();
+//    final public static Image iconWood = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\Wood.png").getImage();
+//    final public static Image iconWoodNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\WoodNearby.png").getImage();
+//    final public static Image iconStone = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\Stone.png").getImage();
+//    final public static Image iconStoneNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\StoneNearby.png").getImage();
+//    final public static Image iconSmallStone = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\SmallStone.png").getImage();
+//    final public static Image iconSmallStoneNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\SmallStoneNearby.png").getImage();
+//    final public static Image iconUndergroundObject = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\UndergroundObject.png").getImage();
+//    final public static Image iconGoldNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\GoldNearby.png").getImage();
+//    final public static Image iconDiamondNearby = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\DiamondNearby.png").getImage();
+//    final public static Image iconGroundGrass = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\GroundGrass.png").getImage();
+//    final public static Image iconGroundWater = new ImageIcon("C:\\Users\\Cripton\\Documents\\Projects Intellij Idea\\War Of Cards\\versions\\v0.3sn0.6\\resources\\images\\GroundWater.png").getImage();
+
+
+    static Runnable runnableRepaint;
+    static Thread threadRepaint = new Thread(runnableRepaint);
 
     final static int widthOfScreen = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
     final static int heightOfScreen = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
@@ -100,6 +109,8 @@ public abstract class MainVariables {
     static boolean isRepaint = true;
     static boolean isRunnablePrepared = false;
     static boolean isResizable = false;
+
+    static boolean isHitBoxMode = false;
 
     static boolean isWPressed = false;
     static boolean isAPressed = false;
@@ -135,7 +146,7 @@ public abstract class MainVariables {
     final static JButton buttonLoadWorld = new JButton("Загрузить");
     final static JButton buttonExit = new JButton("Выйти");
     final static JButton buttonSettings = new JButton("Настройки");
-    final static JButton buttonRegistrationBack = new JButton("Назад");
+    final static JButton buttonRegistrationBack = new JButton("Закрыть");
     final static JButton buttonEndRegistration = new JButton("Зарегестрироваться");
     final static JButton buttonRight = new JButton(">");
     final static JButton buttonLeft = new JButton("<");
@@ -154,8 +165,11 @@ public abstract class MainVariables {
     final static JLabel labelWarning = new JLabel();
     final static JLabel labelSlots = new JLabel("Слоты");
     final static JLabel labelNick = new JLabel();
-    final static JLabel labelNotification = new JLabel("");
+//    final static JLabel labelNotification = new JLabel("");
     final static JLabel labelSaveAccount = new JLabel();
+
+    static ArrayList<JLabel> listOfLabelsNotification = new ArrayList<>();
+    static ArrayList<Boolean> listOfLabelsNotificationBool = new ArrayList<>();
 
     final static JTextField textNick = new JTextField();
     final static JTextField textPassword = new JPasswordField();

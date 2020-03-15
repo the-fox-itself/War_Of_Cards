@@ -5,8 +5,8 @@ import static Client.Mechanic.MainVariables.colorStartPictureRed;
 public class ObjectBarrier extends GameObject {
     public ObjectBarrier() {
         System.out.println("Creating object of class ObjectBarrier...");
-        width = 10;
-        height = 10;
+        width = 8;
+        height = 8;
         color = colorStartPictureRed;
         name = "Barrier";
         System.out.println("Finished creating object of class ObjectBarrier.");

@@ -23,7 +23,8 @@ public class Quest implements Serializable {
         this.searchCard = searchCard;
         System.out.println("Finished creating object of class Quest.");
         System.out.println("Created quest:  numberOfQuest: " + numberOfQuest + ", goal: " + goal + ", goalNumber: " + goalNumber + ", reachCards: " + reachCards + ", isCompleted: " + isCompleted + ", searchCard: " + searchCard);
-
+    }
+    public void runnableOn() {
         Runnable runnable = () -> {
             while (true) {
                 if (isNow) {

@@ -1,5 +1,7 @@
 package Client.Mechanic;
 
+import Client.Objects.Essences.Essence;
+import Client.Objects.GameObjects.GameObject;
 import Client.Objects.Ground.Ground;
 import Client.Objects.Quest;
 
@@ -25,19 +27,20 @@ public class DrawPanel extends JPanel {
                 paintObject(colorStartPartitions, 0, 200, 2000, 20, "Rect", g);
                 paintObject(colorStartPartitions, 0, 800, 2000, 20, "Rect", g);
 
-//                if (!textNick.getText().equals("") && !textAge.getText().equals("") && !textPassword.getText().equals(""))
-//                    paintObject(colorStartLabelAccountBackground, 20, 535, 260, 50, "Rect", g);
+//                Image image = new ImageIcon("C:\\Users\\Cripton\\Pictures\\1Icon.png").getImage();
+//                g.drawImage(image, mainFrame.getWidth()/2-image.getWidth(null)/2, mainFrame.getHeight()/2-image.getHeight(null)/2,null);
+
                 break;
             case 2:
                 for (Ground ground : worldNow.listOfGrounds) {
                     g.drawImage(ground.icon, ground.x, ground.y, null);
                 }
-                paintObject(colorGamePlayerBackground, xOfPlayerOnFrame - 20, yOfPlayerOnFrame - 20 + 10, 40, 30, "Oval", g);
+                paintObject(colorGamePlayerBackground, xOfPlayerOnFrame - 20, yOfPlayerOnFrame + 5, 40, 30, "Oval", g);
 
                 paintImageTypeObjects("Object", "Gold", g);
                 paintImageTypeObjects("Object", "Diamond", g);
                 paintTypeObjects("Object", "Water", "Oval", g);
-                g.drawImage(iconPlayer, xOfPlayerOnFrame - iconPlayer.getWidth(this)/2, (yOfPlayerOnFrame - iconPlayer.getHeight(this)/2) - 15, this);
+                g.drawImage(iconPlayer, xOfPlayerOnFrame - iconPlayer.getWidth(this)/2, yOfPlayerOnFrame - iconPlayer.getHeight(this)/2, this);
                 paintImageTypeObjects("Essence", "Wolf", g);
                 paintImageTypeObjects("Object", "Stone", g);
                 paintImageTypeObjects("Object", "SmallStone", g);
@@ -73,20 +76,29 @@ public class DrawPanel extends JPanel {
                 }
 
                 if (timerStatementRepaint == 5) {
-                    if (!labelNotification.getText().equals("")) {
-                        Runnable runnable = () -> {
-                            String s = labelNotification.getText();
-                            try {
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            if (s.equals(labelNotification.getText())) {
-                                labelNotification.setText("");
-                            }
-                        };
-                        Thread thread = new Thread(runnable);
-                        thread.start();
+                    for (JLabel label : listOfLabelsNotification) {
+                        if (listOfLabelsNotificationBool.get(listOfLabelsNotification.indexOf(label))) {
+                            listOfLabelsNotificationBool.add(listOfLabelsNotification.indexOf(label), false);
+                            Runnable runnable = () -> {
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                for (int x2 = 230; x2 > 0; x2--) {
+                                    label.setForeground(new Color(0, 0, 0, x2));
+                                    try {
+                                        Thread.sleep(2);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                                visFalse(label);
+                                label.setForeground(new Color(0, 0, 0, 230));
+                            };
+                            Thread thread = new Thread(runnable);
+                            thread.start();
+                        }
                     }
                     if (worldNow.listOfQuests.size() > worldNow.amountOfCompletedQuests) {
                         if (!worldNow.listOfQuests.get(worldNow.amountOfCompletedQuests).isCompleted()) {
@@ -106,11 +118,41 @@ public class DrawPanel extends JPanel {
                     } else {
                         textOfQuests.setText(" Все квесты\n пройдены!\n Поздравляем!");
                     }
-                }
-                if (timerStatementRepaint == 5) {
                     timerStatementRepaint = 0;
                 } else {
                     timerStatementRepaint++;
+                }
+                if (isHitBoxMode) {
+                    g.setColor(new Color(240, 50, 50));
+                    g.drawLine(xOfPlayerOnFrame, yOfPlayerOnFrame, xOfPlayerOnFrame, yOfPlayerOnFrame + iconPlayer.getHeight(null) / 2);
+                    g.drawLine(xOfPlayerOnFrame, yOfPlayerOnFrame, xOfPlayerOnFrame, yOfPlayerOnFrame - iconPlayer.getHeight(null) / 2);
+                    g.drawLine(xOfPlayerOnFrame, yOfPlayerOnFrame, xOfPlayerOnFrame + iconPlayer.getWidth(null) / 2, yOfPlayerOnFrame);
+                    g.drawLine(xOfPlayerOnFrame, yOfPlayerOnFrame, xOfPlayerOnFrame - iconPlayer.getWidth(null) / 2, yOfPlayerOnFrame);
+
+                    for (Essence essence : worldNow.listOfEssences) {
+                        g.drawLine(essence.xOnFrame, essence.yOnFrame, essence.xOnFrame, essence.yOnFrame + iconPlayer.getHeight(null) / 2);
+                        g.drawLine(essence.xOnFrame, essence.yOnFrame, essence.xOnFrame, essence.yOnFrame - iconPlayer.getHeight(null) / 2);
+                        g.drawLine(essence.xOnFrame, essence.yOnFrame, essence.xOnFrame + iconPlayer.getWidth(null) / 2, essence.yOnFrame);
+                        g.drawLine(essence.xOnFrame, essence.yOnFrame, essence.xOnFrame - iconPlayer.getWidth(null) / 2, essence.yOnFrame);
+
+                        g.drawLine(essence.xOnFrame-5, essence.yOnFrame-5, essence.xOnFrame+5, essence.yOnFrame-5);
+                        g.drawLine(essence.xOnFrame-5, essence.yOnFrame-5, essence.xOnFrame-5, essence.yOnFrame+5);
+                        g.drawLine(essence.xOnFrame+5, essence.yOnFrame+5, essence.xOnFrame-5, essence.yOnFrame+5);
+                        g.drawLine(essence.xOnFrame+5, essence.yOnFrame+5, essence.xOnFrame+5, essence.yOnFrame-5);
+                    }
+                    for (GameObject gameObject : worldNow.listOfObjects) {
+                        if (gameObject.name.equals("Barrier")) {
+                            g.drawLine(gameObject.xOnFrame+4-6, gameObject.yOnFrame+4-6, gameObject.xOnFrame+4+6, gameObject.yOnFrame+4-6);
+                            g.drawLine(gameObject.xOnFrame+4-6, gameObject.yOnFrame+4-6, gameObject.xOnFrame+4-6, gameObject.yOnFrame+4+6);
+                            g.drawLine(gameObject.xOnFrame+4+6, gameObject.yOnFrame+4+6, gameObject.xOnFrame+4-6, gameObject.yOnFrame+4+6);
+                            g.drawLine(gameObject.xOnFrame+4+6, gameObject.yOnFrame+4+6, gameObject.xOnFrame+4+6, gameObject.yOnFrame+4-6);
+                        } else {
+                            g.drawLine(gameObject.xOnFrame-40, gameObject.yOnFrame-40, gameObject.xOnFrame+40, gameObject.yOnFrame-40);
+                            g.drawLine(gameObject.xOnFrame-40, gameObject.yOnFrame-40, gameObject.xOnFrame-40, gameObject.yOnFrame+40);
+                            g.drawLine(gameObject.xOnFrame+40, gameObject.yOnFrame+40, gameObject.xOnFrame-40, gameObject.yOnFrame+40);
+                            g.drawLine(gameObject.xOnFrame+40, gameObject.yOnFrame+40, gameObject.xOnFrame+40, gameObject.yOnFrame-40);
+                        }
+                    }
                 }
 
                 break;
