@@ -1,13 +1,19 @@
 package Client.Objects.GameObjects;
 
-import static Client.Mechanic.MainVariables.colorStartPictureRed;
+import Client.Mechanic.MainGUIVariables;
+
+import static Client.Mechanic.MainGUIVariables.COLOR_OBJECT_BARRIER;
 
 public class ObjectBarrier extends GameObject {
-    public ObjectBarrier() {
+    public ObjectBarrier(int xOnFrame, int yOnFrame) {
         System.out.println("Creating object of class ObjectBarrier...");
         width = 8;
         height = 8;
-        color = colorStartPictureRed;
+        this.xOnFrame = xOnFrame;
+        this.yOnFrame = yOnFrame;
+        xOnWorld = xOnFrame - MainGUIVariables.playerXFrame;
+        yOnWorld = yOnFrame - MainGUIVariables.playerYFrame;
+        color = COLOR_OBJECT_BARRIER;
         name = "Barrier";
         System.out.println("Finished creating object of class ObjectBarrier.");
         System.out.println("Created object " + name + ": xOnFrame: " + xOnFrame + ", yOnFrame: " + yOnFrame + ", width: " + width + ", height: " + height + ", color: " + color + ", iconOfFar: " + iconOfFar + ", iconOfNearby: " + iconOfNearby);
