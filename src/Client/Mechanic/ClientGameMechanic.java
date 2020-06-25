@@ -53,6 +53,8 @@ class ClientGameMechanic { //Этот класс наследует все от�
 //        scrollPaneWorlds.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 //        textWorlds.setBackground(COLOR_INTERFACE_ACTIVATE_GREEN);
 
+        frame.setIconImage(ICON_FRAME);
+
         textQuests.setEditable(false);
         textQuests.addKeyListener(new MainFrameKeyListener()); //Обработчик событий, выслеживающий нажатия по клавиатуре при открытии окна frame.
         printNote("Adding KeyListener on object textQuests", NOTE_TYPE_DONE);

@@ -70,6 +70,7 @@ public abstract class MainGUIVariables {
     final public static Image ICON_MENU_BACKGROUND = new ImageIcon("resources"+SEPARATOR+"images"+SEPARATOR+"ICON_MENU_BACKGROUND.png").getImage();
     final public static Image ICON_MENU_TITLE = new ImageIcon("resources"+SEPARATOR+"images"+SEPARATOR+"ICON_MENU_TITLE.png").getImage();
     final public static Image ICON_CARD = new ImageIcon("resources"+SEPARATOR+"images"+SEPARATOR+"ICON_CARD.png").getImage();
+    final public static Image ICON_FRAME = new ImageIcon("resources"+SEPARATOR+"images"+SEPARATOR+"ICON_FRAME.png").getImage();
 
 
     static Runnable runnableRepaint;
@@ -130,7 +131,7 @@ public abstract class MainGUIVariables {
     final static int TIME_RUNNABLE_END = LCM(TIME_RUNNABLE_DIVIDER_WOLF_PROCESSING, TIME_RUNNABLE_DIVIDER_RESOURCE_MINING, TIME_RUNNABLE_DIVIDER_SEARCH_NEARBY_OBJECTS);
     static int timerMainRunnableActions;
 
-    final static JFrame frame = getFrame("War Of Cards Pre-dev 0.3", FRAME_WIDTH, FRAME_HEIGHT, null, null, resizableOn);
+    final static JFrame frame = getFrame("War Of Cards v0.3pre-release2", FRAME_WIDTH, FRAME_HEIGHT, null, null, resizableOn);
 
     final static JButton buttonSinglePlayer = getButtonNullLayout("Одиночная игра", f40, frame,
             frame.getWidth()/2 - (frame.getWidth()/4+40)/2, frame.getHeight()/8*4-60,

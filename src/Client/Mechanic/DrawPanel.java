@@ -54,7 +54,7 @@ public class DrawPanel extends JPanel {
                     if (worldCurrent.listOfQuests.size() > playerCurrent.amountOfCompletedQuests) {
                         if (!worldCurrent.listOfQuests.get(playerCurrent.amountOfCompletedQuests).isCompleted()) {
                             textQuests.setText("         Квесты\n\n " + worldCurrent.listOfQuests.get(playerCurrent.amountOfCompletedQuests).getNumberOfQuest() + ". "
-                                    + worldCurrent.listOfQuests.get(playerCurrent.amountOfCompletedQuests).getGoal() + "\n\n Добыто: "
+                                    + worldCurrent.listOfQuests.get(playerCurrent.amountOfCompletedQuests).getGoal() + "\n\n\n Добыто: "
                                     + worldCurrent.listOfQuests.get(playerCurrent.amountOfCompletedQuests).getReachCards().size() + "/"
                                     + worldCurrent.listOfQuests.get(playerCurrent.amountOfCompletedQuests).getGoalNumber() + ".");
                             if (!worldCurrent.listOfQuests.get(playerCurrent.amountOfCompletedQuests).isNow()) {
@@ -106,12 +106,13 @@ public class DrawPanel extends JPanel {
                         }
                     }
                     g.setColor(COLOR_INTERFACE_ORANGE);
-                    g.setFont(f20);
-                    g.drawString("x: " + (0- playerCurrent.xOfPlayer) + ", y: " + (0- playerCurrent.yOfPlayer), 10, 20);
+                    g.setFont(f15);
+                    g.drawString("Версия игры: v0.3pre-release2", 10, 20);
+                    g.drawString("Координаты игрока - x: " + (0- playerCurrent.xOfPlayer) + ", y: " + (0- playerCurrent.yOfPlayer), 10, 40);
                     if (!playerCurrent.listOfNearbyGameObjects.isEmpty()) {
-                        g.drawString("type: " + playerCurrent.listOfNearbyGameObjects.get(0).name + ", x: " + (playerCurrent.listOfNearbyGameObjects.get(0).xOnWorld) + ", y: " + (0 - playerCurrent.listOfNearbyGameObjects.get(0).yOnWorld), 10, 40);
+                        g.drawString("Ближайший объект - type: " + playerCurrent.listOfNearbyGameObjects.get(0).name + ", x: " + (playerCurrent.listOfNearbyGameObjects.get(0).xOnWorld) + ", y: " + (0 - playerCurrent.listOfNearbyGameObjects.get(0).yOnWorld), 10, 60);
                     } else {
-                        g.drawString("no nearby objects", 10, 40);
+                        g.drawString("Ближайший объект - null", 10, 60);
                     }
                 }
 
@@ -124,7 +125,7 @@ public class DrawPanel extends JPanel {
                     wholeThings += quest.getGoalNumber();
                 }
                 worldCurrent.percentComplete = (double) completedThings / wholeThings*100;
-                g.drawString("Прогресс: "+(int)worldCurrent.percentComplete+"%", frame.getWidth()/2-60, 20);
+                g.drawString("Прогресс: "+(int)worldCurrent.percentComplete+"%", frame.getWidth()/2-60, 30);
 
                 if (inventoryOpen) {
                     paintObject(COLOR_GAME_INVENTORY_BACKGROUND, 260, 100, frame.getWidth()-520, frame.getHeight()-240, "Rect", g);
