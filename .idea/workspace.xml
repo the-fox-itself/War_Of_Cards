@@ -2,18 +2,106 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="War Of Cards Pre-release" />
+      <artifact name="War Of Cards Server test 1" />
     </artifacts-to-build>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7dc5138-f73e-4cb9-a81d-0798d1758fbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/images/ICON_FRAME.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/ClientGameMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Mechanic/ClientGameMechanic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Mechanic/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/MainGUIVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Mechanic/MainGUIVariables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/War_Of_Cards_0_2_copy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/War_Of_Cards_0_3_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/joml_1_9_25_javadoc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/War Of Cards 0.2 copy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/War Of Cards 0.2 — копия.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/War Of Cards 0.2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/War Of Cards.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_DIAMOND.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_FRAME.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_GOLD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Documentation/Геймплей" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Documentation/Текущие минусы игры" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameMechanic/GameMainVariables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameMechanic/GameMechanic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameMechanic/GameThreads.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectEmpty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundEmpty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/War_Of_Cards_Pre_release.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/War_Of_Cards_Server_test_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cripton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cripton.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_BACK.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_FRONT.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_LEFT.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_RIGHT.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_DIAMOND_NEARBY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_GOLD_NEARBY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_SMALL_STONE.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_SMALL_STONE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_SMALL_STONE_NEARBY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_STONE.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_STONE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_STONE_NEARBY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_UNDERGROUND.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_UNDERGROUND.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_NEARBY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/ClientGameMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientGameMechanic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientDrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/GUIListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameGUIListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/MainGUIVariables.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/SwingPlus/AllAvailibleFonts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Libraries/AllAvailibleFonts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/SwingPlus/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Libraries/Methods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardDiamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardGold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardSmallStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardSmallStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardWater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardWood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/WeaponCards/CardPovertyPants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyPants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/WeaponCards/CardPovertyShirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyShirt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Essences/Essence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/Essence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Essences/EssenceWolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/EssenceWolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectBarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectBarrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectDiamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectGold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectSmallStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectSmallStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectWater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectWood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Grounds/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/Ground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Grounds/GroundGrass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundGrass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Grounds/GroundWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Quest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/WorldGeneration/Biomes/Biome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/WorldGeneration/Biomes/Biome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/WorldGeneration/Biomes/BiomeForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/WorldGeneration/Biomes/BiomeForest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/WorldGeneration/Biomes/BiomePond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/WorldGeneration/Biomes/BiomePond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documentation/Карты" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentation/Карты" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documentation/Основная документация" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentation/Основная документация" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documentation/То, что надо сделать" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentation/То, что надо сделать" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,300 +110,20 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/MainGUIVariables.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="72" column="109" selection-start-line="72" selection-start-column="109" selection-end-line="72" selection-end-column="109" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#400#401#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/DrawPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Quest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2482#2483#0" expanded="true" />
-                <element signature="e#2509#2510#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="698">
-              <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/SwingPlus/Methods.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="246" column="38" selection-start-line="246" selection-start-column="38" selection-end-line="246" selection-end-column="38" />
-              <folding>
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#494#495#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/ClientGameMechanic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-              <folding>
-                <element signature="e#1092#1093#0" expanded="true" />
-                <element signature="e#1183#1184#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/GUIListeners.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="339" column="47" selection-start-line="339" selection-start-column="47" selection-end-line="339" selection-end-column="47" />
-              <folding>
-                <element signature="e#757#758#0" expanded="true" />
-                <element signature="e#842#843#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Exit</find>
-      <find>FONT</find>
-      <find>font</find>
-      <find>fo</find>
-    </findStrings>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Account.java" />
-        <option value="$PROJECT_DIR$/src/Client/Mechanic/SwingPlus/SwingPlusMethods.java" />
-        <option value="$PROJECT_DIR$/src/Client/Mechanic/Main.java" />
-        <option value="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Quest.java" />
-        <option value="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/World.java" />
-        <option value="$PROJECT_DIR$/src/Client/Mechanic/GUIListeners.java" />
-        <option value="$PROJECT_DIR$/src/Client/Mechanic/SwingPlus/Methods.java" />
-        <option value="$PROJECT_DIR$/saves/recentlySave.ser" />
-        <option value="$PROJECT_DIR$/src/Client/Mechanic/DrawPanel.java" />
-        <option value="$PROJECT_DIR$/src/Client/Mechanic/MainGUIVariables.java" />
-        <option value="$PROJECT_DIR$/src/Client/Mechanic/ClientGameMechanic.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-18" />
-    <option name="width" value="1944" />
-    <option name="height" value="2088" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="War_Of_Cards_Pre_release" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="texts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="saves" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Mechanic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Mechanic" type="462c0819:PsiDirectoryNode" />
-              <item name="SwingPlus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="Cards" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="NaturalCards" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="WeaponCards" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="Essences" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="GameObjects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="Grounds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-              <item name="TechnicalObjects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Biomes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="War Of Cards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="War Of Cards" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Documentation" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectId" id="1dyzFg0YTUb1GIZifuXD2NynD1d" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
@@ -323,38 +131,35 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="war_of_cards" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/images" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/sounds" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\src\Libraries" />
       <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\texts" />
       <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\saves" />
       <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\images" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="GameMechanic.Objects.TechnicalObjects" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\sounds" />
+      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards" />
+      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\images" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client.Mechanic.Main" />
+    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientMechanic.ClientMain" />
       <module name="War Of Cards" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Client.Mechanic.*" />
+          <option name="PATTERN" value="GameMechanic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -364,10 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ClientMain" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -386,62 +192,22 @@
       <option name="project" value="LOCAL" />
       <updated>1593101624516</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v0.3pre-release2">
+      <created>1593104059088</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593104059089</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1719" height="932" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30787733" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32948717" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.49969932" weight="0.03846154" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50030065" side_tool="true" weight="0.5923077" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.03846154" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32948717" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -460,259 +226,67 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v0.3pre-release1 (a bit after)" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.3pre-release1 (a bit after)" />
+    <MESSAGE value="v0.3pre-release2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.3pre-release2" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Client/Objects/Grounds/Ground.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Objects/GameObjects/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/texts/text_english">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/texts/text_russian">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saves/22.ser">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding>
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/fonts/AlundraText.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Quest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2482#2483#0" expanded="true" />
-            <element signature="e#2509#2510#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="251" column="18" selection-start-line="251" selection-start-column="18" selection-end-line="251" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/GUIListeners.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="339" column="47" selection-start-line="339" selection-start-column="47" selection-end-line="339" selection-end-column="47" />
-          <folding>
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#842#843#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/SwingPlus/Methods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="246" column="38" selection-start-line="246" selection-start-column="38" selection-end-line="246" selection-end-column="38" />
-          <folding>
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saves/recentlySave.ser">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_BACK.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_FRONT.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/images/ICON_GROUND_GRASS.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/images/ICON_OBJECT_DIAMOND_NEARBY.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_NEARBY.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding>
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/DrawPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/MainGUIVariables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="72" column="109" selection-start-line="72" selection-start-column="109" selection-end-line="72" selection-end-column="109" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Mechanic/ClientGameMechanic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-          <folding>
-            <element signature="e#1092#1093#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="573" y="263" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603613371523">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="573" y="263" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.920@0.0.1707.920" timestamp="1603613371523" />
+    <state x="0" y="0" width="1707" height="920" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597842979717">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="0" y="0" width="1707" height="920" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1707.920@0.0.1707.920" timestamp="1597842979717" />
+    <state x="585" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597846897502">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="585" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920@0.0.1707.920" timestamp="1597846897502" />
+    <state x="635" y="216" key="FileChooserDialogImpl" timestamp="1597401867236">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="635" y="216" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1597401867236" />
+    <state width="1664" height="2" key="GridCell.Tab.0.bottom" timestamp="1605900319679">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1664" height="2" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1605900319679" />
+    <state width="1664" height="2" key="GridCell.Tab.0.center" timestamp="1605900319679">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1664" height="2" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1605900319679" />
+    <state width="1664" height="2" key="GridCell.Tab.0.left" timestamp="1605900319679">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1664" height="2" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1605900319679" />
+    <state width="1664" height="2" key="GridCell.Tab.0.right" timestamp="1605900319679">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="1664" height="2" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1605900319679" />
+    <state x="364" y="71" key="SettingsEditor" timestamp="1597401881723">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="364" y="71" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1597401881723" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1597408226235">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1707.920@0.0.1707.920" timestamp="1597408226234" />
+    <state x="516" y="196" width="672" height="678" key="search.everywhere.popup" timestamp="1599407921321">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="516" y="196" width="672" height="678" key="search.everywhere.popup/0.0.1707.920@0.0.1707.920" timestamp="1599407921321" />
   </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>War Of Cards Pre-release</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
