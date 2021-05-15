@@ -5,6 +5,9 @@
       <artifact name="War Of Cards Server test 1" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -25,82 +28,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7dc5138-f73e-4cb9-a81d-0798d1758fbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/War_Of_Cards_0_2_copy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/War_Of_Cards_0_3_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/joml_1_9_25_javadoc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/War Of Cards 0.2 copy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/War Of Cards 0.2 — копия.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/War Of Cards 0.2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/War Of Cards.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_DIAMOND.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_FRAME.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_GOLD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Documentation/Геймплей" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Documentation/Текущие минусы игры" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameMechanic/GameMainVariables.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameMechanic/GameMechanic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameMechanic/GameThreads.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectEmpty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundEmpty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/War_Of_Cards_Pre_release.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/War_Of_Cards_Server_test_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cripton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cripton.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_BACK.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_FRONT.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_LEFT.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ANIMATION_PLAYER_RIGHT.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_DIAMOND_NEARBY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_GOLD_NEARBY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_SMALL_STONE.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_SMALL_STONE.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_SMALL_STONE_NEARBY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_STONE.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_STONE.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_STONE_NEARBY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_UNDERGROUND.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_UNDERGROUND.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/ICON_OBJECT_WOOD_NEARBY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/ClientGameMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientGameMechanic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientDrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/GUIListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameGUIListeners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/MainGUIVariables.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/SwingPlus/AllAvailibleFonts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Libraries/AllAvailibleFonts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Mechanic/SwingPlus/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Libraries/Methods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardDiamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardGold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardSmallStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardSmallStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardWater.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/NaturalCards/CardWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/WeaponCards/CardPovertyPants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyPants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Cards/WeaponCards/CardPovertyShirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyShirt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Essences/Essence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/Essence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Essences/EssenceWolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/EssenceWolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectBarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectBarrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectDiamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectGold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectSmallStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectSmallStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectWater.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/GameObjects/ObjectWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Grounds/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/Ground.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Grounds/GroundGrass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundGrass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/Grounds/GroundWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundWater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Quest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Objects/TechnicalObjects/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/WorldGeneration/Biomes/Biome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/WorldGeneration/Biomes/Biome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/WorldGeneration/Biomes/BiomeForest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/WorldGeneration/Biomes/BiomeForest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/WorldGeneration/Biomes/BiomePond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/WorldGeneration/Biomes/BiomePond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Documentation/Карты" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentation/Карты" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Documentation/Основная документация" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentation/Основная документация" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Documentation/То, что надо сделать" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentation/То, что надо сделать" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientDrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientDrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientGameMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientGUIMechanic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documentation/Геймплей" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentation/Геймплей" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/GameGUIListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameGUIListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Libraries/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Libraries/Methods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,10 +67,10 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="war_of_cards" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/sounds" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -199,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593104059089</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="sound test">
+      <created>1605900728188</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605900728188</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,53 +173,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v0.3pre-release1 (a bit after)" />
     <MESSAGE value="v0.3pre-release2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.3pre-release2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="573" y="263" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603613371523">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state x="573" y="263" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.920@0.0.1707.920" timestamp="1603613371523" />
-    <state x="0" y="0" width="1707" height="920" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597842979717">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state x="0" y="0" width="1707" height="920" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1707.920@0.0.1707.920" timestamp="1597842979717" />
-    <state x="585" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597846897502">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state x="585" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.920@0.0.1707.920" timestamp="1597846897502" />
-    <state x="635" y="216" key="FileChooserDialogImpl" timestamp="1597401867236">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state x="635" y="216" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1597401867236" />
-    <state width="1664" height="2" key="GridCell.Tab.0.bottom" timestamp="1605900319679">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state width="1664" height="2" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1605900319679" />
-    <state width="1664" height="2" key="GridCell.Tab.0.center" timestamp="1605900319679">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state width="1664" height="2" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1605900319679" />
-    <state width="1664" height="2" key="GridCell.Tab.0.left" timestamp="1605900319679">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state width="1664" height="2" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1605900319679" />
-    <state width="1664" height="2" key="GridCell.Tab.0.right" timestamp="1605900319679">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state width="1664" height="2" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1605900319679" />
-    <state x="364" y="71" key="SettingsEditor" timestamp="1597401881723">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state x="364" y="71" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1597401881723" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1597408226235">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1707.920@0.0.1707.920" timestamp="1597408226234" />
-    <state x="516" y="196" width="672" height="678" key="search.everywhere.popup" timestamp="1599407921321">
-      <screen x="0" y="0" width="1707" height="920" />
-    </state>
-    <state x="516" y="196" width="672" height="678" key="search.everywhere.popup/0.0.1707.920@0.0.1707.920" timestamp="1599407921321" />
+    <MESSAGE value="sound test" />
+    <option name="LAST_COMMIT_MESSAGE" value="sound test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

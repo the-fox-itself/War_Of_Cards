@@ -62,20 +62,31 @@ public class GameGUIListeners {
             worldCurrent.listOfPlayers.add(playerCurrent);
             accountCurrent.listOfWorlds.add(worldCurrent);
 
-            for (int x = -501; x <= 501; x++) {
-                ObjectBarrier barrier = new ObjectBarrier(x, 501);
+            //Создание барьеров с каждой из сторон мира на 501 координате
+            //Создание угловых барьеров
+            ObjectBarrier barrier = new ObjectBarrier(501, 501);
+            worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
+            barrier = new ObjectBarrier(-501, 501);
+            worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
+            barrier = new ObjectBarrier(501, -501);
+            worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
+            barrier = new ObjectBarrier(-501, -501);
+            worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
+            //Создание линий из барьеров с каждой из сторон мира, не включая углы
+            for (int x = -500; x <= 500; x++) {
+                barrier = new ObjectBarrier(x, 501);
                 worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
             }
-            for (int x = -501; x <= 501; x++) {
-                ObjectBarrier barrier = new ObjectBarrier(x, -501);
+            for (int x = -500; x <= 500; x++) {
+                barrier = new ObjectBarrier(x, -501);
                 worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
             }
             for (int y = -500; y <= 500; y++) {
-                ObjectBarrier barrier = new ObjectBarrier(501, y);
+                barrier = new ObjectBarrier(501, y);
                 worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
             }
             for (int y = -500; y <= 500; y++) {
-                ObjectBarrier barrier = new ObjectBarrier(-501, y);
+                barrier = new ObjectBarrier(-501, y);
                 worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
             }
             System.out.println("All ObjectBarriers have created.");

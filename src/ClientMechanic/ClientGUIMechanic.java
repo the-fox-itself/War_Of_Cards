@@ -11,8 +11,8 @@ import static Libraries.Methods.*;
 import java.awt.*;
 import java.io.*;
 
-class ClientGameMechanic {
-    ClientGameMechanic() {
+class ClientGUIMechanic {
+    ClientGUIMechanic() {
         printNote("Creating an object of class ClientGameMechanic", NOTE_TYPE_DONE);
     }
 

@@ -27,10 +27,10 @@ public abstract class GameObject implements Serializable { //Класс-роди
     public static final String NAME_BARRIER = "barrier";
 
     public int getXOfFrame() {
-        return (int)(this.xOnWorld*10-playerCurrent.xOfPlayer);
+        return (int)(this.xOnWorld*10-playerCurrent.xOfPlayer+frame.getWidth()/2);
     }
     public int getYOfFrame() {
-        return (int)(this.yOnWorld*10-playerCurrent.yOfPlayer);
+        return (int)(this.yOnWorld*10-playerCurrent.yOfPlayer+frame.getHeight()/2);
     }
 
     public abstract void recovery();

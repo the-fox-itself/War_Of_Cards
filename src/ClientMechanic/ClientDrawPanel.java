@@ -1,7 +1,6 @@
 package ClientMechanic;
 
 import GameMechanic.Objects.Essences.Essence;
-import GameMechanic.Objects.Essences.EssenceWolf;
 import GameMechanic.Objects.GameObjects.GameObject;
 import GameMechanic.Objects.Grounds.Ground;
 import GameMechanic.Objects.TechnicalObjects.Quest;
@@ -20,22 +19,19 @@ public class ClientDrawPanel extends JPanel {
         printNote("Creating an object of class DrawPanel", NOTE_TYPE_DONE);
     }
 
-    public final static String TYPE_OBJECT = "object";
-    public final static String TYPE_ESSENCE = "essence";
-
     public final static String PAINT_RECT = "rect";
     public final static String PAINT_OVAL = "oval";
 
-    protected void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) { //Отрисовка экрана клиента
         super.paintComponent(g);
         switch (repaintPhase) {
-            case REPAINT_MENU:
+            case REPAINT_MENU: //Отрисовка во время нахождения в главном меню
                 g.drawImage(ICON_MENU_BACKGROUND, frame.getWidth()/2-ICON_MENU_BACKGROUND.getWidth(null)/2,
                         frame.getHeight()/2-ICON_MENU_BACKGROUND.getHeight(null)/2,null);
                 g.drawImage(ICON_MENU_TITLE, frame.getWidth()/2-ICON_MENU_TITLE.getWidth(null)/2, -20,null);
                 break;
 
-            case REPAINT_GAME:
+            case REPAINT_GAME: //Отрисовка во время нахождения в игровом мире
                 for (Map.Entry<Ground, int[]> groundSet : worldCurrent.listOfGrounds.entrySet()) {
                     Ground ground = groundSet.getKey();
                     g.drawImage(ground.icon, ground.getXOfFrame(), ground.getYOfFrame(), null);
