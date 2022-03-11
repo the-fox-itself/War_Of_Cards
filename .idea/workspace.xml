@@ -28,13 +28,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7dc5138-f73e-4cb9-a81d-0798d1758fbc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Libraries/MButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/to do" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/War_Of_Cards_0_2_copy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/War_Of_Cards_0_3_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/joml_1_9_25_javadoc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/War Of Cards.iml" beforeDir="false" afterPath="$PROJECT_DIR$/War Of Cards.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/texts/text_english" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/texts/text_russian" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientDrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientDrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientGameMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientGUIMechanic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientGUIMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientGUIMechanic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Documentation/Геймплей" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documentation/Геймплей" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameMechanic/GameGUIListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameGUIListeners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/GameMainVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameMainVariables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/GameMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameMechanic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/GameThreads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameThreads.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardDiamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardGold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardSmallStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardSmallStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardWood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyPants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyPants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyShirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyShirt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/Essence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/Essence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/EssenceWolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/EssenceWolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectBarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectBarrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectDiamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectEmpty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectEmpty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectGold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectSmallStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectSmallStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectStone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectWood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundEmpty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundEmpty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundGrass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundGrass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Quest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Libraries/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Libraries/Methods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +86,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/GameMechanic/GameThreads.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1dyzFg0YTUb1GIZifuXD2NynD1d" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -66,14 +111,20 @@
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="war_of_cards" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/sounds" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/images" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\images" />
+      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\sounds" />
+      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\sound" />
       <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\src\Libraries" />
       <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\texts" />
       <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\saves" />
@@ -81,11 +132,6 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="GameMechanic.Objects.TechnicalObjects" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\sounds" />
-      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards" />
-      <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -141,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605900728188</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Initial commit 0.1 15.05.2021">
+      <created>1621087879635</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621087879635</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,13 +221,13 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v0.3pre-release1 (a bit after)" />
     <MESSAGE value="v0.3pre-release2" />
     <MESSAGE value="sound test" />
-    <option name="LAST_COMMIT_MESSAGE" value="sound test" />
+    <MESSAGE value="Initial commit 0.1 15.05.2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit 0.1 15.05.2021" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -182,6 +235,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

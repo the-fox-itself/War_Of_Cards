@@ -9,16 +9,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Map;
 
 import static GameMechanic.GameMainVariables.*;
 import static Libraries.Methods.*;
 
 public class ClientDrawPanel extends JPanel {
-    ClientDrawPanel() {
-        printNote("Creating an object of class DrawPanel", NOTE_TYPE_DONE);
-    }
-
     public final static String PAINT_RECT = "rect";
     public final static String PAINT_OVAL = "oval";
 
@@ -157,7 +154,8 @@ public class ClientDrawPanel extends JPanel {
                     paintObject(COLOR_GAME_INVENTORY_BACKGROUND, 260, 100, frame.getWidth()-520, frame.getHeight()-240, PAINT_RECT, g);
                 }
 
-                for (GameObject gameObject : playerCurrent.listOfNearbyGameObjects) {
+                ArrayList<GameObject> listOfNearbyGameObjectsCopy = playerCurrent.listOfNearbyGameObjects;
+                for (GameObject gameObject : listOfNearbyGameObjectsCopy) {
                     if (!gameObject.name.equals(GameObject.NAME_BARRIER)) {
                         g.drawImage(ICON_OBJECT_FRAME, gameObject.getXOfFrame() - ICON_OBJECT_FRAME.getWidth(null) / 2, gameObject.getYOfFrame() -
                                 ICON_OBJECT_FRAME.getHeight(null) / 2, null);

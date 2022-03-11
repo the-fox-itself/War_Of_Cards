@@ -4,7 +4,6 @@ import static GameMechanic.GameMainVariables.*;
 
 public class ObjectWood extends GameObject { //Древесина.
     public ObjectWood(int xOnWorld, int yOnWorld) { //Конструктор для установления начальных характеристик.
-        System.out.println("Creating object of class ObjectWood...");
         this.xOnWorld = xOnWorld;
         this.yOnWorld = yOnWorld;
         int rand = (int) (Math.random()*2);
@@ -18,7 +17,6 @@ public class ObjectWood extends GameObject { //Древесина.
         }
         this.iconType = rand;
         this.name = NAME_WOOD; //Её название.
-        System.out.println("Finished creating object of class ObjectWood.");
         System.out.println("Created object "+name+" [width: "+width+", height: "+height+", xOnWorld: "+this.xOnWorld+", yOnWorld: "+this.yOnWorld+", color: "+color+", iconOfFar: "+iconOfFar+", iconOfNearby: "+iconOfNearby+"]");
     }
 

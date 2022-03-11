@@ -3,9 +3,6 @@ package GameMechanic;
 import GameMechanic.Objects.Cards.Card;
 import GameMechanic.Objects.Cards.WeaponCards.CardPovertyPants;
 import GameMechanic.Objects.Cards.WeaponCards.CardPovertyShirt;
-import GameMechanic.Objects.GameObjects.*;
-import GameMechanic.Objects.Grounds.GroundGrass;
-import GameMechanic.Objects.Grounds.GroundWater;
 import GameMechanic.Objects.TechnicalObjects.Account;
 import GameMechanic.Objects.TechnicalObjects.Player;
 import GameMechanic.Objects.TechnicalObjects.Quest;
@@ -20,10 +17,6 @@ import static GameMechanic.GameMechanic.*;
 import static Libraries.Methods.*;
 
 public class GameGUIListeners {
-    GameGUIListeners() {
-        printNote("Creating an object of class GUIListeners", NOTE_TYPE_DONE);
-    }
-
     public static class SinglePlayer implements ActionListener { //Обработка нажатия кнопки buttonSinglePlayer.
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
@@ -57,112 +50,14 @@ public class GameGUIListeners {
     public static class NewWorld implements ActionListener { //Обработка нажатия кнопки buttonNewWorld.
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
-            worldCurrent = new World();
-            playerCurrent = new Player(accountCurrent, 0, 0);
+            worldCurrent = new World(accountCurrent, "");
+            playerCurrent = new Player(worldCurrent, 0, 0);
             worldCurrent.listOfPlayers.add(playerCurrent);
             accountCurrent.listOfWorlds.add(worldCurrent);
 
-            //Создание барьеров с каждой из сторон мира на 501 координате
-            //Создание угловых барьеров
-            ObjectBarrier barrier = new ObjectBarrier(501, 501);
-            worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
-            barrier = new ObjectBarrier(-501, 501);
-            worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
-            barrier = new ObjectBarrier(501, -501);
-            worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
-            barrier = new ObjectBarrier(-501, -501);
-            worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
-            //Создание линий из барьеров с каждой из сторон мира, не включая углы
-            for (int x = -500; x <= 500; x++) {
-                barrier = new ObjectBarrier(x, 501);
-                worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
-            }
-            for (int x = -500; x <= 500; x++) {
-                barrier = new ObjectBarrier(x, -501);
-                worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
-            }
-            for (int y = -500; y <= 500; y++) {
-                barrier = new ObjectBarrier(501, y);
-                worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
-            }
-            for (int y = -500; y <= 500; y++) {
-                barrier = new ObjectBarrier(-501, y);
-                worldCurrent.listOfObjects.put(barrier, new int[] {barrier.xOnWorld, barrier.yOnWorld});
-            }
-            System.out.println("All ObjectBarriers have created.");
-
-            ObjectStone stone = new ObjectStone(0, 0);
-            worldCurrent.listOfObjects.put(stone, new int[]{stone.xOnWorld, stone.yOnWorld});
-            ObjectStone stone1 = new ObjectStone(1, 0);
-            worldCurrent.listOfObjects.put(stone, new int[]{stone.xOnWorld, stone.yOnWorld});
-            ObjectStone stone2 = new ObjectStone(2, 1);
-            worldCurrent.listOfObjects.put(stone, new int[]{stone.xOnWorld, stone.yOnWorld});
-
-//            for (int x = worldCurrent.startAmountOfWoods; x > 0; x--) {
-//                GameObject wood = new ObjectWood();
-//                wood.setLocations(wood);
-//                worldCurrent.listOfObjects.put(wood, new int[]{wood.xOnWorld, wood.yOnWorld});
-//            }
-//            System.out.println("All ObjectWoods have created.");
-//            for (int x = worldCurrent.startAmountOfStones; x > 0; x--) {
-//                GameObject stone = new ObjectStone();
-//                stone.setLocations(stone);
-//                worldCurrent.listOfObjects.put(stone, new int[] {stone.xOnWorld, stone.yOnWorld});
-//            }
-//            System.out.println("All ObjectStones have created.");
-//            for (int x = worldCurrent.startAmountOfSmallStones; x > 0; x--) {
-//                GameObject smallStone = new ObjectSmallStone();
-//                smallStone.setLocations(smallStone);
-//                worldCurrent.listOfObjects.put(smallStone, new int[] {smallStone.xOnWorld, smallStone.yOnWorld});
-//            }
-//            System.out.println("All ObjectsSmallStones have created.");
-//            for (int x = worldCurrent.startAmountOfGolds; x > 0; x--) {
-//                GameObject gold = new ObjectGold();
-//                gold.setLocations(gold);
-//                worldCurrent.listOfObjects.put(gold, new int[] {gold.xOnWorld, gold.yOnWorld});
-//            }
-//            System.out.println("All ObjectGolds have created.");
-//            for (int x = worldCurrent.startAmountOfDiamonds; x > 0; x--) {
-//                GameObject diamond = new ObjectDiamond();
-//                diamond.setLocations(diamond);
-//                worldCurrent.listOfObjects.put(diamond, new int[] {diamond.xOnWorld, diamond.yOnWorld});
-//            }
-//            System.out.println("All ObjectDiamonds have created.");
-//            for (int x = worldCurrent.startAmountOfWolfs; x > 0; x--) {
-//                Essence wolf = new EssenceWolf();
-//                worldCurrent.listOfEssences.add(wolf);
-//            }
-//            System.out.println("All EssenceWolfs have created.");
-
-            for (int x = -500; x < 500; x+=5) {
-                for (int y = -500; y < 500; y+=5) {
-                    int rand = (int) (Math.random()*100);
-                    if (rand == 0) {
-                        GroundWater groundWater = new GroundWater(x, y);
-                        worldCurrent.listOfGrounds.put(groundWater, new int[] {groundWater.xOnWorld, groundWater.yOnWorld});
-                    } else {
-                        GroundGrass groundGrass = new GroundGrass(x, y);
-                        worldCurrent.listOfGrounds.put(groundGrass, new int[] {groundGrass.xOnWorld, groundGrass.yOnWorld});
-                    }
-                }
-            }
-            System.out.println("All Grounds have created.");
-
-            Quest quest1 = new Quest(1, "Собрать 10 карт\n\n Дерево", 10, Card.NAME_WOOD);
-            quest1.runnableOn();
-            Quest quest2 = new Quest(2, "Собрать 10 карт\n\n Камень", 10, Card.NAME_STONE);
-            Quest quest3 = new Quest(3, "Собрать 5 карт\n\n Мальнький камень", 5, Card.NAME_SMALL_STONE);
-            Quest quest4 = new Quest(4, "Собрать 10 карт\n\n Золото", 10, Card.NAME_GOLD);
-            Quest quest5 = new Quest(5, "Собрать 10 карт\n\n Алмаз", 10, Card.NAME_DIAMOND);
-            worldCurrent.listOfQuests.add(quest1);
-            worldCurrent.listOfQuests.add(quest2);
-            worldCurrent.listOfQuests.add(quest3);
-            worldCurrent.listOfQuests.add(quest4);
-            worldCurrent.listOfQuests.add(quest5);
-
             menuGame();
 
-            runnableOn = true;
+//            gameLoopOn = true;
             regenerationOn = true;
             gameStart = true;
 
@@ -176,9 +71,9 @@ public class GameGUIListeners {
                 playerCurrent.slots.add(cardPovertyPants);
                 playerCurrent.slots.add(cardPovertyShirt);
             }
-            setNotification("Мир успешно создан!");
+            createNotification("Мир успешно создан!");
             iconPlayerCurrent = ICON_PLAYER_FRONT;
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     } //Конец внутреннего класса NewWorld.
     public static class LoadWorld implements ActionListener {
         @Override
@@ -194,7 +89,7 @@ public class GameGUIListeners {
                 menuGame();
                 visFalse(labelSaveAccount);
 
-                runnableOn = true;
+//                gameLoopOn = true;
                 regenerationOn = true;
                 gameStart = true;
             }
@@ -221,7 +116,7 @@ public class GameGUIListeners {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
             System.exit(0); //Завершение игры.
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     } //Конец внутреннего класса Exit.
 
     public static class ExitAccount implements ActionListener {
@@ -245,7 +140,7 @@ public class GameGUIListeners {
                 buttonSettings.setBackground(COLOR_INTERFACE_GREEN);
                 menuStartEnableSettings(false);
             }
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     }
 
     public static class SettingsServer implements ActionListener {
@@ -262,7 +157,7 @@ public class GameGUIListeners {
             textPassword.setText("");
             visFalse(labelWarning);
             visFalse(buttonNewAccountFromLoadAccount);
-            buttonEndRegistration.setText("Зарегестрироваться");
+            buttonEndRegistration.setText("Зарегистрироваться");
             buttonEndRegistration.setFont(f20);
             if (buttonRegistration.getBackground().equals(COLOR_INTERFACE_GREEN)) {
                 buttonRegistration.setBackground(COLOR_INTERFACE_ACTIVATE_GREEN);
@@ -277,7 +172,7 @@ public class GameGUIListeners {
                 accountRegistration = false;
                 visFalse(buttonLoadAccountFromNewAccount);
             }
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     } //Конец внутреннего класса NewAccount.
 
     public static class LoadAccount implements ActionListener {
@@ -308,7 +203,7 @@ public class GameGUIListeners {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
             boolean isNormal = true;
-            //Если все поля регистрации чем-то заполнены то это условие срабатывает.
+            //Если все поля регистрации чем-то заполнены, то это условие срабатывает.
             visFalse(labelWarningNeedRegistration);
             if (!textNick.getText().equals("") && !textPassword.getText().equals("")) {
                 if (accountRegistration) {
@@ -438,7 +333,7 @@ public class GameGUIListeners {
                 visFalse(labelWarning);
                 visTrue(labelWarning);
             }
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     } //Конец внутреннего класса EndOfRegistrationAccount.
 
 
@@ -453,7 +348,7 @@ public class GameGUIListeners {
                 visTrue(buttonRight);
             }
 
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     } //Конец внутреннего класса InventoryLeft.
 
     public static class InventoryRight implements ActionListener {
@@ -466,26 +361,26 @@ public class GameGUIListeners {
                 visTrue(buttonLeft);
             }
 
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     } //Конец внутреннего класса InventoryRight.
 
     public static class InventorySlotsPants implements ActionListener {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
             textQuests.requestFocus();
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     } //Конец внутреннего класса InventorySlotsPants.
     public static class InventorySlotsShirt implements ActionListener {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
             textQuests.requestFocus();
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     } //Конец внутреннего класса InventorySlotsShirt.
     public static class InventorySlotsHands implements ActionListener {
         @Override //Переопределение метода actionPerformed(ActionEvent actionEvent).
         public void actionPerformed(ActionEvent actionEvent) {
             textQuests.requestFocus();
-        } //Конец переопредлённого метода actionPerformed().
+        } //Конец переопределённого метода actionPerformed().
     } //Конец внутреннего класса InventorySlotsHands.
 
     //Событие нажатий клавиатуры
@@ -706,7 +601,7 @@ public class GameGUIListeners {
                         visFalse(buttonShirtSlots);
                         visFalse(buttonHandsSlots);
 
-                        System.out.println("Уведомление. Выход из инвенторя.");
+                        System.out.println("Уведомление. Выход из инвентаря.");
                         inventoryOpen = false;
                     }
                     break;
@@ -719,7 +614,7 @@ public class GameGUIListeners {
                         double y = (int) ((Math.random() * 10) + 0.5) * 100 - 500; //450, 350, 250, 150, 50, -50, -150, -250, -350, -450
                         playerCurrent.xOfPlayer -= x;
                         playerCurrent.yOfPlayer -= y;
-                        setNotification("Использован телепорт радиусом 20 полей");
+                        createNotification("Использован телепорт радиусом 20 полей");
                     }
                     break;
                 case 'k':
@@ -735,12 +630,12 @@ public class GameGUIListeners {
                 case 'з':
                 case 'З':
                     if (fastModeOn) {
-                        setNotification("Высокая скорость выключена");
+                        createNotification("Высокая скорость выключена");
                         playerCurrent.walkSpeed = 1;
                         playerCurrent.runSpeed = 2;
                         fastModeOn = false;
                     } else {
-                        setNotification("Высокая скорость включена");
+                        createNotification("Высокая скорость включена");
                         playerCurrent.walkSpeed = 10;
                         playerCurrent.runSpeed = 20;
                         fastModeOn = true;
@@ -751,13 +646,13 @@ public class GameGUIListeners {
                 case 'х':
                 case 'Х':
                     if (godModeOn) {
-                        setNotification("Бессмертие выключено");
+                        createNotification("Бессмертие выключено");
                         godModeOn = false;
                         if (collisionWithBarrier(playerXFrame, playerYFrame)) {
                             deathAndRespawn();
                         }
                     } else {
-                        setNotification("Бесмертие включено");
+                        createNotification("Бессмертие включено");
                         godModeOn = true;
                     }
                     break;
@@ -770,18 +665,10 @@ public class GameGUIListeners {
             switch (button.getKeyChar()) {
                 case 'w':
                 case 'ц':
-                    if (!inventoryOpen) {
-                        w = false;
-                        if (s || S) {
-                            iconPlayerCurrent = ANIMATION_PLAYER_FRONT;
-                        } else if (!a && !A && !d && !D) {
-                            iconPlayerCurrent = ICON_PLAYER_BACK;
-                        }
-                    }
-                    break;
                 case 'W':
                 case 'Ц':
                     if (!inventoryOpen) {
+                        w = false;
                         W = false;
                         if (s || S) {
                             iconPlayerCurrent = ANIMATION_PLAYER_FRONT;
@@ -792,22 +679,10 @@ public class GameGUIListeners {
                     break;
                 case 'a':
                 case 'ф':
-                    if (!inventoryOpen) {
-                        a = false;
-                        if (s || S) {
-                            iconPlayerCurrent = ANIMATION_PLAYER_FRONT;
-                        } else if (w || W) {
-                            iconPlayerCurrent = ANIMATION_PLAYER_BACK;
-                        } else if (d || D) {
-                            iconPlayerCurrent = ANIMATION_PLAYER_RIGHT;
-                        } else {
-                            iconPlayerCurrent = ICON_PLAYER_LEFT;
-                        }
-                    }
-                    break;
                 case 'A':
                 case 'Ф':
                     if (!inventoryOpen) {
+                        a = false;
                         A = false;
                         if (s || S) {
                             iconPlayerCurrent = ANIMATION_PLAYER_FRONT;
@@ -822,18 +697,10 @@ public class GameGUIListeners {
                     break;
                 case 's':
                 case 'ы':
-                    if (!inventoryOpen) {
-                        s = false;
-                        if (w || W) {
-                            iconPlayerCurrent = ANIMATION_PLAYER_BACK;
-                        } else if (!a && !A && !d && !D) {
-                            iconPlayerCurrent = ICON_PLAYER_FRONT;
-                        }
-                    }
-                    break;
                 case 'S':
                 case 'Ы':
                     if (!inventoryOpen) {
+                        s = false;
                         S = false;
                         if (w || W) {
                             iconPlayerCurrent = ANIMATION_PLAYER_BACK;
@@ -844,22 +711,10 @@ public class GameGUIListeners {
                     break;
                 case 'd':
                 case 'в':
-                    if (!inventoryOpen) {
-                        d = false;
-                        if (s || S) {
-                            iconPlayerCurrent = ANIMATION_PLAYER_FRONT;
-                        } else if (w || W) {
-                            iconPlayerCurrent = ANIMATION_PLAYER_BACK;
-                        } else if (a || A) {
-                            iconPlayerCurrent = ANIMATION_PLAYER_LEFT;
-                        } else {
-                            iconPlayerCurrent = ICON_PLAYER_RIGHT;
-                        }
-                    }
-                    break;
                 case 'D':
                 case 'В':
                     if (!inventoryOpen) {
+                        d = false;
                         D = false;
                         if (s || S) {
                             iconPlayerCurrent = ANIMATION_PLAYER_FRONT;

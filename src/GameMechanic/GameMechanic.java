@@ -4,7 +4,6 @@ import GameMechanic.Objects.Cards.Card;
 import GameMechanic.Objects.Cards.NaturalCards.*;
 import GameMechanic.Objects.GameObjects.GameObject;
 
-import java.io.File;
 import java.util.Map;
 import java.util.Objects;
 
@@ -106,32 +105,32 @@ public class GameMechanic {
                     case GameObject.NAME_WOOD:
                         card = new CardWood();
                         playerCurrent.amountOfAllGettingCardWoods++;
-                        setNotification("Добыт ресурс: Дерево");
+                        createNotification("Добыт ресурс: Дерево");
                         System.out.println("Добыт ресурс: Дерево");
                         break;
                     case GameObject.NAME_STONE:
                         card = new CardStone();
                         playerCurrent.amountOfAllGettingCardStones++;
-                        setNotification("Добыт ресурс: Камень");
+                        createNotification("Добыт ресурс: Камень");
                         System.out.println("Добыт ресурс: Камень");
-                        playSound(new File("C:\\Users\\Cripton\\IdeaProjects\\War Of Cards\\resources\\sounds\\mine.wav"));
+                        playSound(SOUND_STONE_MINING);
                         break;
                     case GameObject.NAME_SMALL_STONE:
                         card = new CardSmallStone();
                         playerCurrent.amountOfAllGettingCardSmallStones++;
-                        setNotification("Добыт ресурс: Маленький камень");
+                        createNotification("Добыт ресурс: Маленький камень");
                         System.out.println("Добыт ресурс: Маленький камень");
                         break;
                     case GameObject.NAME_GOLD:
                         card = new CardGold();
                         playerCurrent.amountOfAllGettingCardGolds++;
-                        setNotification("Добыт ресурс: Золото");
+                        createNotification("Добыт ресурс: Золото");
                         System.out.println("Добыт ресурс: Золото");
                         break;
                     case GameObject.NAME_DIAMOND:
                         card = new CardDiamond();
                         playerCurrent.amountOfAllGettingCardDiamonds++;
-                        setNotification("Добыт ресурс: Алмаз");
+                        createNotification("Добыт ресурс: Алмаз");
                         System.out.println("Добыт ресурс: Алмаз");
                         break;
                 }
@@ -158,7 +157,7 @@ public class GameMechanic {
         }
     }
 
-    public static void setNotification(String notification) {
+    public static void createNotification(String notification) {
         new GameThreads.NotificationThread(notification).start();
     }
 
@@ -195,7 +194,7 @@ public class GameMechanic {
         playerCurrent.xOfPlayer = 0;
         playerCurrent.yOfPlayer = 0;
 
-        setNotification("Вы умерли! Ваше текущее количество смертей: " + playerCurrent.amountOfDeaths);
+        createNotification("Вы умерли! Ваше текущее количество смертей: " + playerCurrent.amountOfDeaths);
 
         iconPlayerCurrent = ICON_PLAYER_FRONT;
     }

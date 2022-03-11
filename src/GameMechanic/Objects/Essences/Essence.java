@@ -4,10 +4,6 @@ import java.awt.*; //Импорт пакета с классом Color.
 import java.io.Serializable;
 
 public abstract class Essence implements Serializable { //Класс-родитель для всех живых объектов на местности.
-    Essence() {
-        System.out.println("Created class Essence.");
-    }
-
     public int xOnFrame; //Первая координата этого существа на плоскости.
     public int yOnFrame; //Вторая координата этого существа на плоскости.
     public int width; //Ширина существа.

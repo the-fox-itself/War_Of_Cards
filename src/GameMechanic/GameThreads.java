@@ -20,7 +20,7 @@ public abstract class GameThreads {
             double previous = new Date().getTime();
             double steps = 0;
             while (true) {
-                if (runnableOn) {
+                if (gameLoopOn) {
                     double loopStartTime = new Date().getTime();
                     double elapsed = loopStartTime - previous;
                     previous = new Date().getTime();
@@ -67,24 +67,24 @@ public abstract class GameThreads {
                     resourceMining(GameObject.NAME_DIAMOND);
                 }
 
-                if (w && !s && !S) {
+                if (w && !s) {
                     playerMove('y', playerCurrent.walkSpeed);
-                } else if (W && !S && !s) {
+                } else if (W && !S) {
                     playerMove('y', playerCurrent.runSpeed);
                 }
-                if (s && !w && !W) {
+                if (s && !w) {
                     playerMove('y', -playerCurrent.walkSpeed);
-                } else if (S && !W && !w) {
+                } else if (S && !W) {
                     playerMove('y', -playerCurrent.runSpeed);
                 }
-                if (d && !a && !A) {
+                if (d && !a) {
                     playerMove('x', -playerCurrent.walkSpeed);
-                } else if (D && !A && !a) {
+                } else if (D && !A) {
                     playerMove('x', -playerCurrent.runSpeed);
                 }
-                if (a && !d && !D) {
+                if (a && !d) {
                     playerMove('x', playerCurrent.walkSpeed);
-                } else if (A && !D && !d) {
+                } else if (A && !D) {
                     playerMove('x', playerCurrent.runSpeed);
                 }
             }
@@ -138,13 +138,13 @@ public abstract class GameThreads {
                                     && (playerXFrame - wolfCurrent.xOnFrame < 5 && playerXFrame - wolfCurrent.xOnFrame > -5)) { //Если волк очень близко к игроку.
                                 playerXFrame -= 10;
                                 try { //try-catch для паузы.
-                                    Thread.sleep(2); //Пауза в размере 2 милисекунд.
+                                    Thread.sleep(2); //Пауза в размере 2 миллисекунд.
                                 } catch (InterruptedException e) {
                                     e.printStackTrace(); //Обработка ошибки.
                                 }
                                 playerXFrame += 20;
                                 try { //try-catch для паузы.
-                                    Thread.sleep(2); //Пауза в размере 2 милисекунд.
+                                    Thread.sleep(2); //Пауза в размере 2 миллисекунд.
                                 } catch (InterruptedException e) {
                                     e.printStackTrace(); //Обработка ошибки.
                                 }
@@ -158,7 +158,7 @@ public abstract class GameThreads {
                                 } //Конец if.
                                 if (playerCurrent.health == 0) { //Если у игрока 0 жизней.
                                     if (!godModeOn) {
-                                        deathAndRespawn(); //Он погибает и респавнится.
+                                        deathAndRespawn(); //Он погибает и появляется.
                                     }
                                 } else { //Если у игрока не 0 жизней.
                                     if (timerPlayerTakeDamage == 0) { //И если переменная-таймер timerPlayerTakeDamage равна 0.
@@ -167,7 +167,7 @@ public abstract class GameThreads {
                                         timerPlayerTakeDamage--; //Она уменьшается на единицу.
                                     } //Конец else.
                                 } //Конец else.
-                            } else { //Если же волк не достаточно близок к игроку, чтобы укусить его.
+                            } else { //Если же волк недостаточно близок к игроку, чтобы укусить его.
                                 if (playerXFrame - wolfCurrent.xOnFrame < -3) { //Если игрок находится левее волка.
                                     wolfCurrent.xOnFrame -= 2 * wolfCurrent.essenceSpeed; //То волк двигается влево, по направлению к игроку.
                                     wolfCurrent.icon = ICON_WOLF_LEFT;
@@ -181,9 +181,9 @@ public abstract class GameThreads {
                                     wolfCurrent.yOnFrame += 2 * wolfCurrent.essenceSpeed; //То волк двигается вниз, по направлению к игроку.
                                 }
                             }
-                        } else if (wolfCurrent.timePassed == 0) { //Если же игрок не достаточно близок к волку, чтобы волк его заметил и при этом настало время для следующего шага.
+                        } else if (wolfCurrent.timePassed == 0) { //Если же игрок недостаточно близок к волку, чтобы волк его заметил и при этом настало время для следующего шага.
                             int rand = (int) (Math.random() * 4); //То вычисляем случайное значение для переменной rand в пределах от 0 до 3 включительно.
-                            switch (rand) { //Исли переменной rand дали значение...
+                            switch (rand) { //Если переменной rand дали значение...
                                 case 0: //...0
                                     wolfCurrent.xOnFrame -= 2 * wolfCurrent.essenceSpeed; //Передвижение волка влево на определённое количество пикселей, в зависимости от скорости волка.
                                     wolfCurrent.icon = ICON_WOLF_LEFT;
@@ -199,7 +199,7 @@ public abstract class GameThreads {
                                     wolfCurrent.yOnFrame += 2 * wolfCurrent.essenceSpeed; //Передвижение волка вниз на определённое количество пикселей, в зависимости от скорости волка.
                                     break; //Конец кейса.
                             }
-                            wolfCurrent.timePassed = wolfCurrent.timeOfNextWalk; //Заводим новое время для того, чтобы волк не бегал, как сумасшедшиц.
+                            wolfCurrent.timePassed = wolfCurrent.timeOfNextWalk; //Заводим новое время для того, чтобы волк не бегал, как сумасшедший.
                         } else { //Если же время не настало и запущен таймер.
                             wolfCurrent.timePassed--; //То уменьшаем его.
                         } //Конец else.
@@ -234,7 +234,7 @@ public abstract class GameThreads {
 
         @Override
         public void run() {
-            JLabel labelNotification = getLabelNullLayout(notification, f25, frame, 1150, frame.getHeight()-120, 1000, 50, COLOR_INTERFACE_ORANGE) ;
+            JLabel labelNotification = getLabelNullLayout(notification, f25, frame, 1150, frame.getHeight()-120, COLOR_INTERFACE_ORANGE) ;
             visTrue(labelNotification);
             int sleep = 60;
             while (labelNotification.getY() < frame.getHeight()+30 && sleep > 0) {

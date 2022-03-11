@@ -6,19 +6,16 @@ import GameMechanic.Objects.TechnicalObjects.World;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 import static Libraries.Methods.*;
 
 public abstract class GameMainVariables {
-    GameMainVariables() {
-        printNote("Creating an object of class GameMechanicMainVariables", NOTE_TYPE_DONE);
-    }
-
-    public final static String version = "v0.3server-test1";
+    public final static String version = "v0.1.0";
     public static String serverHost = "localhost";
     public static int serverPort = 5000;
 
-    public static double millisecondsPerUpdate = 1000d / 30;
+    public static double millisecondsPerUpdate = 1000d / 60;
     public static String[] listOfIncorrectSymbols = {"\\", "/", ".", "\"", "⊠"};
 
     public static GameThreads.GameLoop gameLoop = new GameThreads.GameLoop();
@@ -33,8 +30,9 @@ public abstract class GameMainVariables {
     public static boolean hitBoxModeOn;
     public static boolean fastModeOn;
     public static boolean gameStart;
-    public static boolean runnableOn;
+    public static boolean gameLoopOn;
     public static boolean resizableOn;
+    public static boolean fullscreenOn = true;
     public static boolean godModeOn;
     public static boolean regenerationOn;
     public static boolean needRegistrationOn;
@@ -116,13 +114,19 @@ public abstract class GameMainVariables {
     final public static Image ICON_MENU_TITLE = new ImageIcon("resources"+SEPARATOR+"images"+SEPARATOR+"ICON_MENU_TITLE.png").getImage();
     final public static Image ICON_FRAME = new ImageIcon("resources"+SEPARATOR+"images"+SEPARATOR+"ICON_FRAME.png").getImage();
 
-    public final static int FRAME_WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-    public final static int FRAME_HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+    final public static Image IMAGE_BUTTON_START = new ImageIcon("resources"+SEPARATOR+"images"+SEPARATOR+"Button_Start.png").getImage();
+    final public static Image IMAGE_SELECTED_BUTTON = new ImageIcon("resources"+SEPARATOR+"images"+SEPARATOR+"Selected_Button.png").getImage();
 
-    public static int playerXFrame = FRAME_WIDTH / 2;
-    public static int playerYFrame = FRAME_HEIGHT / 2;
+    final public static File SOUND_STONE_MINING = new File("resources"+SEPARATOR+"sounds"+SEPARATOR+"StoneMining.wav");
+    final public static File FONT_ALUNDRA_TEXT = new File("resources"+SEPARATOR+"fonts"+SEPARATOR+"AlundraText.ttf");
+    public static final String FONT_USED = "AlundraText";
 
-    public final static JFrame frame = getFrame("War Of Cards: " + version, ICON_FRAME, FRAME_WIDTH, FRAME_HEIGHT,
+    public final static Dimension FRAME_SIZE = new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+
+    public static int playerXFrame = FRAME_SIZE.width / 2;
+    public static int playerYFrame = FRAME_SIZE.height / 2;
+
+    public final static JFrame frame = getFrame("War Of Cards: " + version, ICON_FRAME, FRAME_SIZE.width, FRAME_SIZE.height,
             null, null, resizableOn);
 
     public final static JButton buttonSinglePlayer = getButtonNullLayout("Одиночная игра", f40, frame,
@@ -154,7 +158,7 @@ public abstract class GameMainVariables {
     public final static JButton buttonSettings = getButtonNullLayout("Настройки", f30, frame,
             frame.getWidth()/2+40, frame.getHeight()-100, frame.getWidth()/5, 50,
             new GameGUIListeners.Settings(), COLOR_INTERFACE_GREEN, null);
-    public final static JButton buttonEndRegistration = getButtonNullLayout("Зарегестрироваться", f20, frame,
+    public final static JButton buttonEndRegistration = getButtonNullLayout("Зарегистрироваться", f20, frame,
             75, 680, 270, 45, new GameGUIListeners.EndOfRegistrationAccount(), COLOR_INTERFACE_GREEN, null);
 
     public final static JButton buttonRight = getButtonNullLayout(">", f50, frame,
@@ -181,29 +185,29 @@ public abstract class GameMainVariables {
 
 
     public final static JLabel labelSettings = getLabelNullLayout("Настройки", f35, frame,
-            frame.getWidth()/2-180/2, 250, 180, 60, COLOR_INTERFACE_YELLOW);
+            frame.getWidth()/2-180/2, 250, COLOR_INTERFACE_YELLOW);
     public final static JButton buttonSettingsServer = getButtonNullLayout("Подключение к серверу", f30, frame,
             frame.getWidth()/2-200, 350, 400, 55,
             new GameGUIListeners.SettingsServer(), COLOR_INTERFACE_YELLOW, null);
 
-    public final static JLabel labelWarningNeedRegistration = getLabelNullLayout("Необходимо зарегестрироваться!", f30, frame,
-            frame.getWidth()/3+45, frame.getHeight()/7*5, 500, 40, COLOR_INTERFACE_GREEN);
+    public final static JLabel labelWarningNeedRegistration = getLabelNullLayout("Необходимо зарегистрироваться!", f30, frame,
+            frame.getWidth()/3+45, frame.getHeight()/7*5, COLOR_INTERFACE_GREEN);
 
     public final static JLabel labelRegisterNick = getLabelNullLayout("Логин", f25, frame,
-            165, 420, 300, 30, COLOR_INTERFACE_GREEN);
+            165, 420, COLOR_INTERFACE_GREEN);
     public final static JLabel labelRegisterPassword = getLabelNullLayout("Пароль", f25, frame,
-            165, 520, 200, 30, COLOR_INTERFACE_GREEN);
+            165, 520, COLOR_INTERFACE_GREEN);
     public final static JLabel labelAccount = getLabelNullLayout("Вы не авторизованы", f30, frame,
-            60, frame.getHeight()-190, 400, 60, COLOR_INTERFACE_GREEN);
+            60, frame.getHeight()-190, COLOR_INTERFACE_GREEN);
     public final static JLabel labelWarning = getLabelNullLayout(null, f20, frame,
-            100, 740, 2000, 30, COLOR_INTERFACE_GREEN);
+            100, 740, COLOR_INTERFACE_GREEN);
     public final static JLabel labelSlots = getLabelNullLayout("Слоты", f50, frame,
-            frame.getWidth()/2-85, 120, 180, 50, COLOR_INTERFACE_ORANGE);
-    public final static JLabel labelNick = new JLabel();
-    //    public final static JLabel labelNick = getLabelNullLayout(null, f15, frame,
-//            0, playerYFrame - 75, 100, 20, COLOR_INTERFACE_ORANGE);
+            frame.getWidth()/2-85, 120, COLOR_INTERFACE_ORANGE);
+//    public final static JLabel labelNick = new JLabel();
+    public final static JLabel labelNick = getLabelNullLayout(null, f15, frame,
+            0, playerYFrame - 75, COLOR_INTERFACE_ORANGE);
     public final static JLabel labelSaveAccount = getLabelNullLayout(null, f20, frame,
-            370, frame.getHeight()-100, 1000, 40, COLOR_INTERFACE_GREEN);
+            370, frame.getHeight()-100, COLOR_INTERFACE_GREEN);
 
     public final static JTextField textNick = getTextFieldNullLayout(null, f30, frame,
             80, 465, 250, 40, COLOR_INTERFACE_TURQUOISE, null);

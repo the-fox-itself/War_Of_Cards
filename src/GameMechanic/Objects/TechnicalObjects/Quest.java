@@ -13,12 +13,10 @@ public class Quest implements Serializable {
     public String searchCardName;
 
     public Quest(int numberOfQuest, String goal, int goalNumber, String searchCardName) {
-        System.out.println("Creating object of class Quest...");
         this.numberOfQuest = numberOfQuest;
         this.goal = goal;
         this.goalNumber = goalNumber;
         this.searchCardName = searchCardName;
-        System.out.println("Finished creating object of class Quest.");
         System.out.println("Created quest:  numberOfQuest: " + numberOfQuest + ", goal: " + goal + ", goalNumber: " + goalNumber + ", reachCards: " + reachedNumber + ", isCompleted: " + isCompleted + ", searchCard: " + searchCardName);
     }
     public void runnableOn() {

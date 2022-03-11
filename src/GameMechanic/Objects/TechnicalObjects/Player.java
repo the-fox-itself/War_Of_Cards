@@ -7,13 +7,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Player implements Serializable {
-    public Player(Account account, double xOfPlayer, double yOfPlayer) {
-        this.account = account;
+    public Player(World world, double xOfPlayer, double yOfPlayer) {
+        this.world = world;
         this.xOfPlayer = xOfPlayer;
         this.yOfPlayer = yOfPlayer;
     }
 
-    public Account account;
+    public World world;
 
     public double xOfPlayer;
     public double yOfPlayer;

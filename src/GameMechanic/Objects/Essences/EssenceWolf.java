@@ -8,7 +8,6 @@ public class EssenceWolf extends Essence { //Волк.
     transient Thread threadBehavior = new GameThreads.WolfThread(this);
 
     public EssenceWolf() { //Конструктор для установления начальных характеристик.
-        System.out.println("Creating object of class EssenceWolf...");
         name = NAME_WOLF;
         do {
             xOnFrame = (int) (Math.random() * 1000) * 10 - 5000 - playerXFrame;
@@ -26,7 +25,6 @@ public class EssenceWolf extends Essence { //Волк.
 
         threadBehavior.start();
 
-        System.out.println("Finished creating object of class EssenceWolf.");
         System.out.println("Created essence " + name + ":  x: " + xOnFrame + ", y: " + yOnFrame + ", w: " + width + ", h: " + height + ", health: " + essenceHealth + ", speed: " + essenceSpeed + ", icon: " + icon + ", timeToWalk: " + timeOfNextWalk + ", timePassed: " + timePassed);
     }
 

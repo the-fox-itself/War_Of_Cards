@@ -4,7 +4,6 @@ import GameMechanic.Objects.Cards.Card; //Импорт класса-родите
 
 public class CardDiamond extends Card { //Карта Алмаз.
     public CardDiamond() { //Конструктор для установления начальных характеристик.
-        System.out.println("Creating object of class CardDiamond...");
         this.level = LEVEL_0;
         this.rarity = RARITY_CIVIL;
         this.type = TYPE_NATURAL;
@@ -15,7 +14,6 @@ public class CardDiamond extends Card { //Карта Алмаз.
             strength -= 30;
         }
         this.specifications.add(strength);
-        System.out.println("Finished creating object of class CardDiamond.");
         System.out.println("Created card " + name + ": level: " + level + ", sort: " + rarity + ", type: " + type + ", isWear: " + isWear + ", specifications: " + specifications + ", description: " + description);
     }
 }

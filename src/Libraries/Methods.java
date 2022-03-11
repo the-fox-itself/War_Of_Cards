@@ -12,26 +12,21 @@ import java.net.Socket;
 import static GameMechanic.GameMainVariables.*;
 
 public abstract class Methods {
-    Methods() {
-        printNote("Creating an object of class Methods", NOTE_TYPE_DONE);
-    }
-
     final public static String SEPARATOR = System.getProperty("file.separator");
-    private static final String font = "AlundraText";
-    public final static Font f90 = new Font(font, Font.PLAIN, 90);
-    public final static Font f80 = new Font(font, Font.PLAIN, 80);
-    public final static Font f70 = new Font(font, Font.PLAIN, 70);
-    public final static Font f60 = new Font(font, Font.PLAIN, 60);
-    public final static Font f50 = new Font(font, Font.PLAIN, 50);
-    public final static Font f45 = new Font(font, Font.PLAIN, 45);
-    public final static Font f40 = new Font(font, Font.PLAIN, 40);
-    public final static Font f35 = new Font(font, Font.PLAIN, 35);
-    public final static Font f32 = new Font(font, Font.PLAIN, 32);
-    public final static Font f30 = new Font(font, Font.PLAIN, 30);
-    public final static Font f25 = new Font(font, Font.PLAIN, 25);
-    public final static Font f20 = new Font(font, Font.PLAIN, 20);
-    public final static Font f17 = new Font(font, Font.PLAIN, 17);
-    public final static Font f15 = new Font(font, Font.PLAIN, 15);
+    public final static Font f90 = new Font(FONT_USED, Font.PLAIN, 90);
+    public final static Font f80 = new Font(FONT_USED, Font.PLAIN, 80);
+    public final static Font f70 = new Font(FONT_USED, Font.PLAIN, 70);
+    public final static Font f60 = new Font(FONT_USED, Font.PLAIN, 60);
+    public final static Font f50 = new Font(FONT_USED, Font.PLAIN, 50);
+    public final static Font f45 = new Font(FONT_USED, Font.PLAIN, 45);
+    public final static Font f40 = new Font(FONT_USED, Font.PLAIN, 40);
+    public final static Font f35 = new Font(FONT_USED, Font.PLAIN, 35);
+    public final static Font f32 = new Font(FONT_USED, Font.PLAIN, 32);
+    public final static Font f30 = new Font(FONT_USED, Font.PLAIN, 30);
+    public final static Font f25 = new Font(FONT_USED, Font.PLAIN, 25);
+    public final static Font f20 = new Font(FONT_USED, Font.PLAIN, 20);
+    public final static Font f17 = new Font(FONT_USED, Font.PLAIN, 17);
+    public final static Font f15 = new Font(FONT_USED, Font.PLAIN, 15);
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
@@ -110,11 +105,11 @@ public abstract class Methods {
     }
     public static void visTrue(Component component) {
         component.setVisible(true);
-        printNote("Displaying component [isVisible:true, component:"+component+"]", NOTE_TYPE_DONE);
+//        printNote("Displaying component [isVisible:true, component:"+component+"]", NOTE_TYPE_DONE);
     }
     public static void visFalse(Component component) {
         component.setVisible(false);
-        printNote("Hiding component [isVisible:false, component:"+component+"]", NOTE_TYPE_DONE);
+//        printNote("Hiding component [isVisible:false, component:"+component+"]", NOTE_TYPE_DONE);
     }
     public static void setComponent(Container container, Component component, Font font, int x, int y, int width, int height) {
         container.add(component);
@@ -259,11 +254,12 @@ public abstract class Methods {
 
         return returnButton;
     }
-    public static JLabel getLabelNullLayout(String text, Font font, JFrame frameAdd, int x, int y, int width, int height, Color foreground) {
+    public static JLabel getLabelNullLayout(String text, Font font, JFrame frameAdd, int x, int y, Color foreground) {
         JLabel returnLabel = new JLabel(text);
         returnLabel.setFont(font);
         frameAdd.add(returnLabel, 1, 0);
-        returnLabel.setBounds(x, y, width, height);
+        returnLabel.setBounds(x, y, returnLabel.getPreferredSize().width, returnLabel.getPreferredSize().height);
+        returnLabel.setFont(font);
         returnLabel.setForeground(foreground);
         visFalse(returnLabel);
 

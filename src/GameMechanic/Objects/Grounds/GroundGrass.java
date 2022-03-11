@@ -7,7 +7,6 @@ public class GroundGrass extends Ground {
         super(xOnWorld, yOnWorld);
         this.icon = ICON_GROUND_GRASS;
         this.name = NAME_GRASS;
-        System.out.println("New ground has created: " + name + ".");
     }
 
     @Override
