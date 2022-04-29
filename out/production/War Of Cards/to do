@@ -1,0 +1,15 @@
+- Fix labelNick appearance during the game
+- Fix near objects locating
+- Fix ground rendering glitch with white vertical lines
+- Create better interface
+- Fix world loading from saved account on the server
+- Create world generation near the player instead of the whole world generation from the start
+- Rendering only objects near the player
+- Infinite world generation
+
+
+
+Done:
+- Make walking in one direction and running in another direction possible
+- Fix running stuck glitch where you can press W but release w
+- Fix ConcurrentModificationException at ClientMechanic.ClientDrawPanel.paintComponent(ClientDrawPanel.java:156)

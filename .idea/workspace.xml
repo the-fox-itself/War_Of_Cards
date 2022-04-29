@@ -28,45 +28,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7dc5138-f73e-4cb9-a81d-0798d1758fbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Libraries/MButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/to do" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/War_Of_Cards_0_2_copy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/War_Of_Cards_0_3_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/joml_1_9_25_javadoc.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Documentation/Геймплей" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Documentation/Игровые объекты" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Documentation/Инвентарь и Крафт" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Documentation/Карты" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Documentation/Основная документация" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Documentation/Текущие минусы игры" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Documentation/То, что надо сделать" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Documentation/То, что уже сделано" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Documentation/Торговля" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/Libraries/AllAvailibleFonts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/War Of Cards/to do" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/war_of_cards_0.2.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/war_of_cards_0.2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/War Of Cards.iml" beforeDir="false" afterPath="$PROJECT_DIR$/War Of Cards.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/texts/text_english" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/texts/text_russian" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientDrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientDrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientGUIMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientGUIMechanic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientMechanic/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientMechanic/ClientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/GameGUIListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameGUIListeners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/GameMainVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameMainVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/GameMechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameMechanic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/GameThreads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/GameThreads.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardDiamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardGold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardSmallStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardSmallStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/NaturalCards/CardWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyPants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyPants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyShirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Cards/WeaponCards/CardPovertyShirt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/Essence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/Essence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/EssenceWolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Essences/EssenceWolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectBarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectBarrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectDiamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectDiamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectEmpty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectEmpty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectGold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectSmallStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectSmallStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectWood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/GameObjects/ObjectWood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundEmpty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundEmpty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundGrass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundGrass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/Grounds/GroundWater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/Quest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameMechanic/Objects/TechnicalObjects/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Libraries/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Libraries/Methods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,18 +83,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
-    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="war_of_cards" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/images" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/Users/Cripton/IdeaProjects/War Of Cards"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Cripton\IdeaProjects\War Of Cards\resources\images" />
@@ -194,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621087879635</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Save commit">
+      <created>1647017777266</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647017777266</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,7 +205,8 @@
     <MESSAGE value="v0.3pre-release2" />
     <MESSAGE value="sound test" />
     <MESSAGE value="Initial commit 0.1 15.05.2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit 0.1 15.05.2021" />
+    <MESSAGE value="Save commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Save commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
